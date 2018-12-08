@@ -539,7 +539,7 @@
             this.btnAgregaPresentaciones.Name = "btnAgregaPresentaciones";
             this.btnAgregaPresentaciones.Size = new System.Drawing.Size(109, 120);
             this.btnAgregaPresentaciones.TabIndex = 1;
-            this.btnAgregaPresentaciones.Text = "Agregar presentaciones_prueba";
+            this.btnAgregaPresentaciones.Text = "Agregar presentaciones";
             this.btnAgregaPresentaciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregaPresentaciones.UseVisualStyleBackColor = true;
             this.btnAgregaPresentaciones.Click += new System.EventHandler(this.btnAgregaPresentaciones_Click_1);
