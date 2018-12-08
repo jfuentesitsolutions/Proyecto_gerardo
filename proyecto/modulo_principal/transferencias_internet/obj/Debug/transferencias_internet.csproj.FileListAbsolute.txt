@@ -26,3 +26,17 @@ J:\Escritorio\Proyecto_gerardo\modulo_principal\transferencias_internet\bin\Debu
 J:\Escritorio\Proyecto_gerardo\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.csprojResolveAssemblyReference.cache
 J:\Escritorio\Proyecto_gerardo\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.dll
 J:\Escritorio\Proyecto_gerardo\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\transferencias_internet.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\transferencias_internet.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\conexiones_BD.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\MySql.Data.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\MySqlBackup.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\sessionManager.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\utilitarios.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\LibPrintTicket.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\conexiones_BD.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\sessionManager.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\bin\Debug\utilitarios.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.csprojResolveAssemblyReference.cache
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\transferencias_internet\obj\Debug\transferencias_internet.pdb

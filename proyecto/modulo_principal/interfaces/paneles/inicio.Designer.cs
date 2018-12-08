@@ -539,7 +539,7 @@
             this.btnAgregaPresentaciones.Name = "btnAgregaPresentaciones";
             this.btnAgregaPresentaciones.Size = new System.Drawing.Size(109, 120);
             this.btnAgregaPresentaciones.TabIndex = 1;
-            this.btnAgregaPresentaciones.Text = "Agregar presentaciones";
+            this.btnAgregaPresentaciones.Text = "Agregar presentaciones_prueba";
             this.btnAgregaPresentaciones.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregaPresentaciones.UseVisualStyleBackColor = true;
             this.btnAgregaPresentaciones.Click += new System.EventHandler(this.btnAgregaPresentaciones_Click_1);
@@ -663,7 +663,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 755);
+            this.panel1.Location = new System.Drawing.Point(0, 650);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(932, 100);
             this.panel1.TabIndex = 11;
@@ -675,7 +675,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 166);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(932, 589);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(932, 484);
             this.flowLayoutPanel2.TabIndex = 12;
             // 
             // inicio
@@ -684,7 +684,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(932, 855);
+            this.ClientSize = new System.Drawing.Size(932, 750);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_opciones);

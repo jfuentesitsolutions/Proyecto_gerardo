@@ -50,3 +50,13 @@ J:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.pdb
 J:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
 J:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
 J:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\conexiones_BD.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\conexiones_BD.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\MySqlBackup.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\sessionManager.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\utilitarios.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\sessionManager.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\bin\Debug\utilitarios.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb

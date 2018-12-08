@@ -59,3 +59,17 @@ J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.pdb
 J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
 J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.dll
 J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\cache_manager.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\cache_manager.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\conexiones_BD.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\MySql.Data.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\MySqlBackup.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\sessionManager.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\utilitarios.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\LibPrintTicket.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\conexiones_BD.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\sessionManager.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\utilitarios.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.pdb
