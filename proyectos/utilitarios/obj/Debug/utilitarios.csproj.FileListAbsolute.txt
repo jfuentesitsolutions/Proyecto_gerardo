@@ -1,0 +1,22 @@
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\utilitarios\bin\Debug\utilitarios.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\utilitarios\bin\Debug\utilitarios.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\utilitarios\obj\Debug\utilitarios.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\utilitarios\obj\Debug\utilitarios.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+E:\Escritorio\Proyecto_gerardo\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache

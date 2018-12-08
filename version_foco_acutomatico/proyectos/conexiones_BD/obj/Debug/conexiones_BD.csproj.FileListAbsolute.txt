@@ -1,0 +1,40 @@
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\bin\Debug\conexiones_BD.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\bin\Debug\conexiones_BD.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\bin\Debug\MySql.Data.xml
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\obj\Debug\conexiones_BD.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\obj\Debug\conexiones_BD.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\bin\Debug\utilitarios.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\conexiones_BD\bin\Debug\utilitarios.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\conexiones_BD.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\conexiones_BD.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\MySql.Data.xml
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\MySql.Data.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\conexiones_BD.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\conexiones_BD.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\conexiones_BD.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\conexiones_BD.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\utilitarios.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.csprojResolveAssemblyReference.cache
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\obj\Debug\conexiones_BD.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\MySql.Data.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\MySqlBackup.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\sessionManager.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\sessionManager.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\MySql.Data.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\MySqlBackup.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\sessionManager.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\sessionManager.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\conexiones_BD\bin\Debug\LibPrintTicket.dll

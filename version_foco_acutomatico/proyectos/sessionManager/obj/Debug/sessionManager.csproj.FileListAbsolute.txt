@@ -1,0 +1,20 @@
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\sessionManager\bin\Debug\sessionManager.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\sessionManager\bin\Debug\sessionManager.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\sessionManager\obj\Debug\sessionManager.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\sessionManager\obj\Debug\sessionManager.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache

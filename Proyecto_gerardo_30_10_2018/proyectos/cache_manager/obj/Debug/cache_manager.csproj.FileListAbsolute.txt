@@ -1,0 +1,61 @@
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\cache_manager.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\cache_manager.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\conexiones_BD.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\MySql.Data.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\conexiones_BD.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\MySql.Data.xml
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\obj\Debug\cache_manager.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\obj\Debug\cache_manager.pdb
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\utilitarios.dll
+D:\Proyectos Desarrollos mios\invertario_alcaldia\app_alcaldia\app_inventario\cache_manager\bin\Debug\utilitarios.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySql.Data.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySql.Data.xml
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.pdb
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.dll
+C:\Users\Fuentes\Desktop\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySql.Data.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.pdb
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySql.Data.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.dll
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.pdb
+F:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySqlBackup.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySqlBackup.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\LibPrintTicket.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\sessionManager.dll
+E:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\sessionManager.pdb
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\cache_manager.pdb
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySql.Data.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\MySqlBackup.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\sessionManager.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\LibPrintTicket.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\conexiones_BD.pdb
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\sessionManager.pdb
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\bin\Debug\utilitarios.pdb
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.csprojResolveAssemblyReference.cache
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.dll
+J:\Escritorio\Proyecto_gerardo\proyectos\cache_manager\obj\Debug\cache_manager.pdb
