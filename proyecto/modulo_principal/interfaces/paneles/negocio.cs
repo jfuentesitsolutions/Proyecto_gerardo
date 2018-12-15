@@ -26,7 +26,10 @@ namespace interfaces.paneles
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mantenimientos.negocio.cambio_precios cp = new mantenimientos.negocio.cambio_precios();
+            //mantenimientos.negocio.cambio_precios cp = new mantenimientos.negocio.cambio_precios();
+            //cp.ShowDialog();
+
+            productos.precios_productos cp = new productos.precios_productos();
             cp.ShowDialog();
         }
 

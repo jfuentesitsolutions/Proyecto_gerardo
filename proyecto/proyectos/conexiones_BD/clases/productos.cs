@@ -181,7 +181,7 @@ namespace conexiones_BD.clases
             String Consulta;
             Consulta = @"select pp.idsucursal_producto as idsp ,pr.cod_producto as codigo, pr.nom_producto as nombre, count(*) as cantipre, concat(pr.cod_producto,' < -|-> ',pr.nom_producto) as productoCod,
                         pp.precio, sp.existencias, p.nombre_presentacion as prese, pp.idpresentacion_producto as prepro, u.porcentaje as ud, uu.porcentaje as um,
-                        pp.tipo, u.idutilidad_compra as idud, uu.idutilidad_compra as idum
+                        pp.tipo, concat('$',pp.precio) as pre, u.idutilidad_compra as idud, uu.idutilidad_compra as idum
                         from presentaciones_productos pp, sucursales_productos sp, presentaciones p, productos pr, utilidades_compras u, utilidades_compras uu
                         where pp.idsucursal_producto = sp.idsucursal_producto and pp.idpresentacion = p.idpresentacion and sp.idproducto = pr.idproducto
                         and sp.idutilidadDetalles = u.idutilidad_compra and sp.idutilidadMayoreo = uu.idutilidad_compra
@@ -206,12 +206,12 @@ namespace conexiones_BD.clases
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = @"select pp.idsucursal_producto as idsp ,pr.cod_producto as codigo, pr.nom_producto as nombre,
-pp.precio, sp.existencias, p.nombre_presentacion as prese, pp.idpresentacion_producto as prepro, u.porcentaje as ud, uu.porcentaje as um,
-pp.tipo, pp.cantidad_unidades as cin
-from presentaciones_productos pp, sucursales_productos sp, presentaciones p, productos pr, utilidades_compras u, utilidades_compras uu
-where pp.idsucursal_producto=sp.idsucursal_producto and pp.idpresentacion=p.idpresentacion and sp.idproducto=pr.idproducto
-and sp.idutilidadDetalles=u.idutilidad_compra and sp.idutilidadMayoreo=uu.idutilidad_compra
-; ";
+                        pp.precio, sp.existencias, p.nombre_presentacion as prese, pp.idpresentacion_producto as prepro, u.porcentaje as ud, uu.porcentaje as um,
+                        pp.tipo, pp.cantidad_unidades as cin
+                        from presentaciones_productos pp, sucursales_productos sp, presentaciones p, productos pr, utilidades_compras u, utilidades_compras uu
+                        where pp.idsucursal_producto=sp.idsucursal_producto and pp.idpresentacion=p.idpresentacion and sp.idproducto=pr.idproducto
+                        and sp.idutilidadDetalles=u.idutilidad_compra and sp.idutilidadMayoreo=uu.idutilidad_compra
+                        ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {

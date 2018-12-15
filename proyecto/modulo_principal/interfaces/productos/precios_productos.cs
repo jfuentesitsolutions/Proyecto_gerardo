@@ -12,6 +12,7 @@ namespace interfaces.productos
 {
     public partial class precios_productos : Form
     {
+        utilitarios.cargar_tablas tabla;
         public precios_productos()
         {
             InitializeComponent();
@@ -31,6 +32,45 @@ namespace interfaces.productos
         private void precios_productos_Load(object sender, EventArgs e)
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
+            cargarTablas();
+        }
+
+        private void cargarTablas()
+        {
+            tabla = new utilitarios.cargar_tablas(tablad, txtBusqueda, conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT(), "productoCod");
+            tabla.cargarSinContadorRegistros();
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            tabla.FiltrarLocalmenteSinContadorRegistros();
+        }
+
+        private void txtBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                    tablad.Focus();
+            }
+        }
+
+        private void tablad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                txtBusqueda.Focus();
+            }else if(e.KeyCode == Keys.Enter){
+                producto pr = new producto();
+                pr.ShowDialog();
+            }
+        }
+
+        private void tablad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
