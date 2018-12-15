@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(precios_productos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tablad = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,16 +109,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar productos";
             // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(17, 25);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(575, 39);
-            this.txtBusqueda.TabIndex = 0;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyUp);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::interfaces.Properties.Resources.search;
@@ -127,6 +118,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(17, 25);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(575, 39);
+            this.txtBusqueda.TabIndex = 0;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyUp);
             // 
             // groupBox2
             // 
@@ -142,7 +143,9 @@
             // 
             this.tablad.AllowUserToAddRows = false;
             this.tablad.AllowUserToDeleteRows = false;
-            this.tablad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.tablad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tablad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -159,24 +162,23 @@
             this.Column20,
             this.Column23,
             this.Column22});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(96)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablad.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(96)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablad.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablad.Location = new System.Drawing.Point(3, 22);
             this.tablad.MultiSelect = false;
             this.tablad.Name = "tablad";
             this.tablad.ReadOnly = true;
             this.tablad.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tablad.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tablad.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tablad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablad.Size = new System.Drawing.Size(657, 274);
             this.tablad.TabIndex = 1;
