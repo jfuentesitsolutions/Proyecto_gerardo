@@ -10,8 +10,37 @@ using System.Windows.Forms;
 
 namespace interfaces.productos
 {
+
     public partial class producto : Form
     {
+        string idsuc_produ, idproducto;
+
+        public string Idsuc_produ
+        {
+            get
+            {
+                return idsuc_produ;
+            }
+
+            set
+            {
+                idsuc_produ = value;
+            }
+        }
+
+        public string Idproducto
+        {
+            get
+            {
+                return idproducto;
+            }
+
+            set
+            {
+                idproducto = value;
+            }
+        }
+
         public producto()
         {
             InitializeComponent();

@@ -54,6 +54,11 @@
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idpr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idmar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kardex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -161,7 +166,12 @@
             this.Column19,
             this.Column20,
             this.Column23,
-            this.Column22});
+            this.Column22,
+            this.idpr,
+            this.idmar,
+            this.idcat,
+            this.idesta,
+            this.kardex});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,6 +308,46 @@
             this.Column22.Name = "Column22";
             this.Column22.ReadOnly = true;
             // 
+            // idpr
+            // 
+            this.idpr.DataPropertyName = "idproducto";
+            this.idpr.HeaderText = "idpro";
+            this.idpr.Name = "idpr";
+            this.idpr.ReadOnly = true;
+            this.idpr.Visible = false;
+            // 
+            // idmar
+            // 
+            this.idmar.DataPropertyName = "idmarca";
+            this.idmar.HeaderText = "idmar";
+            this.idmar.Name = "idmar";
+            this.idmar.ReadOnly = true;
+            this.idmar.Visible = false;
+            // 
+            // idcat
+            // 
+            this.idcat.DataPropertyName = "idcategoria";
+            this.idcat.HeaderText = "idcate";
+            this.idcat.Name = "idcat";
+            this.idcat.ReadOnly = true;
+            this.idcat.Visible = false;
+            // 
+            // idesta
+            // 
+            this.idesta.DataPropertyName = "idestante";
+            this.idesta.HeaderText = "idestan";
+            this.idesta.Name = "idesta";
+            this.idesta.ReadOnly = true;
+            this.idesta.Visible = false;
+            // 
+            // kardex
+            // 
+            this.kardex.DataPropertyName = "kardex";
+            this.kardex.HeaderText = "karde";
+            this.kardex.Name = "kardex";
+            this.kardex.ReadOnly = true;
+            this.kardex.Visible = false;
+            // 
             // precios_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -351,5 +401,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idcat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idesta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kardex;
     }
 }
