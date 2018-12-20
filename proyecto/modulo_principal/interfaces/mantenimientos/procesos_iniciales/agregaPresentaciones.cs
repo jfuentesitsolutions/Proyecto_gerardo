@@ -65,7 +65,12 @@ namespace interfaces.mantenimientos.procesos_iniciales
             cargandoLista();
             tabla2 = new utilitarios.cargar_tablas(tabla_presentacion, txtBuscarP, conexiones_BD.clases.presentaciones.datosTabla(), "nombre_presentacion");
             tabla2.cargarSinContadorRegistros();
-            listasBusqueda.Text = codigo;
+            if (codigo != null)
+            {
+                listasBusqueda.Text = codigo;
+                cargandoProductos();
+            }
+            
             
         }
 
@@ -142,10 +147,7 @@ namespace interfaces.mantenimientos.procesos_iniciales
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            
-                quitar();
-            
-            
+                quitar();  
         }
 
         private void txtBuscarP_KeyUp(object sender, KeyEventArgs e)
@@ -169,35 +171,39 @@ namespace interfaces.mantenimientos.procesos_iniciales
         {
             if (e.KeyCode == Keys.Enter)
             {
-                try
-                {
-                    DataRowView seleccion = (DataRowView)listasBusqueda.SelectedItem;
-                    txtnombreP.Text = seleccion.Row[3].ToString();
-                    txtCodigo.Text = seleccion.Row[2].ToString();
-                    listaMarca.SelectedValue = seleccion.Row[6].ToString();
-                    listaCategoria.SelectedValue = seleccion.Row[4].ToString();
-                    listaSucursal.SelectedValue = seleccion.Row[8].ToString();
-                    listaEstante.SelectedValue = seleccion.Row[10].ToString();
-                    fecha.Text = seleccion.Row[12].ToString();
-                    idsucursal_producto = seleccion.Row[0].ToString();
-                    idproducto = seleccion.Row[1].ToString();
-
-                    cargarTablaPresentaciones();
-
-                    txtBuscarP.Focus();
-                }
-                catch
-                {
-                    if (MessageBox.Show("Deseas crear un producto nuevo", "No exite producto", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    {
-                        mantenimientos.productos pr = new productos();
-                        pr.txtCodigo.Text = listasBusqueda.Text;
-                        pr.ShowDialog();
-                    }
-                }
-                
+                cargandoProductos();               
             }
             
+        }
+
+        private void cargandoProductos()
+        {
+            try
+            {
+                DataRowView seleccion = (DataRowView)listasBusqueda.SelectedItem;
+                txtnombreP.Text = seleccion.Row[3].ToString();
+                txtCodigo.Text = seleccion.Row[2].ToString();
+                listaMarca.SelectedValue = seleccion.Row[6].ToString();
+                listaCategoria.SelectedValue = seleccion.Row[4].ToString();
+                listaSucursal.SelectedValue = seleccion.Row[8].ToString();
+                listaEstante.SelectedValue = seleccion.Row[10].ToString();
+                fecha.Text = seleccion.Row[12].ToString();
+                idsucursal_producto = seleccion.Row[0].ToString();
+                idproducto = seleccion.Row[1].ToString();
+
+                cargarTablaPresentaciones();
+
+                txtBuscarP.Focus();
+            }
+            catch
+            {
+                if (MessageBox.Show("Deseas crear un producto nuevo", "No exite producto", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    mantenimientos.productos pr = new productos();
+                    pr.txtCodigo.Text = listasBusqueda.Text;
+                    pr.ShowDialog();
+                }
+            }
         }
 
         private void cargarTablaPresentaciones()

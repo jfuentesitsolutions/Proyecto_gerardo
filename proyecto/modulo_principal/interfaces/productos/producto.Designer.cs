@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(producto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,8 +55,8 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            this.btnAgregar = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chkPriori = new System.Windows.Forms.CheckBox();
             this.btnModifica = new System.Windows.Forms.Button();
@@ -89,7 +90,6 @@
             this.btnAgr = new System.Windows.Forms.PictureBox();
             this.listaProveedores = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listaUtilidadDetalle = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -104,14 +104,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.precioVM = new System.Windows.Forms.NumericUpDown();
+            this.error4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.tabla.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.existencia)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precio)).BeginInit();
@@ -130,6 +131,7 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.precioCM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioVM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -180,6 +182,7 @@
             this.tabla.SelectedIndex = 0;
             this.tabla.Size = new System.Drawing.Size(442, 431);
             this.tabla.TabIndex = 3;
+            this.tabla.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabla_Selecting);
             // 
             // tabPage1
             // 
@@ -215,6 +218,7 @@
             this.btnActualizar.TabIndex = 15;
             this.btnActualizar.Text = "Actualizar información";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // chkKardex
             // 
@@ -249,15 +253,19 @@
             // 
             // fecha
             // 
-            this.fecha.Location = new System.Drawing.Point(220, 216);
+            this.fecha.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fecha.Location = new System.Drawing.Point(220, 221);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(187, 26);
             this.fecha.TabIndex = 11;
             // 
             // listaEstante
             // 
+            this.listaEstante.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.listaEstante.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.listaEstante.FormattingEnabled = true;
-            this.listaEstante.Location = new System.Drawing.Point(19, 215);
+            this.listaEstante.Location = new System.Drawing.Point(19, 220);
             this.listaEstante.Name = "listaEstante";
             this.listaEstante.Size = new System.Drawing.Size(189, 27);
             this.listaEstante.TabIndex = 10;
@@ -265,7 +273,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(216, 193);
+            this.label6.Location = new System.Drawing.Point(216, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 19);
             this.label6.TabIndex = 9;
@@ -274,7 +282,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 193);
+            this.label5.Location = new System.Drawing.Point(15, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 19);
             this.label5.TabIndex = 8;
@@ -282,8 +290,10 @@
             // 
             // listaCategoria
             // 
+            this.listaCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.listaCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.listaCategoria.FormattingEnabled = true;
-            this.listaCategoria.Location = new System.Drawing.Point(220, 163);
+            this.listaCategoria.Location = new System.Drawing.Point(220, 168);
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(187, 27);
             this.listaCategoria.TabIndex = 7;
@@ -291,7 +301,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(216, 140);
+            this.label4.Location = new System.Drawing.Point(216, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 19);
             this.label4.TabIndex = 6;
@@ -299,8 +309,10 @@
             // 
             // listaMarca
             // 
+            this.listaMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.listaMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.listaMarca.FormattingEnabled = true;
-            this.listaMarca.Location = new System.Drawing.Point(19, 163);
+            this.listaMarca.Location = new System.Drawing.Point(19, 168);
             this.listaMarca.Name = "listaMarca";
             this.listaMarca.Size = new System.Drawing.Size(189, 27);
             this.listaMarca.TabIndex = 5;
@@ -332,7 +344,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(19, 78);
+            this.txtNombre.Location = new System.Drawing.Point(19, 83);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(388, 55);
@@ -341,7 +353,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 56);
+            this.label1.Location = new System.Drawing.Point(15, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 19);
             this.label1.TabIndex = 0;
@@ -350,8 +362,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.btnEliminar);
+            this.tabPage2.Controls.Add(this.btnAgregar);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
@@ -361,27 +373,29 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Presentaciones";
             // 
-            // pictureBox2
+            // btnEliminar
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(377, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(377, 12);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(32, 32);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // pictureBox1
+            // btnAgregar
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(339, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(339, 12);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(32, 32);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // groupBox4
             // 
@@ -422,6 +436,7 @@
             this.btnModifica.TabIndex = 8;
             this.btnModifica.Text = "Modificar";
             this.btnModifica.UseVisualStyleBackColor = true;
+            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
             // canti
             // 
@@ -552,6 +567,7 @@
             this.tabla_presentacion_producto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla_presentacion_producto.Size = new System.Drawing.Size(385, 159);
             this.tabla_presentacion_producto.TabIndex = 0;
+            this.tabla_presentacion_producto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_presentacion_producto_CellClick);
             // 
             // id1
             // 
@@ -634,7 +650,7 @@
             this.groupBox2.Controls.Add(this.tablaProveedores);
             this.groupBox2.Location = new System.Drawing.Point(23, 87);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 285);
+            this.groupBox2.Size = new System.Drawing.Size(387, 285);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Proveedores asignados";
@@ -659,7 +675,7 @@
             this.tablaProveedores.ReadOnly = true;
             this.tablaProveedores.RowHeadersVisible = false;
             this.tablaProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaProveedores.Size = new System.Drawing.Size(373, 260);
+            this.tablaProveedores.Size = new System.Drawing.Size(381, 260);
             this.tablaProveedores.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -702,7 +718,7 @@
             this.groupBox1.Controls.Add(this.listaProveedores);
             this.groupBox1.Location = new System.Drawing.Point(23, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 81);
+            this.groupBox1.Size = new System.Drawing.Size(387, 81);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proveedores";
@@ -717,6 +733,7 @@
             this.btnEli.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnEli.TabIndex = 10;
             this.btnEli.TabStop = false;
+            this.btnEli.Click += new System.EventHandler(this.btnEli_Click);
             // 
             // btnAgr
             // 
@@ -728,6 +745,7 @@
             this.btnAgr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnAgr.TabIndex = 9;
             this.btnAgr.TabStop = false;
+            this.btnAgr.Click += new System.EventHandler(this.btnAgr_Click);
             // 
             // listaProveedores
             // 
@@ -744,7 +762,6 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage4.Controls.Add(this.btnGuardar);
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.groupBox6);
             this.tabPage4.Location = new System.Drawing.Point(4, 28);
@@ -754,17 +771,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Precios/Utilidades";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(170, 340);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 29);
-            this.btnGuardar.TabIndex = 4;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.listaUtilidadDetalle);
@@ -773,9 +779,10 @@
             this.groupBox5.Controls.Add(this.precioCD);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Location = new System.Drawing.Point(20, 166);
+            this.groupBox5.Enabled = false;
+            this.groupBox5.Location = new System.Drawing.Point(20, 214);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(389, 138);
+            this.groupBox5.Size = new System.Drawing.Size(389, 127);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalle";
@@ -786,7 +793,7 @@
             this.listaUtilidadDetalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listaUtilidadDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.listaUtilidadDetalle.FormattingEnabled = true;
-            this.listaUtilidadDetalle.Location = new System.Drawing.Point(205, 76);
+            this.listaUtilidadDetalle.Location = new System.Drawing.Point(105, 73);
             this.listaUtilidadDetalle.Name = "listaUtilidadDetalle";
             this.listaUtilidadDetalle.Size = new System.Drawing.Size(168, 27);
             this.listaUtilidadDetalle.TabIndex = 3;
@@ -795,7 +802,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Location = new System.Drawing.Point(201, 44);
+            this.label15.Location = new System.Drawing.Point(149, 33);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 19);
             this.label15.TabIndex = 2;
@@ -805,7 +812,7 @@
             // 
             this.precioVD.BackColor = System.Drawing.SystemColors.Control;
             this.precioVD.DecimalPlaces = 2;
-            this.precioVD.Location = new System.Drawing.Point(129, 76);
+            this.precioVD.Location = new System.Drawing.Point(295, 74);
             this.precioVD.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -832,7 +839,7 @@
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(114, 33);
+            this.label14.Location = new System.Drawing.Point(282, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(87, 40);
             this.label14.TabIndex = 4;
@@ -857,9 +864,10 @@
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.precioVM);
-            this.groupBox6.Location = new System.Drawing.Point(20, 19);
+            this.groupBox6.Enabled = false;
+            this.groupBox6.Location = new System.Drawing.Point(20, 59);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(389, 130);
+            this.groupBox6.Size = new System.Drawing.Size(389, 128);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Mayoreo";
@@ -870,7 +878,7 @@
             this.listaMayoreo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listaMayoreo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.listaMayoreo.FormattingEnabled = true;
-            this.listaMayoreo.Location = new System.Drawing.Point(215, 76);
+            this.listaMayoreo.Location = new System.Drawing.Point(116, 76);
             this.listaMayoreo.Name = "listaMayoreo";
             this.listaMayoreo.Size = new System.Drawing.Size(168, 27);
             this.listaMayoreo.TabIndex = 3;
@@ -879,7 +887,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(214, 44);
+            this.label11.Location = new System.Drawing.Point(174, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 19);
             this.label11.TabIndex = 2;
@@ -912,7 +920,7 @@
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Location = new System.Drawing.Point(121, 33);
+            this.label16.Location = new System.Drawing.Point(291, 23);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(87, 40);
             this.label16.TabIndex = 4;
@@ -923,7 +931,7 @@
             // 
             this.precioVM.BackColor = System.Drawing.SystemColors.Control;
             this.precioVM.DecimalPlaces = 2;
-            this.precioVM.Location = new System.Drawing.Point(137, 76);
+            this.precioVM.Location = new System.Drawing.Point(304, 76);
             this.precioVM.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -932,6 +940,11 @@
             this.precioVM.Name = "precioVM";
             this.precioVM.Size = new System.Drawing.Size(65, 26);
             this.precioVM.TabIndex = 5;
+            // 
+            // error4
+            // 
+            this.error4.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error4.ContainerControl = this;
             // 
             // producto
             // 
@@ -958,8 +971,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.existencia)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canti)).EndInit();
@@ -982,6 +995,7 @@
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.precioCM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.precioVM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1017,14 +1031,6 @@
         private System.Windows.Forms.RadioButton chkM;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.DataGridView tabla_presentacion_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn presen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.DataGridView tablaProveedores;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1049,9 +1055,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown precioVM;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnAgregar;
+        private System.Windows.Forms.PictureBox btnEliminar;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.DateTimePicker fecha;
         public System.Windows.Forms.ComboBox listaEstante;
@@ -1060,5 +1065,14 @@
         public System.Windows.Forms.TextBox txtCodigo;
         public System.Windows.Forms.NumericUpDown existencia;
         public System.Windows.Forms.CheckBox chkKardex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn presen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ErrorProvider error4;
     }
 }

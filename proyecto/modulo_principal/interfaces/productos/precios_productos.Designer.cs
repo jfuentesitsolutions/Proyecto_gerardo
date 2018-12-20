@@ -59,6 +59,13 @@
             this.idcat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kardex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utiliM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utiliD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prvd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -171,7 +178,14 @@
             this.idmar,
             this.idcat,
             this.idesta,
-            this.kardex});
+            this.kardex,
+            this.fecha,
+            this.utiliM,
+            this.utiliD,
+            this.prv,
+            this.prc,
+            this.prvm,
+            this.prvd});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -348,6 +362,62 @@
             this.kardex.ReadOnly = true;
             this.kardex.Visible = false;
             // 
+            // fecha
+            // 
+            this.fecha.DataPropertyName = "fecha_ingreso";
+            this.fecha.HeaderText = "fe";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Visible = false;
+            // 
+            // utiliM
+            // 
+            this.utiliM.DataPropertyName = "idutilidadMayoreo";
+            this.utiliM.HeaderText = "UM";
+            this.utiliM.Name = "utiliM";
+            this.utiliM.ReadOnly = true;
+            this.utiliM.Visible = false;
+            // 
+            // utiliD
+            // 
+            this.utiliD.DataPropertyName = "idutilidadDetalles";
+            this.utiliD.HeaderText = "UD";
+            this.utiliD.Name = "utiliD";
+            this.utiliD.ReadOnly = true;
+            this.utiliD.Visible = false;
+            // 
+            // prv
+            // 
+            this.prv.DataPropertyName = "precio_venta";
+            this.prv.HeaderText = "PV";
+            this.prv.Name = "prv";
+            this.prv.ReadOnly = true;
+            this.prv.Visible = false;
+            // 
+            // prc
+            // 
+            this.prc.DataPropertyName = "precio_compra";
+            this.prc.HeaderText = "PC";
+            this.prc.Name = "prc";
+            this.prc.ReadOnly = true;
+            this.prc.Visible = false;
+            // 
+            // prvm
+            // 
+            this.prvm.DataPropertyName = "precio_ventaM";
+            this.prvm.HeaderText = "PVM";
+            this.prvm.Name = "prvm";
+            this.prvm.ReadOnly = true;
+            this.prvm.Visible = false;
+            // 
+            // prvd
+            // 
+            this.prvd.DataPropertyName = "precio_compraM";
+            this.prvd.HeaderText = "PCM";
+            this.prvd.Name = "prvd";
+            this.prvd.ReadOnly = true;
+            this.prvd.Visible = false;
+            // 
             // precios_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -406,5 +476,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idcat;
         private System.Windows.Forms.DataGridViewTextBoxColumn idesta;
         private System.Windows.Forms.DataGridViewTextBoxColumn kardex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn utiliM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn utiliD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prvd;
     }
 }

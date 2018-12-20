@@ -34,14 +34,18 @@ namespace interfaces.productos
         private void precios_productos_Load(object sender, EventArgs e)
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
-            cargarTablas();
+            cargarTablas(false);
         }
 
-        private void cargarTablas()
+        private void cargarTablas(bool actuali)
         {
             tabla = new utilitarios.cargar_tablas(tablad, txtBusqueda, conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT(), "productoCod");
             tabla.cargarSinContadorRegistros();
-            cargarListas();
+            if (!actuali)
+            {
+                cargarListas();
+            }
+            
         }
 
         private void cargarListas()
@@ -108,10 +112,22 @@ namespace interfaces.productos
                 {
                     pr.chkKardex.Checked = true;
                 }
+                if (!tablad.CurrentRow.Cells[19].Value.ToString().Equals(""))
+                {
+                    pr.fecha.Value = Convert.ToDateTime(tablad.CurrentRow.Cells[19].Value.ToString());
+                }
                 
 
                 pr.Idsuc_produ = tablad.CurrentRow.Cells[0].Value.ToString();
                 pr.Idproducto = tablad.CurrentRow.Cells[14].Value.ToString();
+
+                pr.Utili_m = tablad.CurrentRow.Cells[20].Value.ToString();
+                pr.Utili_d = tablad.CurrentRow.Cells[21].Value.ToString();
+                pr.Pv = tablad.CurrentRow.Cells[22].Value.ToString();
+                pr.Pc = tablad.CurrentRow.Cells[23].Value.ToString();
+                pr.Pvm = tablad.CurrentRow.Cells[24].Value.ToString();
+                pr.Pcm = tablad.CurrentRow.Cells[25].Value.ToString();
+
 
                 pr.ShowDialog();
                 txtBusqueda.Focus();
@@ -119,16 +135,20 @@ namespace interfaces.productos
                 {
                     tablad.CurrentCell = tablad.Rows[0].Cells[1];
                 }
+
+                if (pr.Actualiza)
+                {
+                    cargarTablas(true);
+                }
             }
             else
             {
                 txtBusqueda.Text = "";
                 txtBusqueda.Focus();
                 
-            }
-
-            
-            
+            }     
         }
+
+
     }
 }
