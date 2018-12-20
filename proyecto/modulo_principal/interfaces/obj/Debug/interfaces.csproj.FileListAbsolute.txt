@@ -513,3 +513,6 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\in
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\MySql.Data.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\espera_datos.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\espera_datos.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\Bunifu_UI_v1.52.dll

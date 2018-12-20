@@ -14,6 +14,20 @@ namespace interfaces.productos
     {
         utilitarios.cargar_tablas tabla;
         DataTable marca, categoria, estantes;
+        DataTable productos;
+
+        public DataTable Productos
+        {
+            get
+            {
+                return productos;
+            }
+
+            set
+            {
+                productos = value;
+            }
+        }
 
         public precios_productos()
         {
@@ -33,18 +47,20 @@ namespace interfaces.productos
 
         private void precios_productos_Load(object sender, EventArgs e)
         {
+            
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
             cargarTablas(false);
         }
 
         private void cargarTablas(bool actuali)
         {
-            tabla = new utilitarios.cargar_tablas(tablad, txtBusqueda, conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT(), "productoCod");
+            tabla = new utilitarios.cargar_tablas(tablad, txtBusqueda, productos, "productoCod");
             tabla.cargarSinContadorRegistros();
-            if (!actuali)
+
+            /*if (!actuali)
             {
                 cargarListas();
-            }
+            }*/
             
         }
 

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(producto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
@@ -181,7 +181,7 @@
             this.tabla.Name = "tabla";
             this.tabla.SelectedIndex = 0;
             this.tabla.Size = new System.Drawing.Size(442, 431);
-            this.tabla.TabIndex = 3;
+            this.tabla.TabIndex = 0;
             this.tabla.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabla_Selecting);
             // 
             // tabPage1
@@ -215,7 +215,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(170, 334);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(96, 47);
-            this.btnActualizar.TabIndex = 15;
+            this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar información";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -226,7 +226,7 @@
             this.chkKardex.Location = new System.Drawing.Point(159, 284);
             this.chkKardex.Name = "chkKardex";
             this.chkKardex.Size = new System.Drawing.Size(74, 23);
-            this.chkKardex.TabIndex = 14;
+            this.chkKardex.TabIndex = 7;
             this.chkKardex.Text = "Kardex";
             this.chkKardex.UseVisualStyleBackColor = true;
             // 
@@ -240,7 +240,7 @@
             0});
             this.existencia.Name = "existencia";
             this.existencia.Size = new System.Drawing.Size(120, 26);
-            this.existencia.TabIndex = 13;
+            this.existencia.TabIndex = 6;
             // 
             // label7
             // 
@@ -258,7 +258,7 @@
             this.fecha.Location = new System.Drawing.Point(220, 221);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(187, 26);
-            this.fecha.TabIndex = 11;
+            this.fecha.TabIndex = 5;
             // 
             // listaEstante
             // 
@@ -268,7 +268,7 @@
             this.listaEstante.Location = new System.Drawing.Point(19, 220);
             this.listaEstante.Name = "listaEstante";
             this.listaEstante.Size = new System.Drawing.Size(189, 27);
-            this.listaEstante.TabIndex = 10;
+            this.listaEstante.TabIndex = 4;
             // 
             // label6
             // 
@@ -296,7 +296,7 @@
             this.listaCategoria.Location = new System.Drawing.Point(220, 168);
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(187, 27);
-            this.listaCategoria.TabIndex = 7;
+            this.listaCategoria.TabIndex = 3;
             // 
             // label4
             // 
@@ -315,7 +315,7 @@
             this.listaMarca.Location = new System.Drawing.Point(19, 168);
             this.listaMarca.Name = "listaMarca";
             this.listaMarca.Size = new System.Drawing.Size(189, 27);
-            this.listaMarca.TabIndex = 5;
+            this.listaMarca.TabIndex = 2;
             // 
             // label3
             // 
@@ -331,7 +331,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(159, 24);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(248, 26);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 0;
             // 
             // label2
             // 
@@ -544,8 +544,8 @@
             // 
             this.tabla_presentacion_producto.AllowUserToAddRows = false;
             this.tabla_presentacion_producto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabla_presentacion_producto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabla_presentacion_producto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla_presentacion_producto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_presentacion_producto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tabla_presentacion_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -659,8 +659,8 @@
             // 
             this.tablaProveedores.AllowUserToAddRows = false;
             this.tablaProveedores.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tablaProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tablaProveedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaProveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tablaProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -689,8 +689,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "idproveedor";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn2.HeaderText = "ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;

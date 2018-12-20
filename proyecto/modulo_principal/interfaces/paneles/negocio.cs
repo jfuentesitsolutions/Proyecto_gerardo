@@ -29,8 +29,30 @@ namespace interfaces.paneles
             //mantenimientos.negocio.cambio_precios cp = new mantenimientos.negocio.cambio_precios();
             //cp.ShowDialog();
 
-            productos.precios_productos cp = new productos.precios_productos();
-            cp.ShowDialog();
+            using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
+            {
+                fe.Titulo = "Cargando productos por favor espere...";
+                fe.Funcion = cargarDatos;
+                DataTable datos = fe.Funcion();
+
+                if (fe.ShowDialog() == DialogResult.OK)
+                {
+                    productos.precios_productos cp = new productos.precios_productos();
+                    cp.Productos = datos;
+                    cp.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("La carga de productos a sido cancelada...");
+                }
+            }
+
+            
+        }
+
+        private DataTable cargarDatos()
+        {
+            return conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT();
         }
 
         private void btnAgregaPresentaciones_Click(object sender, EventArgs e)
