@@ -181,7 +181,7 @@ namespace conexiones_BD.clases
             String Consulta;
             Consulta = @"select pp.idsucursal_producto as idsp ,pr.cod_producto as codigo, pr.nom_producto as nombre, count(*) as cantipre, concat(pr.cod_producto,' < -|-> ',pr.nom_producto) as productoCod,
                         pp.precio, sp.existencias, p.nombre_presentacion as prese, pp.idpresentacion_producto as prepro, u.porcentaje as ud, uu.porcentaje as um,
-                        pp.tipo, concat('$',pp.precio) as pre, u.idutilidad_compra as idud, uu.idutilidad_compra as idum, pr.idproducto, pr.idmarca, pr.idcategoria, pr.idestante, sp.kardex, pr.fecha_ingreso,
+                        pp.tipo, concat('$',pp.precio) as pre, u.idutilidad_compra as idud, uu.idutilidad_compra as idum, pr.idproducto, pr.idmarca, pr.idcategoria, sp.idestante, sp.kardex, pr.fecha_ingreso,
                         sp.idutilidadMayoreo, sp.idutilidadDetalles, sp.precio_venta, sp.precio_compra, sp.precio_ventaM, sp.precio_compraM
                         from presentaciones_productos pp, sucursales_productos sp, presentaciones p, productos pr, utilidades_compras u, utilidades_compras uu
                         where pp.idsucursal_producto = sp.idsucursal_producto and pp.idpresentacion = p.idpresentacion and sp.idproducto = pr.idproducto

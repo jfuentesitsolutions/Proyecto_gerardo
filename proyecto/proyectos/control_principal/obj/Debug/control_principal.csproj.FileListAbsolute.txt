@@ -246,7 +246,6 @@ C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_p
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\utilitarios.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\transferencias_internet.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.csprojResolveAssemblyReference.cache
-C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.csproj.control_principal.exe.config
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.configuracion_inicial.tabla_empleados.resources
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.configuracion_inicial.tabla_grupos.resources
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.configuracion_inicial.tabla_unidades.resources
@@ -313,3 +312,5 @@ C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_p
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.pdb
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.pdb

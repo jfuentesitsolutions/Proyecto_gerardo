@@ -45,7 +45,7 @@ namespace espera_datos
             }
         }
 
-        public Func<DataTable> Funcion
+        public Func<List<DataTable>> Funcion
         {
             get
             {
@@ -60,12 +60,12 @@ namespace espera_datos
 
         Action accion;
 
-        Func<DataTable> funcion;
+        Func<List<DataTable>> funcion;
 
         private void splash_espera_Shown(object sender, EventArgs e)
         {
-            lblTitulo.Text = titulo;
-            Task.Factory.StartNew(funcion).ContinueWith((t) => taskCompleted());
+            
+            Task.Factory.StartNew(Funcion).ContinueWith((t) => taskCompleted());
         }
 
         private void taskCompleted()
@@ -83,6 +83,11 @@ namespace espera_datos
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void splash_espera_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

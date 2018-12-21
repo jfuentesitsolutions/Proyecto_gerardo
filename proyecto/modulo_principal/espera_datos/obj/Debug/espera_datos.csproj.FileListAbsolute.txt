@@ -7,3 +7,17 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\Bunifu_UI_v1.52.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csprojResolveAssemblyReference.cache
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.Properties.Resources.resources
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.xml
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.xml
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csprojResolveAssemblyReference.cache
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.Properties.Resources.resources
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.splash_espera.resources
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources

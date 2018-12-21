@@ -31,14 +31,14 @@ namespace interfaces.paneles
 
             using (espera_datos.splash_espera fe = new espera_datos.splash_espera())
             {
-                fe.Titulo = "Cargando productos por favor espere...";
+                
                 fe.Funcion = cargarDatos;
-                DataTable datos = fe.Funcion();
+                
 
                 if (fe.ShowDialog() == DialogResult.OK)
                 {
                     productos.precios_productos cp = new productos.precios_productos();
-                    cp.Productos = datos;
+                    cp.Productos = fe.Funcion()[0];
                     cp.ShowDialog();
                 }
                 else
@@ -50,9 +50,11 @@ namespace interfaces.paneles
             
         }
 
-        private DataTable cargarDatos()
+        private List<DataTable> cargarDatos()
         {
-            return conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT();
+            List<DataTable> datos = new List<DataTable>();
+            datos.Add(conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT());
+            return datos;
         }
 
         private void btnAgregaPresentaciones_Click(object sender, EventArgs e)

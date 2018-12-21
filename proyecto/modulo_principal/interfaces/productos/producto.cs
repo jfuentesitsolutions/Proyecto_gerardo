@@ -295,7 +295,6 @@ namespace interfaces.productos
         private void producto_Load(object sender, EventArgs e)
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
-            cargarListasUtilidades();
             cargandoUtilidades();
         }
 
@@ -348,16 +347,6 @@ namespace interfaces.productos
             tabla_proveedores = new utilitarios.cargar_tablas(tablaProveedores, new TextBox(), conexiones_BD.clases.proveedores_productos.datosTabla(idproducto), "nombre_proveedor");
             tabla_proveedores.cargarSinContadorRegistros();
             actualizarTablas = false;
-        }
-
-        private void cargarListasUtilidades()
-        {
-            mayoreo = conexiones_BD.clases.utilidades.datosTablaMayoreo();
-            detalle = conexiones_BD.clases.utilidades.datosTablaDetalle();
-            utilitarios.cargandoListas.cargarLista(mayoreo,
-                listaMayoreo, "nombre", "idutilidad_compra");
-            utilitarios.cargandoListas.cargarLista(detalle,
-                listaUtilidadDetalle, "nombre", "idutilidad_compra");
         }
 
         private void cargandoUtilidades()
@@ -499,6 +488,7 @@ namespace interfaces.productos
                            precioVM.Value.ToString(),
                            precioCM.Value.ToString(),
                            kar);
+                
 
                     pro = new conexiones_BD.clases.productos(
                         txtCodigo.Text,
