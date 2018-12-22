@@ -123,30 +123,22 @@ namespace interfaces.productos
                         pr.txtNombre.Text = tablad.CurrentRow.Cells[2].Value.ToString();
                         pr.existencia.Value = Convert.ToDecimal(tablad.CurrentRow.Cells[6].Value.ToString());
 
-                        utilitarios.cargandoListas.cargarLista(fe.Funcion()[0], pr.listaMarca, "nombre", "idmarca");
-                        utilitarios.cargandoListas.establecerValor(pr.listaMarca, tablad.CurrentRow.Cells[15].Value.ToString());
-                        utilitarios.cargandoListas.cargarLista(fe.Funcion()[1], pr.listaCategoria, "nombre_categoria", "idcategoria");
-                        utilitarios.cargandoListas.establecerValor(pr.listaCategoria, tablad.CurrentRow.Cells[16].Value.ToString());
-                        utilitarios.cargandoListas.cargarLista(fe.Funcion()[2], pr.listaEstante, "nombre", "idestante");
-                       
-
-                        utilitarios.cargandoListas.cargarLista(fe.Funcion()[3], pr.listaMayoreo, "nombre", "idutilidad_compra");
-                        utilitarios.cargandoListas.cargarLista(fe.Funcion()[4],pr.listaUtilidadDetalle, "nombre", "idutilidad_compra");
-
-
-                        if (!tablad.CurrentRow.Cells[17].Value.ToString().Equals(""))
-                        {
-                            utilitarios.cargandoListas.establecerValor(pr.listaEstante, tablad.CurrentRow.Cells[17].Value.ToString());
-                        }
-                        if (tablad.CurrentRow.Cells[18].Value.ToString().Equals("SI"))
-                        {
-                            pr.chkKardex.Checked = true;
-                        }
+                        pr.Idmarca = tablad.CurrentRow.Cells[15].Value.ToString();
+                        pr.Idcategoria = tablad.CurrentRow.Cells[16].Value.ToString();
+                        pr.Idestante = tablad.CurrentRow.Cells[17].Value.ToString();
+                        pr.Kardex = tablad.CurrentRow.Cells[18].Value.ToString();
+                        
+                        
                         if (!tablad.CurrentRow.Cells[19].Value.ToString().Equals(""))
                         {
                             pr.fecha.Value = Convert.ToDateTime(tablad.CurrentRow.Cells[19].Value.ToString());
                         }
-
+                        
+                        pr.Marcas = fe.Funcion()[0];
+                        pr.Categorias = fe.Funcion()[1];
+                        pr.Estantes = fe.Funcion()[2];
+                        pr.Mayoreo = fe.Funcion()[3];
+                        pr.Detalle = fe.Funcion()[4];
 
                         pr.Idsuc_produ = tablad.CurrentRow.Cells[0].Value.ToString();
                         pr.Idproducto = tablad.CurrentRow.Cells[14].Value.ToString();
@@ -161,7 +153,6 @@ namespace interfaces.productos
 
                         pr.ShowDialog();
 
-                        txtBusqueda.Focus();
                         if (tablad.Rows.Count != 0)
                         {
                             tablad.CurrentCell = tablad.Rows[0].Cells[1];

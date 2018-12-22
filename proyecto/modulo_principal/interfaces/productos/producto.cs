@@ -13,8 +13,9 @@ namespace interfaces.productos
 
     public partial class producto : Form
     {
-        string idsuc_produ, idproducto, idpresentacion_producto, utili_m, utili_d, pv, pc, pvm, pcm;
-        DataTable presentaciones, presentacion, proveedores, mayoreo, detalle;
+        string idsuc_produ, idproducto, idpresentacion_producto, utili_m, utili_d, pv, pc, pvm, pcm, 
+            idmarca, idcategoria, idestante, kardex;
+        DataTable presentaciones, presentacion, proveedores, marcas, categorias, estantes, mayoreo, detalle;
         conexiones_BD.clases.presentaciones_productos prpr;
         conexiones_BD.clases.proveedores_productos pr;
         conexiones_BD.clases.sucursales_productos sp;
@@ -23,6 +24,7 @@ namespace interfaces.productos
         utilitarios.cargar_tablas tablas_presentaciones, tabla_proveedores;
         bool actualizarTablas = true, actualiza=false;
         sessionManager.secion sesion = sessionManager.secion.Instancia;
+        
 
         public string Idsuc_produ
         {
@@ -138,6 +140,123 @@ namespace interfaces.productos
             set
             {
                 actualiza = value;
+            }
+        }
+
+        public DataTable Marcas
+        {
+            get
+            {
+                return marcas;
+            }
+
+            set
+            {
+                marcas = value;
+            }
+        }
+
+        public DataTable Categorias
+        {
+            get
+            {
+                return categorias;
+            }
+
+            set
+            {
+                categorias = value;
+            }
+        }
+
+        public DataTable Estantes
+        {
+            get
+            {
+                return estantes;
+            }
+
+            set
+            {
+                estantes = value;
+            }
+        }
+
+        public DataTable Mayoreo
+        {
+            get
+            {
+                return mayoreo;
+            }
+
+            set
+            {
+                mayoreo = value;
+            }
+        }
+
+        public DataTable Detalle
+        {
+            get
+            {
+                return detalle;
+            }
+
+            set
+            {
+                detalle = value;
+            }
+        }
+
+        public string Idmarca
+        {
+            get
+            {
+                return idmarca;
+            }
+
+            set
+            {
+                idmarca = value;
+            }
+        }
+
+        public string Idcategoria
+        {
+            get
+            {
+                return idcategoria;
+            }
+
+            set
+            {
+                idcategoria = value;
+            }
+        }
+
+        public string Idestante
+        {
+            get
+            {
+                return idestante;
+            }
+
+            set
+            {
+                idestante = value;
+            }
+        }
+
+        public string Kardex
+        {
+            get
+            {
+                return kardex;
+            }
+
+            set
+            {
+                kardex = value;
             }
         }
 
@@ -295,7 +414,40 @@ namespace interfaces.productos
         private void producto_Load(object sender, EventArgs e)
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
+            cargarListas();
             cargandoUtilidades();
+        }
+
+        private void cargarListas()
+        {
+            utilitarios.cargandoListas.cargarLista(marcas, listaMarca, "nombre", "idmarca");
+            //utilitarios.cargandoListas.establecerValor(pr.listaMarca, tablad.CurrentRow.Cells[15].Value.ToString());
+            utilitarios.cargandoListas.cargarLista(categorias, listaCategoria, "nombre_categoria", "idcategoria");
+            //utilitarios.cargandoListas.establecerValor(pr.listaCategoria, tablad.CurrentRow.Cells[16].Value.ToString());
+            utilitarios.cargandoListas.cargarLista(estantes, listaEstante, "nombre", "idestante");
+
+
+            utilitarios.cargandoListas.cargarLista(mayoreo, listaMayoreo, "nombre", "idutilidad_compra");
+            utilitarios.cargandoListas.cargarLista(detalle, listaUtilidadDetalle, "nombre", "idutilidad_compra");
+
+            cargarValores();
+        }
+
+        private void cargarValores()
+        {
+            listaMarca.SelectedValue = idmarca;
+            listaCategoria.SelectedValue = idcategoria;
+
+            if (!idestante.Equals(""))
+            {
+                listaEstante.SelectedValue = idestante;
+            }
+            if (kardex.Equals("SI"))
+            {
+                chkKardex.Checked = true;
+            }
+            
+
         }
 
         private void tabla_presentacion_producto_CellClick(object sender, DataGridViewCellEventArgs e)
