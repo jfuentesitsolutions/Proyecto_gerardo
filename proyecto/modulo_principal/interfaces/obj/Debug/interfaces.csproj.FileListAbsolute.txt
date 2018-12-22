@@ -524,3 +524,8 @@ C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\in
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\espera_datos.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CircularProgressBar.xml
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\interfaces.dll.config
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CircularProgressBar.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CircularProgressBar.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.xml

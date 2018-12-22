@@ -297,7 +297,6 @@ J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\ut
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\transferencias_internet.pdb
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\MySql.Data.xml
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.csprojResolveAssemblyReference.cache
-J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.csproj.control_principal.exe.config
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.configuracion_inicial.tabla_empleados.resources
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.configuracion_inicial.tabla_grupos.resources
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.configuracion_inicial.tabla_unidades.resources
@@ -311,6 +310,5 @@ J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\co
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\MySql.Data.xml
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.pdb
-J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\Bunifu_UI_v1.52.dll
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.dll
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.pdb

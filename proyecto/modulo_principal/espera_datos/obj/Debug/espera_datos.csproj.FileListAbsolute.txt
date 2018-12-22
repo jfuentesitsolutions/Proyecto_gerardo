@@ -21,3 +21,8 @@ C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\es
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources
