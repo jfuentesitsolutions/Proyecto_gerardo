@@ -55,6 +55,7 @@ namespace interfaces.productos
         {
             tabla = new utilitarios.cargar_tablas(tablad, txtBusqueda, productos, "productoCod");
             tabla.cargarSinContadorRegistros();
+            lblTotal.Text = productos.Rows.Count.ToString()+" productos encontrados.";
 
         }
 
@@ -117,6 +118,7 @@ namespace interfaces.productos
 
                     if (fe.ShowDialog() == DialogResult.OK)
                     {
+                        List<DataTable> listas = fe.Funcion();
                         producto pr = new producto();
 
                         pr.txtCodigo.Text = tablad.CurrentRow.Cells[1].Value.ToString();
@@ -134,11 +136,12 @@ namespace interfaces.productos
                             pr.fecha.Value = Convert.ToDateTime(tablad.CurrentRow.Cells[19].Value.ToString());
                         }
                         
-                        pr.Marcas = fe.Funcion()[0];
-                        pr.Categorias = fe.Funcion()[1];
-                        pr.Estantes = fe.Funcion()[2];
-                        pr.Mayoreo = fe.Funcion()[3];
-                        pr.Detalle = fe.Funcion()[4];
+                        pr.Marcas = listas[0];
+                        pr.Categorias = listas[1];
+                        pr.Estantes = listas[2];
+                        pr.Mayoreo = listas[3];
+                        pr.Detalle = listas[4];
+
 
                         pr.Idsuc_produ = tablad.CurrentRow.Cells[0].Value.ToString();
                         pr.Idproducto = tablad.CurrentRow.Cells[14].Value.ToString();

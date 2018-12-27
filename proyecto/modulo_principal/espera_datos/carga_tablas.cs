@@ -16,6 +16,7 @@ namespace espera_datos
         {
             InitializeComponent();
         }
+        bool retorno=true;
 
         Action accion;
         Func<DataTable> productos;
@@ -46,9 +47,29 @@ namespace espera_datos
             }
         }
 
+        public bool Retorno
+        {
+            get
+            {
+                return retorno;
+            }
+
+            set
+            {
+                retorno = value;
+            }
+        }
+
         private void carga_tablas_Shown(object sender, EventArgs e)
         {
-            Task.Factory.StartNew(Productos).ContinueWith((t) => taskCompleted());
+            if (retorno)
+            {
+                Task.Factory.StartNew(Productos).ContinueWith((t) => taskCompleted());
+            }else
+            {
+                Task.Factory.StartNew(accion).ContinueWith((t) => taskCompleted());
+            }
+            
         }
 
         private void taskCompleted()

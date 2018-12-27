@@ -139,13 +139,13 @@
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Image = global::interfaces.Properties.Resources.box;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 170);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Cambio de precios";
+            this.button2.Text = "Modificar productos";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);

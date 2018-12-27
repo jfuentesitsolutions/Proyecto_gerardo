@@ -30,6 +30,8 @@ namespace interfaces.ventas.panel
         //DataTable producto_venta = null;
         DataTable pre_producto = null;
         string total = "0.0";
+
+
         public venta()
         {
             InitializeComponent();
@@ -549,7 +551,7 @@ namespace interfaces.ventas.panel
         {
             if (tabla_articulos.RowCount!=0)
             {
-                if (MessageBox.Show("Tienes articulos agregados ¿deseas quitarlos?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
+                if (MessageBox.Show("Tienes articulos agregados ¿Deseas quitarlos?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
                 {
                     tabla_articulos.Rows.Clear();
                     tabla_articulos.Enabled = true;

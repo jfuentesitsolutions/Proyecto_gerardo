@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(precios_productos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.prc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prvm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prvd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -155,8 +156,8 @@
             // 
             this.tablad.AllowUserToAddRows = false;
             this.tablad.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.tablad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            this.tablad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablad.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tablad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -186,23 +187,23 @@
             this.prc,
             this.prvm,
             this.prvd});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(96)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablad.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(96)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablad.DefaultCellStyle = dataGridViewCellStyle5;
             this.tablad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablad.Location = new System.Drawing.Point(3, 22);
             this.tablad.MultiSelect = false;
             this.tablad.Name = "tablad";
             this.tablad.ReadOnly = true;
             this.tablad.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tablad.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tablad.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.tablad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablad.Size = new System.Drawing.Size(657, 274);
             this.tablad.TabIndex = 1;
@@ -418,12 +419,22 @@
             this.prvd.ReadOnly = true;
             this.prvd.Visible = false;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(472, 452);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(130, 19);
+            this.lblTotal.TabIndex = 4;
+            this.lblTotal.Text = "Total de productyos";
+            // 
             // precios_productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(690, 453);
+            this.ClientSize = new System.Drawing.Size(690, 484);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelTitulo);
@@ -444,6 +455,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablad)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -483,5 +495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prc;
         private System.Windows.Forms.DataGridViewTextBoxColumn prvm;
         private System.Windows.Forms.DataGridViewTextBoxColumn prvd;
+        public System.Windows.Forms.Label lblTotal;
     }
 }
