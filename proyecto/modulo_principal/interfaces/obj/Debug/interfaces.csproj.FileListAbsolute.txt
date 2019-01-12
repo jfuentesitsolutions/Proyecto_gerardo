@@ -529,3 +529,5 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\Ci
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CircularProgressBar.xml
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.pdb

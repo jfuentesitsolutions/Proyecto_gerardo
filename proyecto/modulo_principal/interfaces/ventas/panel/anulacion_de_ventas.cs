@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace interfaces.ventas.panel
         bool despliegue = false;
         sessionManager.secion sesion = sessionManager.secion.Instancia;
         DataTable vendedor = conexiones_BD.clases.usuarios.datosTabla();
+        Action accion;
         public anulacion_de_ventas()
         {
             InitializeComponent();
@@ -68,7 +70,7 @@ namespace interfaces.ventas.panel
         private void cargar()
         {
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
-            DataTable docu = conexiones_BD.clases.ventas.tickets.datosTabla(fe.fechaCortaMysql(fecha));
+            DataTable docu = conexiones_BD.clases.ventas.tickets.datosTabla(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]);
             if (listaDocumentos.SelectedIndex == 0)
             {
                 
@@ -86,6 +88,21 @@ namespace interfaces.ventas.panel
         }
 
         private void anulacion_de_ventas_Load(object sender, EventArgs e)
+        {
+            Thread t = new Thread(creandoAccion);
+            t.Start();
+        }
+
+        private void creandoAccion()
+        {
+            accion = cargandoTodo;
+            if (InvokeRequired)
+            {
+                Invoke(accion);
+            }
+        }
+
+        private void cargandoTodo()
         {
             listaDocumentos.SelectedIndex = 0;
             utilitarios.cargandoListas.cargarLista(vendedor, listaVendedor, "usuario", "idusuario");

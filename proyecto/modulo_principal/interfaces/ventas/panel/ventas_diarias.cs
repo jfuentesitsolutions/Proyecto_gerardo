@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,9 +14,13 @@ namespace interfaces.ventas.panel
     public partial class ventas_diarias : Form
     {
         bool despliegue = false;
+        sessionManager.secion sesion = sessionManager.secion.Instancia;
+        Action accion;
+        
         public ventas_diarias()
         {
             InitializeComponent();
+            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -23,7 +28,7 @@ namespace interfaces.ventas.panel
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
 
             Reportes.Diseño.reporteVentasaldia repo = new Reportes.Diseño.reporteVentasaldia();
-            repo.SetDataSource(conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha)));
+            repo.SetDataSource(conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]));
             ventas.ReportSource = repo;
             calcularTotalVentas();
         }
@@ -49,10 +54,25 @@ namespace interfaces.ventas.panel
 
         private void ventas_diarias_Load(object sender, EventArgs e)
         {
+            Thread t = new Thread(creandoAccion);
+            t.Start();
+        }
+
+
+        private void creandoAccion()
+        {
+            accion = cargarTodo;
+            if (InvokeRequired)
+            {
+                Invoke(accion);
+            }
+        }
+
+        private void cargarTodo()
+        {
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
-           
             Reportes.Diseño.reporteVentasaldia repo = new Reportes.Diseño.reporteVentasaldia();
-            repo.SetDataSource(conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha)));
+            repo.SetDataSource(conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]));
             ventas.ReportSource = repo;
             calcularTotalVentas();
         }
@@ -89,7 +109,7 @@ namespace interfaces.ventas.panel
             double tic = 0;
             double fac = 0;
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
-            DataTable dato = conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha));
+            DataTable dato = conexiones_BD.clases.ventas.ventas.ventas_diarias(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]);
 
             foreach (DataRow fila in dato.Rows)
             {

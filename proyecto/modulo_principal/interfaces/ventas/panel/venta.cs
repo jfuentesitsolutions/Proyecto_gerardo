@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,16 +17,15 @@ namespace interfaces.ventas.panel
 
     {
         sessionManager.secion sesion = sessionManager.secion.Instancia;
-        //DataTable productos = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT();
-        //DataTable pre_pro = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_VENT_X_PRESENTACION();
-        DataTable formas_pagos = conexiones_BD.clases.formas_pago.datosTabla();
-        DataTable tipo_factura = conexiones_BD.clases.tipos_factura.datosTabla();
-        DataTable cliente = conexiones_BD.clases.clientes.datosTabla();
-        DataTable vendedor = conexiones_BD.clases.usuarios.datosTabla();
+        //DataTable formas_pagos = conexiones_BD.clases.formas_pago.datosTabla();
+        //DataTable tipo_factura = conexiones_BD.clases.tipos_factura.datosTabla();
+        //DataTable cliente = conexiones_BD.clases.clientes.datosTabla();
+        //DataTable vendedor = conexiones_BD.clases.usuarios.datosTabla();
         utilitarios.cargar_tablas tabla;
         string cantiAn, precioAn;
         bool busqueda = false;
         string idticket_Buscado = null;
+        Action accion;
 
         //DataTable producto_venta = null;
         DataTable pre_producto = null;
@@ -65,7 +65,7 @@ namespace interfaces.ventas.panel
         {
             ocultarDetalles();
         }
-
+        
         private void ocultarDetalles()
         {
             if (Gcliente.Height == 137)
@@ -94,14 +94,14 @@ namespace interfaces.ventas.panel
 
         private void cargaListas()
         {
-            utilitarios.cargandoListas.cargarLista(formas_pagos, listaFormaPago, "nombre_pago", "idforma_pago");
+            utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.formas_pago.datosTabla(), listaFormaPago, "nombre_pago", "idforma_pago");
             listaFormaPago.SelectedValue = "1";
-            utilitarios.cargandoListas.cargarLista(tipo_factura, listaTipoFactura, "nombre", "idtipo_factura");
+            utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.tipos_factura.datosTabla(), listaTipoFactura, "nombre", "idtipo_factura");
             listaTipoFactura.SelectedValue = "1";
-            utilitarios.cargandoListas.cargarLista(cliente, listaClientes, "nom", "idcliente");
+            utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
             listaClientes.SelectedValue = "1";
 
-            utilitarios.cargandoListas.cargarLista(vendedor, listaVendedor, "usuario", "idusuario");
+            utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.usuarios.datosTabla(), listaVendedor, "usuario", "idusuario");
             listaVendedor.Text = sesion.Datos[0];
             if (!sesion.Datos[3].Equals("Administradores"))
             {
@@ -167,7 +167,23 @@ namespace interfaces.ventas.panel
         {
             relog.Start();
 
-        //  producto_venta = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_X_SUCURSAL_VENTA(sesion.DatosRegistro[1]);
+            //  producto_venta = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_X_SUCURSAL_VENTA(sesion.DatosRegistro[1]);
+            Thread t = new Thread(creandoaccion);
+            t.Start();
+
+        }
+
+        private void creandoaccion()
+        {
+            accion = cargarTodo;
+            if (InvokeRequired)
+            {
+                Invoke(accion);
+            }
+        }
+
+        private void cargarTodo()
+        {
             pre_producto = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_X_PRESENTACION_X_SUCURSAL_VENTA(sesion.DatosRegistro[1]);
 
 
@@ -176,7 +192,6 @@ namespace interfaces.ventas.panel
             cargaListas();
             cargarTablas();
             activacionCampoDocumento();
-
         }
 
         private void chkCod_CheckedChanged(object sender, EventArgs e)

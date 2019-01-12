@@ -101,16 +101,16 @@ namespace conexiones_BD.clases.ventas
             return valores;
         }
 
-        public static DataTable datosTabla(string fech)
+        public static DataTable datosTabla(string fech, string idsu)
         {
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = @"select vt.idventa_ticket, vt.correlativo, vt.fecha, concat(c.nombre_cliente,' ',c.apellidos_cliente) as nombre, v.idventa
-from ventas v, ventas_tickets vt, clientes c
-where v.idventa_ticket = vt.idventa_ticket and vt.idcliente = c.idcliente
-and v.fecha>='" + fech+@" 00:00:00' and v.fecha<='"+fech+@" 23:60:00'
-and v.anulacion = 1 order by vt.fecha desc
-; ";
+                from ventas v, ventas_tickets vt, clientes c
+                where v.idventa_ticket = vt.idventa_ticket and vt.idcliente = c.idcliente
+                and v.fecha>='" + fech+@" 00:00:00' and v.fecha<='"+fech+ @" 23:60:00' and v.idsucursal='" + idsu + @"'
+                and v.anulacion = 1 order by vt.fecha desc
+                ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {
