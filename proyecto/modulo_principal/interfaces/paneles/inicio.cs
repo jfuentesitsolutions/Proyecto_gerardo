@@ -131,6 +131,8 @@ namespace interfaces.panel_inicio
         {
             traslados.recepcion_traslados frm = new traslados.recepcion_traslados();
             frm.ShowDialog();
+            /*hilos_conexion.productos_hilos hil = new hilos_conexion.productos_hilos();
+            hil.ShowDialog();*/
         }
     }
 }

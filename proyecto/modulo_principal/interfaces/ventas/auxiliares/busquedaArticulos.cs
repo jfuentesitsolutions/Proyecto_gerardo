@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,8 @@ namespace interfaces.ventas.auxiliares
         DataTable docu=null;
         bool elegido = false;
         string idventa_tic = null;
+        Action accion;
+        sessionManager.secion sesion = sessionManager.secion.Instancia;
 
         public DataTable Docu
         {
@@ -62,6 +65,13 @@ namespace interfaces.ventas.auxiliares
             InitializeComponent();
         }
 
+        private void cargarTodo()
+        {
+            gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
+            listaDocumentos.SelectedIndex = 0;
+            cargarTablas();
+        }
+
         private void cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -69,9 +79,17 @@ namespace interfaces.ventas.auxiliares
 
         private void busquedaArticulos_Load(object sender, EventArgs e)
         {
-            gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
-            listaDocumentos.SelectedIndex = 0;
-            cargarTablas();
+            Thread t = new Thread(creandoAccion);
+            t.Start();
+        }
+
+        private void creandoAccion()
+        {
+            accion = cargarTodo;
+            if (InvokeRequired)
+            {
+                Invoke(accion);
+            }
         }
 
         private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -85,7 +103,7 @@ namespace interfaces.ventas.auxiliares
             if (listaDocumentos.SelectedIndex == 0)
             {
                 utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
-                tabla = new utilitarios.cargar_tablas(tablaDocumentos, txtBuscar, conexiones_BD.clases.ventas.tickets.datosTabla(fe.fechaCortaMysql(fecha)), "correlativo");
+                tabla = new utilitarios.cargar_tablas(tablaDocumentos, txtBuscar, conexiones_BD.clases.ventas.tickets.datosTabla(fe.fechaCortaMysql(fecha), sesion.DatosRegistro[1]), "correlativo");
                 tabla.cargarSinContadorRegistros();
             } else
             {

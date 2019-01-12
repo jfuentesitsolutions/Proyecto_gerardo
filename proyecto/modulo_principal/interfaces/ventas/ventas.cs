@@ -33,8 +33,7 @@ namespace interfaces.ventas
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
             panelLateral.Width = 0;
-            colocarPanel(new panel.venta(), true,"");
-            
+            colocarPanel(new panel.venta(), true,"");  
 
         }
 

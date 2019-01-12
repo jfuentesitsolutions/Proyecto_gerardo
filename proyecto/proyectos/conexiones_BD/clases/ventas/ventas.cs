@@ -63,18 +63,18 @@ namespace conexiones_BD.clases.ventas
             return base.sentenciaIngresar();
         }
 
-        public static DataTable ventas_diarias(string fecha)
+        public static DataTable ventas_diarias(string fecha, string idsu)
         {
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = @"select concat('T',v.idventa_ticket) as ticket, vt.correlativo, vt.fecha, vt.monto_total
-from ventas v, ventas_tickets vt
-where v.idventa_ticket = vt.idventa_ticket and v.fecha >= '"+fecha+@" 00:00:00' and v.fecha <= '"+fecha+@" 23:60:00'
-union
-select concat('F', v.idventa_factura) as ticket, vf.numero_factura, vf.fecha, vf.monto_total
- from ventas v, ventas_factura vf
- where v.idventa_factura = vf.idventa and v.fecha >= '"+fecha+" 00:00:00' and v.fecha <= '"+fecha+@" 23:60:00'
-     ; ";
+                from ventas v, ventas_tickets vt
+                where v.idventa_ticket = vt.idventa_ticket and v.fecha >= '"+fecha+@" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='"+idsu+@"'
+                union
+                select concat('F', v.idventa_factura) as ticket, vf.numero_factura, vf.fecha, vf.monto_total
+                 from ventas v, ventas_factura vf
+                 where v.idventa_factura = vf.idventa and v.fecha >= '" + fecha+" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='" + idsu + @"'
+                     ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {

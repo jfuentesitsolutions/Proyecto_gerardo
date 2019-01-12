@@ -648,6 +648,10 @@
       <Project>{49ab546f-3431-482b-a8d0-c96639346bc4}</Project>
       <Name>gadgets</Name>
     </ProjectReference>
+    <ProjectReference Include="..\hilos_conexion\hilos_conexion.csproj">
+      <Project>{45633170-f1f7-4e71-9971-5027394fd678}</Project>
+      <Name>hilos_conexion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\transferencias_internet\transferencias_internet.csproj">
       <Project>{a7174317-acca-4779-bb9b-fb3ccd8dd73b}</Project>
       <Name>transferencias_internet</Name>

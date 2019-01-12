@@ -49,21 +49,35 @@ namespace interfaces.mantenimientos.base_datos
 
         private void btnRespaldar_Click(object sender, EventArgs e)
         {
-            if (txtRuta.TextLength!=0)
+            if (txtRuta.TextLength != 0)
             {
-                conexiones_BD.Conexion con = new conexiones_BD.Conexion();
-                if (con.exportar(txtRuta.Text))
+                using (espera_datos.carga_tablas fe = new espera_datos.carga_tablas())
                 {
-                    lblRespuesta.Text = "La base se respaldo con éxito";
-                    lblRespuesta.ForeColor = Color.Green;
-                    txtRuta.Text = "";
-                }
-                else
-                {
-                    lblRespuesta.Text = "Ocurrio algun error durante el respaldo";
-                    lblRespuesta.ForeColor = Color.Red;
+                    fe.Accion = respaldardatos;
+                    fe.Retorno = false;
+                    if (fe.ShowDialog() == DialogResult.OK)
+                    {
+                        lblRespuesta.Text = "La base se respaldo con éxito";
+                        lblRespuesta.ForeColor = Color.Green;
+                        txtRuta.Text = "";
+                    }else
+                    {
+                        
+                    }
                 }
             }
+            
+        }
+
+        private void respaldardatos()
+        {
+            
+                conexiones_BD.Conexion con = new conexiones_BD.Conexion();
+                if (!con.exportar(txtRuta.Text))
+                {
+                MessageBox.Show("Ocurrio un error con la base de datos", "No se pudo respaldar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             
         }
 
@@ -87,18 +101,30 @@ namespace interfaces.mantenimientos.base_datos
         {
             if (txtBu.TextLength != 0)
             {
-                conexiones_BD.Conexion con = new conexiones_BD.Conexion();
-                if (con.importar(txtBu.Text))
+                using (espera_datos.carga_tablas fe = new espera_datos.carga_tablas())
                 {
-                    lblres.Text = "La base se importo con éxito";
-                    lblres.ForeColor = Color.Green;
-                    txtBu.Text="";
+                    fe.Accion = importarbase;
+                    fe.Retorno = false;
+                    if (fe.ShowDialog() == DialogResult.OK)
+                    {
+                        lblres.Text = "La base se importo con éxito";
+                        lblres.ForeColor = Color.Green;
+                        txtBu.Text = "";
+                    }
+                    else
+                    {
+                        
+                    }
                 }
-                else
-                {
-                    lblres.Text = "Ocurrio algun error durante la importación";
-                    lblres.ForeColor = Color.Red;
-                }
+            }
+        }
+
+        private void importarbase()
+        {
+            conexiones_BD.Conexion con = new conexiones_BD.Conexion();
+            if (!con.importar(txtBu.Text))
+            {
+                MessageBox.Show("Ocurrio un error con la base de datos", "No se pudo importar", MessageBoxButtons.OK, MessageBoxIcon.Error);   
             }
         }
 
