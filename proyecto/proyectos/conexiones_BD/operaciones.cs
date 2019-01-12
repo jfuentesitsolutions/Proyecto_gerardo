@@ -241,6 +241,7 @@ namespace conexiones_BD
                     comando.ExecuteNonQuery();
                     res = comando.LastInsertedId;
                     Console.WriteLine(res.ToString());
+                    log_sentensias.escribirBinario(pro.sentenciaIngresar());
 
                     foreach (clases.proveedores_productos c in prove)
                     {
@@ -248,6 +249,7 @@ namespace conexiones_BD
                         c.cargarNevamente();
                         comando.CommandText = c.sentenciaIngresar();
                         Console.WriteLine(c.sentenciaIngresar());
+                        log_sentensias.escribirBinario(c.sentenciaIngresar());
                         comando.ExecuteNonQuery();
                     }
 
@@ -304,6 +306,7 @@ namespace conexiones_BD
                     comando.CommandText = p.sentenciaModi().ToString();
                     comando.ExecuteNonQuery();
                     Console.WriteLine(p.sentenciaModificar());
+                    log_sentensias.escribirBinario(p.sentenciaModificar());
 
                     trans.Commit();
 

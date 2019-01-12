@@ -1,0 +1,4 @@
+﻿INSERT INTO productos (cod_producto,nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('1989','PREUA','2019-01-11 23:44:04','1','1');
+UPDATE proveedores_productos SET idproveedor='1', idproducto='3795', UPDATE proveedores_productos SET idproveedor='1', idproducto='3795' WHERE ='';
+INSERT INTO productos (cod_producto,nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('1989','PRUEBA','2019-01-11 23:48:24','1','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('1','3796');

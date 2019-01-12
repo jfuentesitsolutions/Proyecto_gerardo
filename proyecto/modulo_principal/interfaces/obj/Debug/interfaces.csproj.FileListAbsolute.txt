@@ -531,3 +531,5 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\Ci
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.xml
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.pdb
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.dll
+C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.pdb

@@ -112,6 +112,7 @@
     <Compile Include="clases\ventas\tickets.cs" />
     <Compile Include="clases\ventas\ventas.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="log_sentensias.cs" />
     <Compile Include="operaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
