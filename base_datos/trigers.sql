@@ -25,3 +25,7 @@ end if;
 END;
 @ DELIMITER 
 
+CREATE DEFINER=`jfuentes`@`%` TRIGGER `aumenta_producto` BEFORE INSERT ON `detalles_ventas_ticket` FOR EACH ROW BEGIN
+update sucursales_productos set existencias=existencias-new.cantidad where idsucursal_producto=new.idsucursal_producto;
+END
+

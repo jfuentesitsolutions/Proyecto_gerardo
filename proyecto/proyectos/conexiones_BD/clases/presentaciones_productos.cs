@@ -11,7 +11,7 @@ namespace conexiones_BD.clases
     public class presentaciones_productos: entidad
     {
         string idpresentacion_producto, idsucursal_producto, 
-            idpresentacion, cantidad_unidades, precio, tipo, prioridad, cod_producto, correla;
+            idpresentacion, cantidad_unidades, precio, tipo, prioridad, cod_producto, correla, estado;
 
         public string Idsucursal_producto
         {
@@ -117,6 +117,19 @@ namespace conexiones_BD.clases
             }
         }
 
+        public string Estado
+        {
+            get
+            {
+                return estado;
+            }
+
+            set
+            {
+                estado = value;
+            }
+        }
+
         public presentaciones_productos(string idpresentacion_producto)
         {
             this.idpresentacion_producto = idpresentacion_producto;
@@ -134,7 +147,7 @@ namespace conexiones_BD.clases
             base.busquedaDatos(campos, valores, "presentaciones_productos");
         }
 
-        public presentaciones_productos(string idpresentacion_producto, string idsucursal_producto, string idpresentacion, string cantidad_unidades, string precio, string tipo, string pri)
+        public presentaciones_productos(string idpresentacion_producto, string idsucursal_producto, string idpresentacion, string cantidad_unidades, string precio, string tipo, string pri, string estado)
         {
             this.idpresentacion_producto = idpresentacion_producto;
             this.idsucursal_producto = idsucursal_producto;
@@ -143,10 +156,11 @@ namespace conexiones_BD.clases
             this.Precio = precio;
             this.Tipo = tipo;
             this.Prioridad = pri;
+            this.Estado = estado;
             base.cargarDatosModificados(generarCampos(), generarValores(), "presentaciones_productos", idpresentacion_producto, "idpresentacion_producto");
         }
 
-        public presentaciones_productos(string idsucursal_producto, string idpresentacion, string cantidad_unidades, string precio, string tipo, string pri)
+        public presentaciones_productos(string idsucursal_producto, string idpresentacion, string cantidad_unidades, string precio, string tipo, string pri, string estado)
         {
             this.idsucursal_producto = idsucursal_producto;
             this.Idpresentacion = idpresentacion;
@@ -154,6 +168,7 @@ namespace conexiones_BD.clases
             this.Precio = precio;
             this.Tipo = tipo;
             this.Prioridad = pri;
+            this.Estado = estado;
             base.cargarDatos(generarCampos(), generarValores(), "presentaciones_productos");
         }
 
@@ -166,6 +181,7 @@ namespace conexiones_BD.clases
             campos.Add("precio");
             campos.Add("tipo");
             campos.Add("prioridad");
+            campos.Add("estado");
             return campos;
         }
 
@@ -178,6 +194,7 @@ namespace conexiones_BD.clases
             valores.Add(Precio);
             valores.Add(Tipo);
             valores.Add(Prioridad);
+            valores.Add(estado);
             return valores;
         }
 
@@ -186,11 +203,29 @@ namespace conexiones_BD.clases
             base.cargarDatos(generarCampos(), generarValores(), "presentaciones_productos");
         }
 
+        public static int inabilitarPresentacion(string id)
+        {
+            int Datos = 0;
+            String Consulta;
+            Consulta = "UPDATE presentaciones_productos SET estado = 2 WHERE (idpresentacion_producto = '"+ id + "')";
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.actualizar(Consulta);
+            }
+            catch
+            {
+                Datos = 0;
+            }
+
+            return Datos;
+        }
+
         public static DataTable datosTabla()
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = "select * from presentaciones_productos;";
+            Consulta = "select * from presentaciones_productos where estado=1;";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {
@@ -208,9 +243,30 @@ namespace conexiones_BD.clases
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select pp.idpresentacion_producto, pp.idpresentacion, p.nombre_presentacion, pp.cantidad_unidades, pp.precio, pp.tipo, pp.prioridad
+            Consulta = @"select pp.idpresentacion_producto, pp.idpresentacion, p.nombre_presentacion, pp.cantidad_unidades, pp.precio, pp.tipo, pp.prioridad, pp.estado
                         from presentaciones_productos pp, sucursales_productos sp, presentaciones p
                         where pp.idsucursal_producto = sp.idsucursal_producto and pp.idpresentacion = p.idpresentacion and sp.idsucursal_producto = '"+idsuc_p+@"'
+                        order by pp.prioridad asc
+                        ; ";
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+        public static DataTable presentacionesXproducto2(string idsuc_p)
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Consulta = @"select pp.idpresentacion_producto, pp.idpresentacion, p.nombre_presentacion, pp.cantidad_unidades, pp.precio, pp.tipo, pp.prioridad, pp.estado
+                        from presentaciones_productos pp, sucursales_productos sp, presentaciones p
+                        where pp.idsucursal_producto = sp.idsucursal_producto and pp.idpresentacion = p.idpresentacion and sp.idsucursal_producto = '" + idsuc_p + @"' and pp.estado=1
                         order by pp.prioridad asc
                         ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
@@ -232,7 +288,7 @@ namespace conexiones_BD.clases
             String Consulta;
             Consulta = @"select *
                         from presentaciones_productos pp
-                        where pp.idsucursal_producto='"+idsuc_p+@"'
+                        where pp.idsucursal_producto='"+idsuc_p+@" and pp.estado=1'
                         ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
@@ -254,7 +310,7 @@ namespace conexiones_BD.clases
             Consulta = @"select p.nombre_presentacion, p.idpresentacion, pp.precio, pp.idpresentacion_producto
                         from presentaciones_productos pp, presentaciones p, sucursales_productos sp
                         where pp.idpresentacion=p.idpresentacion and pp.idsucursal_producto=sp.idsucursal_producto
-                        and pp.idsucursal_producto=(select sspp.idsucursal_producto from sucursales_productos sspp, productos p where sspp.idproducto=p.idproducto and p.cod_producto='" + codi+@"');
+                        and pp.idsucursal_producto=(select sspp.idsucursal_producto from sucursales_productos sspp, productos p where sspp.idproducto=p.idproducto and p.cod_producto='" + codi+@"') and pp.estado=1;
                         ;";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
@@ -275,7 +331,7 @@ namespace conexiones_BD.clases
             String Consulta;
             Consulta = @"select pp.idsucursal_producto as idsp, concat(p.nombre_presentacion,'x',pp.cantidad_unidades) as nombre, pp.cantidad_unidades, pp.idpresentacion_producto
 from presentaciones_productos pp, presentaciones p
-where pp.idpresentacion = p.idpresentacion and pp.idsucursal_producto = '" + idsuc_p+@"' order by pp.cantidad_unidades desc
+where pp.idpresentacion = p.idpresentacion and pp.idsucursal_producto = '" + idsuc_p+@"' and pp.estado=1 order by pp.cantidad_unidades desc
     ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try

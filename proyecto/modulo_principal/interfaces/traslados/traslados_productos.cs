@@ -975,7 +975,7 @@ namespace interfaces.traslados
                 foreach (DataRow fi in pre.Rows)
                 {
                     conexiones_BD.clases.presentaciones_productos prese = new conexiones_BD.clases.presentaciones_productos(fi[1].ToString(), fi[2].ToString(), fi[3].ToString(),
-                        fi[4].ToString(), fi[5].ToString(), fi[6].ToString());
+                        fi[4].ToString(), fi[5].ToString(), fi[6].ToString(),"1");
                     prese.Cod_producto = fila.Cells[1].Value.ToString();
                     prese.Correla = txtCorrelativo.Text;
                     pr.Add(prese);

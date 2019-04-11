@@ -253,7 +253,7 @@ namespace interfaces.ventas.auxiliares
         private void productos_mas_presentaciones_Load(object sender, EventArgs e)
         {
             bus = new TextBox();
-            tabla = new utilitarios.cargar_tablas(tablaPres, bus, conexiones_BD.clases.presentaciones_productos.presentacionesXproducto(idsucursalProducto), "nombre_presentacion");
+            tabla = new utilitarios.cargar_tablas(tablaPres, bus, conexiones_BD.clases.presentaciones_productos.presentacionesXproducto2(idsucursalProducto), "nombre_presentacion");
             tabla.cargarSinContadorRegistros();
             txtCantidad.Value = 1;
         }

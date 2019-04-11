@@ -222,11 +222,12 @@ namespace conexiones_BD
 
             return numeroFilas;
         }
-        private Int32 EjecutartransaccionProductos_Presentaciones_Proveedores(List<clases.proveedores_productos> prove, List<clases.presentaciones_productos> prese, clases.productos pro, clases.sucursales_productos sp)
+        private Int32 EjecutartransaccionProductos_Presentaciones_Proveedores(List<clases.proveedores_productos> prove, List<clases.presentaciones_productos> prese, clases.productos pro, clases.sucursales_productos sp, clases.codigos co)
         {
             Int32 numeroFilas = 1;
             MySqlTransaction trans = null;
-            long res, res1 = 0;
+            long res, res1, res3 = 0;
+            clases.productos_codigos pc;
 
             if (base.conectar())
             {
@@ -237,11 +238,23 @@ namespace conexiones_BD
                     comando.Connection = base.Conec;
                     comando.Transaction = trans;
 
+                    comando.CommandText = co.sentenciaIngresar();
+                    comando.ExecuteNonQuery();
+                    res3 = comando.LastInsertedId;
+                    Console.WriteLine(res3.ToString());
+
                     comando.CommandText = pro.sentenciaIngresar();
                     comando.ExecuteNonQuery();
                     res = comando.LastInsertedId;
                     Console.WriteLine(res.ToString());
                     log_sentensias.escribirBinario(pro.sentenciaIngresar());
+
+                    pc = new clases.productos_codigos(res.ToString(), res3.ToString());
+
+                    comando.CommandText = pc.sentenciaIngresar();
+                    comando.ExecuteNonQuery();
+                    Console.WriteLine(pc.sentenciaIngresar());
+
 
                     foreach (clases.proveedores_productos c in prove)
                     {
@@ -376,23 +389,22 @@ namespace conexiones_BD
 
                     comando.CommandText = tic.sentenciaIngresar();
                     comando.ExecuteNonQuery();
-                    res = comando.LastInsertedId;
-                    Console.WriteLine(res.ToString());
+                    
 
                     foreach (clases.ventas.detalles_productos_venta_ticket p in dp)
                     {
-                        p.Idventa_ticket = res.ToString();
+                        p.Idventa_ticket = tic.Correlativo;
                         comando.CommandText = p.ingresarProducto();
                         Console.WriteLine(p.ingresarProducto());
                         comando.ExecuteNonQuery();
                     }
 
-                    tic.IdDocu = res.ToString();
+                    tic.IdDocu = tic.Correlativo;
                     comando.CommandText = tic.insertarVenta();
                     comando.ExecuteNonQuery();
 
                     trans.Commit();
-                    numeroFilas = Convert.ToInt32(res);
+                    numeroFilas = 1;
 
                 }
                 catch (MySqlException e)
@@ -704,10 +716,57 @@ namespace conexiones_BD
 
             return numeroFilas;
         }
+        private Int32 EjecutartransaccionCodigosProductos(clases.codigos codi, clases.productos_codigos pc)
+        {
+            Int32 numeroFilas = 1;
+            MySqlTransaction trans = null;
+            long res = 0;
+
+            if (base.conectar())
+            {
+
+                try
+                {
+                    trans = base.Conec.BeginTransaction();
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.Connection = base.Conec;
+                    comando.Transaction = trans;
+
+                    comando.CommandText = codi.sentenciaIngresar();
+                    comando.ExecuteNonQuery();
+                    res = comando.LastInsertedId;
+                    Console.WriteLine(res.ToString());
+
+                    pc.Idcodigo = res.ToString();
+                    pc.cargarNuevamente();
+                    comando.CommandText = pc.sentenciaIngresar();
+                    Console.WriteLine(pc.sentenciaIngresar());
+                    comando.ExecuteNonQuery();
+                    
+
+                    trans.Commit();
+                    numeroFilas = Convert.ToInt32(res);
+
+                }
+                catch (MySqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                    trans.Rollback();
+                    numeroFilas = -1;
+                }
+            }
+
+            return numeroFilas;
+        }
+
         //encapsuladores
         public Int32 EjecutartransaccionEliminarProducto(conexiones_BD.clases.sucursales_productos sp, conexiones_BD.clases.productos p)
         {
             return EjecutartransaccionEliminarProductos(sp, p);
+        }
+        public Int32 EjecutartransaccionCodigosProduc(clases.codigos c, clases.productos_codigos pc)
+        {
+            return EjecutartransaccionCodigosProductos(c, pc);
         }
         public Int32 EjecutartransaccionModificarProducto(conexiones_BD.clases.sucursales_productos sp, conexiones_BD.clases.productos p)
         {
@@ -725,9 +784,9 @@ namespace conexiones_BD
         {
             return EjecutartransaccionCuentas_Proveedores(per, gru);
         }
-        public Int32 transaccionProductos_Presentaciones_Proveedores(List<clases.proveedores_productos> prove, List<clases.presentaciones_productos> prese, clases.productos pro, clases.sucursales_productos sp)
+        public Int32 transaccionProductos_Presentaciones_Proveedores(List<clases.proveedores_productos> prove, List<clases.presentaciones_productos> prese, clases.productos pro, clases.sucursales_productos sp, clases.codigos co)
         {
-            return EjecutartransaccionProductos_Presentaciones_Proveedores(prove, prese, pro, sp);
+            return EjecutartransaccionProductos_Presentaciones_Proveedores(prove, prese, pro, sp, co);
         }
         public Int32 transaccionVentasTickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
         {

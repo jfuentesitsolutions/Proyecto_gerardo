@@ -75,6 +75,7 @@
     <Compile Include="clases\cargos.cs" />
     <Compile Include="clases\categorias.cs" />
     <Compile Include="clases\clientes.cs" />
+    <Compile Include="clases\codigos.cs" />
     <Compile Include="clases\compras\anulaciones_compras.cs" />
     <Compile Include="clases\compras\compras.cs" />
     <Compile Include="clases\compras\detalles_compras.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="clases\presentaciones.cs" />
     <Compile Include="clases\presentaciones_productos.cs" />
     <Compile Include="clases\productos.cs" />
+    <Compile Include="clases\productos_codigos.cs" />
     <Compile Include="clases\proveedores.cs" />
     <Compile Include="clases\proveedores_productos.cs" />
     <Compile Include="clases\sucursales.cs" />

@@ -78,18 +78,22 @@ namespace conexiones_BD.clases.ventas
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = @"select dvt.cantidad_paquete, p.nombre_presentacion, 
-pr.nom_producto,  pp.precio, dvt.total, vt.fecha, vt.correlativo, vt.monto_total_neto, 
-vt.efectivo, vt.cambio, ci.contenido, concat(cll.nombre_cliente,' ',cll.apellidos_cliente) as nombre,
-cll.direccion, corr.inicio, corr.final, vt.idcorrelativo, pr.cod_producto, sp.kardex
-from ventas v, ventas_tickets vt, detalles_ventas_ticket dvt, presentaciones_productos pp, sucursales_productos sp, presentaciones p,
-productos pr, citas ci, clientes cll, correlativos_ticket corr
-where v.idventa_ticket = vt.idventa_ticket
-and dvt.idventa_ticket = vt.idventa_ticket
-and dvt.idpresentacion_producto = pp.idpresentacion_producto
-and pp.idsucursal_producto = sp.idsucursal_producto
-and sp.idproducto = pr.idproducto
-and pp.idpresentacion = p.idpresentacion
-and dvt.idventa_ticket = '" + id+ "' and vt.idcita=ci.idcita and vt.idcliente=cll.idcliente and vt.idcorrelativo = corr.idcorrelativo_ticket; ";
+                pr.nom_producto,  pp.precio, dvt.total, vt.fecha, vt.correlativo, vt.monto_total_neto, 
+                vt.efectivo, vt.cambio, ci.contenido, concat(cll.nombre_cliente,' ',cll.apellidos_cliente) as nombre,
+                cll.direccion, corr.inicio, corr.final, vt.idcorrelativo, codi.codigo as cod_producto, sp.kardex
+                from ventas v, ventas_tickets vt, detalles_ventas_ticket dvt, presentaciones_productos pp, sucursales_productos sp, 
+                presentaciones p, productos pr, citas ci, clientes cll, correlativos_ticket corr, codigos codi, productos_codigos proco
+                where v.idventa = vt.correlativo
+                and dvt.idventa_ticket = vt.correlativo
+                and dvt.idpresentacion_producto = pp.idpresentacion_producto
+                and pp.idsucursal_producto = sp.idsucursal_producto
+                and sp.idproducto = pr.idproducto
+                and proco.idproducto=pr.idproducto
+                and proco.idcodigo=codi.idcodigo
+                and pp.idpresentacion = p.idpresentacion
+                and dvt.idventa_ticket = '"+id+@"' and vt.idcita=ci.idcita and vt.idcliente=cll.idcliente 
+                and vt.idcorrelativo = corr.idcorrelativo_ticket group by pr.nom_producto; ";
+
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {

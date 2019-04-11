@@ -67,9 +67,11 @@ namespace interfaces.mantenimientos
                 btnCancelar.Text = "Eliminar";
                 habilitar(false);
                 cargarTablas();
+                
             }else
             {
                 cargarTablas();
+                chkEstado.Checked = true;
             }
         }
 
@@ -86,6 +88,7 @@ namespace interfaces.mantenimientos
             controles.Add(txtDescripcion);
             controles.Add(btnGuardar);
             controles.Add(btnCancelar);
+            controles.Add(chkEstado);
 
             utilitarios.vaciando_formularios.habilitandoTexbox(controles, co);
         }
@@ -140,13 +143,27 @@ namespace interfaces.mantenimientos
             return existe;
         }
 
+        private String estado()
+        {
+            string esta = null;
+            if (chkEstado.Checked)
+            {
+                esta = "1";
+            }else
+            {
+                esta = "2";
+            }
+
+            return esta;
+        }
+
         private void guardar()
         {
             if (!validar())
             {
                 if (!validarExistencias())
                 {
-                    presentacion = new conexiones_BD.clases.presentaciones(txtPresentacion.Text, txtDescripcion.Text);
+                    presentacion = new conexiones_BD.clases.presentaciones(txtPresentacion.Text, txtDescripcion.Text, estado());
                     if (presentacion.guardar(true) > 0)
                     {
                         vaciarDatos();
@@ -163,7 +180,7 @@ namespace interfaces.mantenimientos
             {
                 if (!validarExistencias())
                 {
-                    presentacion = new conexiones_BD.clases.presentaciones(idpresentacion, txtPresentacion.Text, txtDescripcion.Text);
+                    presentacion = new conexiones_BD.clases.presentaciones(idpresentacion, txtPresentacion.Text, txtDescripcion.Text, estado());
                     if (presentacion.modificar(true) > 0)
                     {
                         habilitar(false);

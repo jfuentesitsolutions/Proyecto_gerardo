@@ -2,3 +2,40 @@
 UPDATE proveedores_productos SET idproveedor='1', idproducto='3795', UPDATE proveedores_productos SET idproveedor='1', idproducto='3795' WHERE ='';
 INSERT INTO productos (cod_producto,nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('1989','PRUEBA','2019-01-11 23:48:24','1','1');
 INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('1','3796');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2019-03-28 14:52:40','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4124');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2019-03-28 15:06:00','2','1');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA','2019-03-28 15:26:14','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4126');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA2','2019-03-29 10:28:03','1','2');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4127');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA3','2019-03-29 10:35:54','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4128');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA4','2019-03-29 10:46:10','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('20','4129');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA5','2019-03-29 10:49:52','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4130');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA6','2019-03-29 10:59:45','1','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4131');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA4','2019-03-29 11:02:58','1','2');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4132');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('PRUEBA4','2019-03-29 11:05:41','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('22','4133');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('DFSD','2019-03-29 11:08:51','2','1');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4134');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('FFF','2019-03-29 11:11:07','1','2');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('21','4135');
+UPDATE productos SET nom_producto='COCA COLA LATA PRUEBA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='COCA COLA LATA PRUEBA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53' WHERE idproducto='3684';
+UPDATE productos SET nom_producto='COCA COLA LATA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='COCA COLA LATA
+', fecha_ingreso='2018-09-08 10:01:04', idcategoria='60', idmarca='53' WHERE idproducto='3684';
+UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2', UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2' WHERE idproducto='4135';
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('ESTA ES UNA ORUEBA','2019-04-06 19:00:10','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4136');
+INSERT INTO productos (nom_producto,fecha_ingreso,idcategoria,idmarca) VALUES('CELULAR CHINO','2019-04-07 14:23:47','60','53');
+INSERT INTO proveedores_productos (idproveedor,idproducto) VALUES('2','4137');
+UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2', UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2' WHERE idproducto='4135';
+UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2', UPDATE productos SET nom_producto='FFF PRUEBA 2', fecha_ingreso='2019-03-29 11:11:07', idcategoria='1', idmarca='2' WHERE idproducto='4135';
+UPDATE productos SET nom_producto='CELULAR CHINO', fecha_ingreso='2019-04-07 14:23:47', idcategoria='5', idmarca='369', UPDATE productos SET nom_producto='CELULAR CHINO', fecha_ingreso='2019-04-07 14:23:47', idcategoria='5', idmarca='369' WHERE idproducto='4137';

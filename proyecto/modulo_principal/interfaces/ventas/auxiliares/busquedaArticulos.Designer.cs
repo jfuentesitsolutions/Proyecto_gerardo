@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(busquedaArticulos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
@@ -38,13 +38,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.listaDocumentos = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fecha = new System.Windows.Forms.DateTimePicker();
             this.tablaDocumentos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -148,16 +147,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Documento";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(28, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 19);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Fecha:";
+            // 
+            // fecha
+            // 
+            this.fecha.CustomFormat = "dd/MM/yyyy";
+            this.fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fecha.Location = new System.Drawing.Point(32, 52);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(190, 26);
+            this.fecha.TabIndex = 12;
+            this.fecha.ValueChanged += new System.EventHandler(this.fecha_ValueChanged);
+            // 
             // tablaDocumentos
             // 
             this.tablaDocumentos.AllowUserToAddRows = false;
             this.tablaDocumentos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tablaDocumentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tablaDocumentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaDocumentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tablaDocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaDocumentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
@@ -171,14 +189,6 @@
             this.tablaDocumentos.Size = new System.Drawing.Size(404, 223);
             this.tablaDocumentos.TabIndex = 8;
             this.tablaDocumentos.DoubleClick += new System.EventHandler(this.tablaDocumentos_DoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idventa_ticket";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
             // 
             // Column2
             // 
@@ -201,26 +211,6 @@
             this.Column4.HeaderText = "Cliente";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.CustomFormat = "dd/MM/yyyy";
-            this.fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fecha.Location = new System.Drawing.Point(32, 52);
-            this.fecha.Name = "fecha";
-            this.fecha.Size = new System.Drawing.Size(190, 26);
-            this.fecha.TabIndex = 12;
-            this.fecha.ValueChanged += new System.EventHandler(this.fecha_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(28, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 19);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Fecha:";
             // 
             // busquedaArticulos
             // 
@@ -259,11 +249,10 @@
         private System.Windows.Forms.ComboBox listaDocumentos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView tablaDocumentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker fecha;
     }
 }

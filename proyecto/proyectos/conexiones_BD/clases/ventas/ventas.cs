@@ -21,7 +21,7 @@ namespace conexiones_BD.clases.ventas
         public ventas(string idventa, string idventa_ticket, string fecha, string idsucursal, string anulacion)
         {
             this.idventa = idventa;
-            this.IdDocu = idventa_ticket;
+            this.IdDocu = idventa_ticket; // este es el correlativo
             this.fecha = fecha;
             this.idsucursal = idsucursal;
             this.Anulacion = anulacion; 
@@ -67,13 +67,13 @@ namespace conexiones_BD.clases.ventas
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select concat('T',v.idventa_ticket) as ticket, vt.correlativo, vt.fecha, vt.monto_total
+            Consulta = @"select concat(v.fecha) as ticket, vt.correlativo, vt.fecha, vt.monto_total
                 from ventas v, ventas_tickets vt
-                where v.idventa_ticket = vt.idventa_ticket and v.fecha >= '"+fecha+@" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='"+idsu+@"'
+                where v.num_ticket = vt.correlativo and v.fecha >= '"+fecha+@" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='"+idsu+@"' and v.anulacion=1
                 union
-                select concat('F', v.idventa_factura) as ticket, vf.numero_factura, vf.fecha, vf.monto_total
+                select concat(v.fecha) as ticket, vf.numero_factura, vf.fecha, vf.monto_total
                  from ventas v, ventas_factura vf
-                 where v.idventa_factura = vf.idventa and v.fecha >= '" + fecha+" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='" + idsu + @"'
+                 where v.num_factura = vf.numero_factura and v.fecha >= '" + fecha+" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='" + idsu + @"'and v.anulacion=1
                      ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
@@ -96,9 +96,9 @@ namespace conexiones_BD.clases.ventas
                         dvt.cantidad_paquete, dvt.precio_venta, dvt.total, vt.monto_total_neto, vt.efectivo, vt.cambio, u.usuario, fp.nombre_pago
                         from ventas v, ventas_tickets vt, detalles_ventas_ticket dvt, sucursales_productos sp, presentaciones_productos pp,
                         clientes c, productos p, presentaciones pre, usuarios u, formas_pagos fp
-                        where v.idventa_ticket = vt.idventa_ticket
+                        where v.num_ticket = vt.correlativo
                         and vt.idcliente = c.idcliente
-                        and dvt.idventa_ticket = vt.idventa_ticket
+                        and dvt.idventa_ticket = vt.correlativo
                         and vt.idusuario = u.idusuario
                         and vt.idforma_pago = fp.idforma_pago
                         and dvt.idsucursal_producto = sp.idsucursal_producto

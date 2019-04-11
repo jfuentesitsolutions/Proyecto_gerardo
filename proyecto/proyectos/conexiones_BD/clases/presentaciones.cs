@@ -9,20 +9,22 @@ namespace conexiones_BD.clases
 {
     public class presentaciones: entidad
     {
-        string idpresentacion, nombre_presentacion, descripcion;
+        string idpresentacion, nombre_presentacion, descripcion, estado;
 
-        public presentaciones(string idpresentacion, string nombre_presentacion, string descripcion)
+        public presentaciones(string idpresentacion, string nombre_presentacion, string descripcion, string estado)
         {
             this.idpresentacion = idpresentacion;
             this.nombre_presentacion = nombre_presentacion;
             this.descripcion = descripcion;
+            this.estado = estado;
             base.cargarDatosModificados(generarCampos(), generarValores(), "presentaciones", idpresentacion, "idpresentacion");
         }
 
-        public presentaciones(string nombre_presentacion, string descripcion)
+        public presentaciones(string nombre_presentacion, string descripcion, string estado)
         {
             this.nombre_presentacion = nombre_presentacion;
             this.descripcion = descripcion;
+            this.estado = estado;
             base.cargarDatos(generarCampos(), generarValores(), "presentaciones");
         }
 
@@ -42,6 +44,7 @@ namespace conexiones_BD.clases
             List<string> campos = new List<string>();
             campos.Add("nombre_presentacion");
             campos.Add("descripcion");
+            campos.Add("estado");
             return campos;
         }
 
@@ -50,6 +53,7 @@ namespace conexiones_BD.clases
             List<string> valores = new List<string>();
             valores.Add(nombre_presentacion);
             valores.Add(descripcion);
+            valores.Add(estado);
             return valores;
         }
 
@@ -78,7 +82,7 @@ namespace conexiones_BD.clases
             String Consulta;
             Consulta = @"select p.nombre_presentacion
                         from presentaciones p
-                        where p.idpresentacion = '"+id+@"'
+                        where p.idpresentacion = '"+id+@" and estado=1'
                         ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try

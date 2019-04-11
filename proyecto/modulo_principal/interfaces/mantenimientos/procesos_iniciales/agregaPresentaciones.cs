@@ -200,7 +200,7 @@ namespace interfaces.mantenimientos.procesos_iniciales
                 if (MessageBox.Show("Deseas crear un producto nuevo", "No exite producto", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     mantenimientos.productos pr = new productos();
-                    pr.txtCodigo.Text = listasBusqueda.Text;
+                    pr.listaCodigos.Text = listasBusqueda.Text;
                     pr.ShowDialog();
                 }
             }
@@ -251,7 +251,8 @@ namespace interfaces.mantenimientos.procesos_iniciales
                         pp.canti.Value.ToString(),
                         Math.Round(pp.precio.Value, 2).ToString(),
                         pp.TipoN,
-                        priori
+                        priori,
+                        "1"
                         );
 
                     if (prpr.guardar(false) > 0)
@@ -268,7 +269,7 @@ namespace interfaces.mantenimientos.procesos_iniciales
         private void agregarProducto_Click(object sender, EventArgs e)
         {
             mantenimientos.productos pr = new productos();
-            pr.txtCodigo.Text = listasBusqueda.Text;
+            pr.listaCodigos.Text = listasBusqueda.Text;
             pr.ShowDialog();
         }
 

@@ -16,11 +16,12 @@ namespace interfaces.mantenimientos
         transferencias_internet.xml xm = new transferencias_internet.xml();
         utilitarios.cargar_tablas tabla, tabla2, tabla3;
         conexiones_BD.clases.productos pro;
+        conexiones_BD.clases.codigos codi;
         conexiones_BD.clases.sucursales_productos sp;
         conexiones_BD.clases.productos p;
         conexiones_BD.clases.presentaciones_productos prpr;
         conexiones_BD.operaciones op;
-        bool selecM=false, selecD=false, cargado=false;
+        bool selecM = false, selecD = false, cargado = false;
         DataGridView tablaPermisosAsig = null;
         string nombre, codigo, idsucusal_producto, idproducto;
 
@@ -62,6 +63,8 @@ namespace interfaces.mantenimientos
                 cargarListas();
                 selecD = true;
                 selecM = true;
+                txtCodigo.Visible = false;
+                listaCodigos.Visible = true;
 
             }
             else
@@ -70,6 +73,9 @@ namespace interfaces.mantenimientos
                 cargarListas();
                 selecD = true;
                 selecM = true;
+                txtCodigo.Visible = true;
+                listaCodigos.Visible = false;
+                btnAgregarCodigo.Visible = false;
             }
 
             cargado = true;
@@ -101,9 +107,9 @@ namespace interfaces.mantenimientos
                 chkNombre.Checked = true;
             }
 
-            
-                tabla2 = new utilitarios.cargar_tablas(tabla_presentacion, txtBuscarP, conexiones_BD.clases.presentaciones.datosTabla(), "nombre_presentacion");
-                tabla2.cargarSinContadorRegistros();
+
+            tabla2 = new utilitarios.cargar_tablas(tabla_presentacion, txtBuscarP, conexiones_BD.clases.presentaciones.datosTabla(), "nombre_presentacion");
+            tabla2.cargarSinContadorRegistros();
 
         }
 
@@ -112,9 +118,11 @@ namespace interfaces.mantenimientos
             if (modificar)
             {
                 modifica();
-            }else
+            }
+            else
             {
                 guarda();
+                
             }
         }
 
@@ -123,14 +131,14 @@ namespace interfaces.mantenimientos
             if (chkCodi.Checked)
             {
                 tabla.FiltrarLocalmentePersonalizado("codP");
-            }else if (chkNombre.Checked)
+            } else if (chkNombre.Checked)
             {
                 tabla.FiltrarLocalmentePersonalizado("nombreP");
-            }else if (chkCategoria.Checked)
+            } else if (chkCategoria.Checked)
             {
                 tabla.FiltrarLocalmentePersonalizado("nombreC");
             }
-            
+
         }
 
         private void txtBuscarP_TextChanged(object sender, EventArgs e)
@@ -177,7 +185,8 @@ namespace interfaces.mantenimientos
                             pp.canti.Value.ToString(),
                             Math.Round(pp.precio.Value, 2).ToString(),
                             pp.TipoN,
-                            priori
+                            priori,
+                            "1"
                             );
 
                         if (prpr.guardar(false) > 0)
@@ -223,7 +232,7 @@ namespace interfaces.mantenimientos
             string mensaje = "Tienes que llenar este campo";
             error1.Clear();
 
-            if (txtnombreP.TextLength==0)
+            if (txtnombreP.TextLength == 0)
             {
                 valido = true;
                 error1.SetError(txtnombreP, mensaje);
@@ -302,7 +311,7 @@ namespace interfaces.mantenimientos
                     precioVM.Value = precio;
                 }
             }
-           
+
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -324,7 +333,7 @@ namespace interfaces.mantenimientos
                             cargarTablaPresentaciones();
                         }
                     }
-                        
+
                 }
                 catch
                 {
@@ -358,7 +367,7 @@ namespace interfaces.mantenimientos
                 pp.Idproducto = this.idproducto;
                 pp.ShowDialog();
 
-            }else
+            } else
             {
                 if (tablaPermisosAsig == null)
                 {
@@ -393,7 +402,7 @@ namespace interfaces.mantenimientos
                     precioVD.Value = precio;
                 }
             }
-           
+
         }
 
         private void cargarListas()
@@ -434,7 +443,7 @@ namespace interfaces.mantenimientos
             Int32 any = fecha.Year;
             Int32 hor = fecha.Day;
             Random alea = new Random();
-            string codigo = any.ToString() + tablaPro.Rows.Count.ToString()+ hor.ToString()+alea.Next(1,1000).ToString();
+            string codigo = any.ToString() + tablaPro.Rows.Count.ToString() + hor.ToString() + alea.Next(1, 1000).ToString();
             return codigo;
         }
 
@@ -470,17 +479,32 @@ namespace interfaces.mantenimientos
             string mensaje1 = "No puedes dejar este campo a cero";
             string mensaje2 = "Tienes que agregar al menos un proveedor";
             string mensaje3 = "Tienes que ingresar al menos una presentación";
+            string mensaje4 = "Tienes que agrear un codigo o más al producto";
+            string mensaje5 = "No puedes dejar este campo vacio";
 
-            if (txtnombreP.TextLength==0)
+            if (txtnombreP.TextLength == 0)
             {
                 valido = true;
                 error4.SetError(txtnombreP, mensaje);
             }
-            if (txtCodigo.TextLength == 0)
+
+
+            if (Modificar)
             {
-                valido = true;
-                error4.SetError(txtCodigo, mensaje);
+                if (listaCodigos.SelectedIndex == -1)
+                {
+                    valido = true;
+                    error4.SetError(listaCodigos, mensaje4);
+                }
+            }else {
+
+                if (txtCodigo.TextLength == 0)
+                {
+                    valido = true;
+                    error4.SetError(txtCodigo, mensaje5);
+                }
             }
+            
             if (listaMarca.SelectedIndex == -1)
             {
                 valido = true;
@@ -557,50 +581,51 @@ namespace interfaces.mantenimientos
             return valido;
         }
 
+        
         private bool validarExistencias()
         {
             List<string> campos = new List<string>();
             List<string> valores = new List<string>();
             bool valido = false;
-            campos.Add("nom_producto");
-            campos.Add("cod_producto");
-            valores.Add(txtnombreP.Text);
-            valores.Add(txtCodigo.Text);
+            campos.Add("codigo");
+            campos.Add("estado");
+            
+            if (modificar)
+            {
+                valores.Add(listaCodigos.SelectedValue.ToString());
+                valores.Add("1");
+            }
+            else
+            {
+                valores.Add(txtCodigo.Text);
+                valores.Add("1");
+            }
+            
 
-            pro = new conexiones_BD.clases.productos(campos, valores);
+            conexiones_BD.clases.codigos pc = new conexiones_BD.clases.codigos(campos, valores);
 
             if (Modificar)
             {
-                if (txtnombreP.Text.Equals(nombre) && txtCodigo.Text.Equals(codigo))
+                conexiones_BD.clases.codigos c = new conexiones_BD.clases.codigos(txtCodigo.Text, "1");
+                if (c.validarCodigoActualizar())
                 {
-                    if (pro.validarCamposcondicorORActu(true, 1) > 1)
-                    {
-                        valido = true;
-                    }
-                    else
-                    {
-                        valido = false;
-                    }
+                    valido = true;
+                    MessageBox.Show("No podemos ingresar el codigo, porque ya esta ingresado en la base", "Codigo duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    if (pro.validarCamposcondicorORActu(true, 1) > 1)
-                    {
-                        valido = true;
-                    }
-                    else
-                    {
-                        valido = false;
-                    }
+                    valido = false;
                 }
 
 
             }
             else
             {
-                if (pro.validarCamposcondicorOR(true) > 0)
+                conexiones_BD.clases.codigos c = new conexiones_BD.clases.codigos(txtCodigo.Text, "1");
+                if (c.validarCodigo())
                 {
                     valido = true;
+                    MessageBox.Show("No podemos ingresar el codigo, porque ya esta ingresado en la base", "Codigo duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -611,6 +636,7 @@ namespace interfaces.mantenimientos
             return valido;
         }
 
+        //guarda productos
         private void guarda()
         {
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
@@ -621,11 +647,15 @@ namespace interfaces.mantenimientos
                 if (!validarExistencias())
                 {
                     pro = new conexiones_BD.clases.productos(
-                        txtCodigo.Text,
                         txtnombreP.Text.ToUpper(),
                         fe.fechaMysql(fecha),
                         listaCategoria.SelectedValue.ToString(),
                         listaMarca.SelectedValue.ToString());
+
+                    codi = new conexiones_BD.clases.codigos(
+                        txtCodigo.Text,
+                        "1"
+                        );
 
                     if (chkKardex.Checked)
                     {
@@ -645,31 +675,30 @@ namespace interfaces.mantenimientos
                         kar);
 
                     op = new conexiones_BD.operaciones();
-                    if(op.transaccionProductos_Presentaciones_Proveedores(generaProveedores(), generaPresentaciones(), pro, sp) > 0)
+                    if(op.transaccionProductos_Presentaciones_Proveedores(generaProveedores(), generaPresentaciones(), pro, sp, codi) > 0)
                     {
                         MessageBox.Show("Los productos se ingresarón","Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        xm._AñadirProductos(txtCodigo.Text,
-                        txtnombreP.Text.ToUpper(),
-                        fe.fechaMysql(fecha),
-                        listaCategoria.SelectedValue.ToString(),
-                        listaMarca.SelectedValue.ToString(), Convert.ToInt16(sesion.DatosRegistro[0]));
+                        //xm._AñadirProductos(listaCodigos.SelectedValue.ToString(),
+                        //txtnombreP.Text.ToUpper(),
+                        //fe.fechaMysql(fecha),
+                        //listaCategoria.SelectedValue.ToString(),
+                        //listaMarca.SelectedValue.ToString(), Convert.ToInt16(sesion.DatosRegistro[0]));
+                        //xm._AñadirSucursal_productos(
+                        //                listaSucursal.SelectedValue.ToString(),
+                        //                "0",
+                        //                listaMayoreo.SelectedValue.ToString(),
+                        //                listaUtilidadDetalle.SelectedValue.ToString(),
+                        //                listaEstante.SelectedValue.ToString(),
+                        //                existencias.Value.ToString(),
+                        //                precioVD.Value.ToString(),
+                        //                precioCD.Value.ToString(),
+                        //                precioVM.Value.ToString(),
+                        //                precioCM.Value.ToString(),
+                        //                kar, listaCodigos.SelectedValue.ToString(), Convert.ToInt16(sesion.DatosRegistro[0]));
 
-                        xm._AñadirSucursal_productos(
-                                        listaSucursal.SelectedValue.ToString(),
-                                        "0",
-                                        listaMayoreo.SelectedValue.ToString(),
-                                        listaUtilidadDetalle.SelectedValue.ToString(),
-                                        listaEstante.SelectedValue.ToString(),
-                                        existencias.Value.ToString(),
-                                        precioVD.Value.ToString(),
-                                        precioCD.Value.ToString(),
-                                        precioVM.Value.ToString(),
-                                        precioCM.Value.ToString(),
-                                        kar, txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
-
-                        this.generarProveedoresBase_datos();
-                        this.generaPresentancionesBase();
+                        //this.generarProveedoresBase_datos();
+                        //this.generaPresentancionesBase();
 
                         vaciar();
                     } else
@@ -692,13 +721,13 @@ namespace interfaces.mantenimientos
             return pro;
         }
 
-        private void generarProveedoresBase_datos()
-        {
-            foreach (DataGridViewRow fila in tablaPermisosAsig.Rows)
-            {
-                xm._AñadirProvedores_productos(fila.Cells[1].Value.ToString(), "0", txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
-            }
-        }
+        //private void generarProveedoresBase_datos()
+        //{
+        //    foreach (DataGridViewRow fila in tablaPermisosAsig.Rows)
+        //    {
+        //        xm._AñadirProvedores_productos(fila.Cells[1].Value.ToString(), "0", listaCodigos.SelectedValue.ToString(), Convert.ToInt16(sesion.DatosRegistro[0]));
+        //    }
+        //}
 
         private void btnNuevamarca_Click(object sender, EventArgs e)
         {
@@ -765,41 +794,43 @@ namespace interfaces.mantenimientos
 
         private void btnGenerarCodigo_Click_1(object sender, EventArgs e)
         {
-            if (txtCodigo.TextLength!=0)
-            {
-                if (MessageBox.Show("¿Quieres que el sistema genere el código?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
-                {
-                    mantenimientos.codigos.codigo_barras cod = new mantenimientos.codigos.codigo_barras();
-                    cod.txtCodigo.Text = generandoNuevoCodigo();
-                    cod.ShowDialog();
+            //Generacion de codigos
 
-                    if (cod.Guardado)
-                    {
-                        txtCodigo.Text = cod.txtCodigo.Text;
-                    }
-                }
-                else
-                {
-                    mantenimientos.codigos.codigo_barras cod = new mantenimientos.codigos.codigo_barras();
-                    cod.txtCodigo.Text = txtCodigo.Text;
-                    cod.ShowDialog();
+            //if (listaCodigos.SelectedIndex==-1)
+            //{
+            //    if (MessageBox.Show("¿Quieres que el sistema genere el código?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            //    {
+            //        mantenimientos.codigos.codigo_barras cod = new mantenimientos.codigos.codigo_barras();
+            //        cod.txtCodigo.Text = generandoNuevoCodigo();
+            //        cod.ShowDialog();
 
-                    if (cod.Guardado)
-                    {
-                        txtCodigo.Text = cod.txtCodigo.Text;
-                    }
-                }
-            }else
-            {
-                mantenimientos.codigos.codigo_barras cod = new mantenimientos.codigos.codigo_barras();
-                cod.txtCodigo.Text = generandoNuevoCodigo();
-                cod.ShowDialog();
+            //        if (cod.Guardado)
+            //        {
+            //            txtCodigo.Text = cod.txtCodigo.Text;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        mantenimientos.codigos.codigo_barras cod = new mantenimientos.codigos.codigo_barras();
+            //        cod.txtCodigo.Text = txtCodigo.Text;
+            //        cod.ShowDialog();
 
-                if (cod.Guardado)
-                {
-                    txtCodigo.Text = cod.txtCodigo.Text;
-                }
-            }
+            //        if (cod.Guardado)
+            //        {
+            //            txtCodigo.Text = cod.txtCodigo.Text;
+            //        }
+            //    }
+            //}else
+            //{
+            //    mantenimientos.codigos.codigo_barras cod = new mantenimientos.codigos.codigo_barras();
+            //    cod.txtCodigo.Text = generandoNuevoCodigo();
+            //    cod.ShowDialog();
+
+            //    if (cod.Guardado)
+            //    {
+            //        txtCodigo.Text = cod.txtCodigo.Text;
+            //    }
+            //}
             
             
         }
@@ -815,10 +846,8 @@ namespace interfaces.mantenimientos
                 agrega();
             }
             if (e.KeyCode==Keys.Left)
-            {
-                
+            {    
                     quitar();
-                
             }
             
         }
@@ -829,7 +858,7 @@ namespace interfaces.mantenimientos
 
             foreach (DataGridViewRow fila in tabla_presentacion_producto.Rows)
             {
-                pp.Add(new conexiones_BD.clases.presentaciones_productos("0", fila.Cells[1].Value.ToString(), fila.Cells[5].Value.ToString(), fila.Cells[3].Value.ToString(), fila.Cells[6].Value.ToString(),"2"));
+                pp.Add(new conexiones_BD.clases.presentaciones_productos("0", fila.Cells[1].Value.ToString(), fila.Cells[5].Value.ToString(), fila.Cells[3].Value.ToString(), fila.Cells[6].Value.ToString(),"2", "1"));
             }
 
             return pp;
@@ -839,7 +868,7 @@ namespace interfaces.mantenimientos
         {
             foreach (DataGridViewRow fila in tabla_presentacion_producto.Rows)
             {
-                xm._AñadirPrese_prod("0", fila.Cells[1].Value.ToString(), fila.Cells[5].Value.ToString(), fila.Cells[3].Value.ToString(), fila.Cells[6].Value.ToString(), "2", txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
+                xm._AñadirPrese_prod("0", fila.Cells[1].Value.ToString(), fila.Cells[5].Value.ToString(), fila.Cells[3].Value.ToString(), fila.Cells[6].Value.ToString(), "2", listaCodigos.SelectedValue.ToString(), Convert.ToInt16(sesion.DatosRegistro[0]));
             }
         }
 
@@ -920,11 +949,23 @@ namespace interfaces.mantenimientos
             }
         }
 
+        private void btnAgregarCodigo_Click(object sender, EventArgs e)
+        {
+            auxiliares.agregaCodigos codi = new auxiliares.agregaCodigos();
+            codi.Idproducto = this.idproducto;
+            Console.WriteLine(idproducto);
+            codi.ShowDialog();
+            if (codi.Listo)
+            {
+                this.cargarCodigos();
+            }
+        }
+
         private void habilitar(bool con)
         {
             List<Control> controles = new List<Control>();
             controles.Add(txtnombreP);
-            controles.Add(txtCodigo);
+            controles.Add(listaCodigos);
             controles.Add(listaMarca);
             controles.Add(listaCategoria);
             controles.Add(listaSucursal);
@@ -951,8 +992,16 @@ namespace interfaces.mantenimientos
             controles.Add(btnQuitar);
             controles.Add(btnGuardar);
             controles.Add(btnCancelar);
+            controles.Add(btnAgregarCodigo);
 
             utilitarios.vaciando_formularios.habilitandoTexbox(controles, con);
+        }
+
+        private void cargarCodigos()
+        {
+            utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.codigos.cargarCodigos(this.idproducto),
+                listaCodigos, "codigo", "idcodigo");
+            listaCodigos.SelectedIndex = 0;
         }
 
         private void tablaPro_Click(object sender, EventArgs e)
@@ -970,6 +1019,7 @@ namespace interfaces.mantenimientos
                     txtCodigo.Text = tablaPro.CurrentRow.Cells[2].Value.ToString();
                     codigo = tablaPro.CurrentRow.Cells[2].Value.ToString();
                     txtnombreP.Text = tablaPro.CurrentRow.Cells[3].Value.ToString();
+                    cargarCodigos();
                     nombre = tablaPro.CurrentRow.Cells[3].Value.ToString();
                     listaCategoria.SelectedValue = tablaPro.CurrentRow.Cells[4].Value.ToString();
                     listaMarca.SelectedValue = tablaPro.CurrentRow.Cells[6].Value.ToString();
@@ -1008,7 +1058,7 @@ namespace interfaces.mantenimientos
             selecD = false;
             selecM = false;
             txtnombreP.Text = "";
-            txtCodigo.Text = "";
+            listaCodigos.SelectedValue = "0";
             listaMarca.SelectedValue = "0";
             listaCategoria.SelectedValue = "0";
             listaSucursal.SelectedValue = "0";
@@ -1066,7 +1116,6 @@ namespace interfaces.mantenimientos
                            kar);
 
                     pro = new conexiones_BD.clases.productos(
-                        txtCodigo.Text,
                         txtnombreP.Text.ToUpper(),
                         fe.fechaMysql(fecha),
                         listaCategoria.SelectedValue.ToString(),

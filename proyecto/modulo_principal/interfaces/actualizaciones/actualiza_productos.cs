@@ -105,50 +105,50 @@ namespace interfaces.actualizaciones
 
         private void btnIngresaTodos_Click(object sender, EventArgs e)
         {
-            int con = tabla_productos.RowCount;
-            int cont = 0;
-            if (tabla_productos.RowCount!=0)
-            {
-                xm._crearXml2("producto", transferencias_internet.nuevos_ingresos.rutas_sucursales(Convert.ToInt16(sesion.DatosRegistro[0]))+"productos.xml");
-                foreach (DataGridViewRow fila in tabla_productos.Rows)
-                {
-                    if (!validarExistencias(fila.Cells[1].Value.ToString(), fila.Cells[0].Value.ToString()))
-                    {
-                        conexiones_BD.clases.productos pr = new conexiones_BD.clases.productos(
-                            fila.Cells[0].Value.ToString(),
-                            fila.Cells[1].Value.ToString(),
-                            fila.Cells[2].Value.ToString(),
-                            fila.Cells[3].Value.ToString(),
-                            fila.Cells[4].Value.ToString()
-                            );
+        //    int con = tabla_productos.RowCount;
+        //    int cont = 0;
+        //    if (tabla_productos.RowCount!=0)
+        //    {
+        //        xm._crearXml2("producto", transferencias_internet.nuevos_ingresos.rutas_sucursales(Convert.ToInt16(sesion.DatosRegistro[0]))+"productos.xml");
+        //        foreach (DataGridViewRow fila in tabla_productos.Rows)
+        //        {
+        //            if (!validarExistencias(fila.Cells[1].Value.ToString(), fila.Cells[0].Value.ToString()))
+        //            {
+        //                conexiones_BD.clases.productos pr = new conexiones_BD.clases.productos(
+        //                    fila.Cells[0].Value.ToString(),
+        //                    fila.Cells[1].Value.ToString(),
+        //                    fila.Cells[2].Value.ToString(),
+        //                    fila.Cells[3].Value.ToString(),
+        //                    fila.Cells[4].Value.ToString()
+        //                    );
 
 
-                        conexiones_BD.operaciones op = new conexiones_BD.operaciones();
-                        int res = op.transaccionProductos_Presentaciones_Proveedores(xm.Proveedores_productos(fila.Cells[0].Value.ToString()),
-                            xm.Presentaciones_productos(fila.Cells[0].Value.ToString()),
-                            pr, xm.sucp(fila.Cells[0].Value.ToString()));
+        //                conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+        //                int res = op.transaccionProductos_Presentaciones_Proveedores(xm.Proveedores_productos(fila.Cells[0].Value.ToString()),
+        //                    xm.Presentaciones_productos(fila.Cells[0].Value.ToString()),
+        //                    pr, xm.sucp(fila.Cells[0].Value.ToString()));
 
-                        if (res > 0)
-                        {
-                            xm.Borrar(fila.Cells[0].Value.ToString(), "producto");
-                            xm.Borrar(fila.Cells[0].Value.ToString(), "sucursal_producto");
-                            xm.Borrar(fila.Cells[0].Value.ToString(), "proveedor_producto");
-                            xm.Borrar(fila.Cells[0].Value.ToString(), "presentacion_pro");
-                            cont++;
-                        }
-                    }
-                }
+        //                if (res > 0)
+        //                {
+        //                    xm.Borrar(fila.Cells[0].Value.ToString(), "producto");
+        //                    xm.Borrar(fila.Cells[0].Value.ToString(), "sucursal_producto");
+        //                    xm.Borrar(fila.Cells[0].Value.ToString(), "proveedor_producto");
+        //                    xm.Borrar(fila.Cells[0].Value.ToString(), "presentacion_pro");
+        //                    cont++;
+        //                }
+        //            }
+        //        }
 
-                if (con==cont)
-                {
-                    MessageBox.Show("Productos ingresados exitosamente a la base", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tabla_productos.DataSource = null;
-                }else
-                {
-                    cargarProductos();
-                }
+        //        if (con==cont)
+        //        {
+        //            MessageBox.Show("Productos ingresados exitosamente a la base", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            tabla_productos.DataSource = null;
+        //        }else
+        //        {
+        //            cargarProductos();
+        //        }
                 
-            }
+        //    }
         }
 
         private bool validarExistencias(string n, string c)
@@ -179,42 +179,42 @@ namespace interfaces.actualizaciones
 
         private void tabla_productos_DoubleClick(object sender, EventArgs e)
         {
-            if (tabla_productos.RowCount!=0)
-            {
-                if (MessageBox.Show("¿Deseas ingresar este producto?","Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
-                {
-                    xm._crearXml2("producto", transferencias_internet.nuevos_ingresos.rutas_sucursales(Convert.ToInt16(sesion.DatosRegistro[0])) + "productos.xml");
+        //    if (tabla_productos.RowCount!=0)
+        //    {
+        //        if (MessageBox.Show("¿Deseas ingresar este producto?","Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
+        //        {
+        //            xm._crearXml2("producto", transferencias_internet.nuevos_ingresos.rutas_sucursales(Convert.ToInt16(sesion.DatosRegistro[0])) + "productos.xml");
 
-                    if (!validarExistencias(tabla_productos.CurrentRow.Cells[1].Value.ToString(), tabla_productos.CurrentRow.Cells[0].Value.ToString()))
-                    {
-                        conexiones_BD.clases.productos pr = new conexiones_BD.clases.productos(
-                            tabla_productos.CurrentRow.Cells[0].Value.ToString(),
-                            tabla_productos.CurrentRow.Cells[1].Value.ToString(),
-                            tabla_productos.CurrentRow.Cells[2].Value.ToString(),
-                            tabla_productos.CurrentRow.Cells[3].Value.ToString(),
-                            tabla_productos.CurrentRow.Cells[4].Value.ToString()
-                            );
+        //            if (!validarExistencias(tabla_productos.CurrentRow.Cells[1].Value.ToString(), tabla_productos.CurrentRow.Cells[0].Value.ToString()))
+        //            {
+        //                conexiones_BD.clases.productos pr = new conexiones_BD.clases.productos(
+        //                    tabla_productos.CurrentRow.Cells[0].Value.ToString(),
+        //                    tabla_productos.CurrentRow.Cells[1].Value.ToString(),
+        //                    tabla_productos.CurrentRow.Cells[2].Value.ToString(),
+        //                    tabla_productos.CurrentRow.Cells[3].Value.ToString(),
+        //                    tabla_productos.CurrentRow.Cells[4].Value.ToString()
+        //                    );
 
-                        conexiones_BD.operaciones op = new conexiones_BD.operaciones();
-                        int res = op.transaccionProductos_Presentaciones_Proveedores(xm.Proveedores_productos(tabla_productos.CurrentRow.Cells[0].Value.ToString()),
-                            xm.Presentaciones_productos(tabla_productos.CurrentRow.Cells[0].Value.ToString()),
-                            pr, xm.sucp(tabla_productos.CurrentRow.Cells[0].Value.ToString()));
+        //                conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+        //                int res = op.transaccionProductos_Presentaciones_Proveedores(xm.Proveedores_productos(tabla_productos.CurrentRow.Cells[0].Value.ToString()),
+        //                    xm.Presentaciones_productos(tabla_productos.CurrentRow.Cells[0].Value.ToString()),
+        //                    pr, xm.sucp(tabla_productos.CurrentRow.Cells[0].Value.ToString()));
 
-                        if (res > 0)
-                        {
-                            xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "producto");
-                            xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "sucursal_producto");
-                            xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "proveedor_producto");
-                            xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "presentacion_pro");
-                            cargarProductos();
-                            tabla_Prese.Rows.Clear();
-                        }else
-                        {
-                            MessageBox.Show("No se pudo ingresar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }   
-                }
-            }
+        //                if (res > 0)
+        //                {
+        //                    xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "producto");
+        //                    xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "sucursal_producto");
+        //                    xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "proveedor_producto");
+        //                    xm.Borrar(tabla_productos.CurrentRow.Cells[0].Value.ToString(), "presentacion_pro");
+        //                    cargarProductos();
+        //                    tabla_Prese.Rows.Clear();
+        //                }else
+        //                {
+        //                    MessageBox.Show("No se pudo ingresar el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                }
+        //            }   
+        //        }
+        //    }
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)

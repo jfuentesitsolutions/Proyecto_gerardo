@@ -59,8 +59,6 @@ namespace interfaces.productos
 
         }
 
-       
-
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             tabla.FiltrarLocalmenteSinContadorRegistros();

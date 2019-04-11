@@ -433,7 +433,8 @@ namespace transferencias_internet
                         pre_p.SelectSingleNode("cantidad_unidades").InnerText,
                         pre_p.SelectSingleNode("precio").InnerText,
                         pre_p.SelectSingleNode("tipo").InnerText,
-                        pre_p.SelectSingleNode("pri").InnerText
+                        pre_p.SelectSingleNode("pri").InnerText,
+                        "1"
                         ));
                 }
             }
@@ -627,7 +628,8 @@ namespace transferencias_internet
                         pre_p.SelectSingleNode("cantidad_unidades").InnerText,
                         pre_p.SelectSingleNode("precio").InnerText,
                         pre_p.SelectSingleNode("tipo").InnerText,
-                        pre_p.SelectSingleNode("pri").InnerText
+                        pre_p.SelectSingleNode("pri").InnerText,
+                        "1"
                         );
                     p.Cod_producto = pre_p.SelectSingleNode("codigo_productos").InnerText;
 

@@ -94,7 +94,7 @@ namespace conexiones_BD.clases
             Consulta = @"select pp.idproveedor_producto, pp.idproveedor, p.nombre_proveedor, pr.idproducto
                         from proveedores_productos pp, proveedores p, productos pr
                         where pp.idproveedor = p.idproveedor and pp.idproducto = pr.idproducto and pp.idproducto = '"+idpro+@"'
-                            ;  ";
+                            ;";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {

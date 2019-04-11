@@ -312,3 +312,5 @@ J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\es
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.dll
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\espera_datos.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\Google.Protobuf.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.csproj.control_principal.exe.config

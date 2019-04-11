@@ -12,6 +12,18 @@ namespace conexiones_BD.clases.ventas
         string idforma_pago, correlativo, idusuario, monto_total_neto, descuentos, monto_total, idc, efectivo,
             cambio, idcliente, idcorrelativo;
 
+        public string Correlativo
+        {
+            get
+            {
+                return correlativo;
+            }
+
+            set
+            {
+                correlativo = value;
+            }
+        }
 
         public tickets(string idventa, string idventa_ticket, string fecha, string idsucursal, string anulacion,
             string idforma_pago, string correlativo, string idusuario, string monto_total_neto, string descuentos,
@@ -20,7 +32,7 @@ namespace conexiones_BD.clases.ventas
             : base(idventa,idventa_ticket, fecha, idsucursal, anulacion)
         {
             this.idforma_pago = idforma_pago;
-            this.correlativo = correlativo;
+            this.Correlativo = correlativo;
             this.idusuario = idusuario;
             this.monto_total_neto = monto_total_neto;
             this.descuentos = descuentos;
@@ -42,10 +54,10 @@ namespace conexiones_BD.clases.ventas
         public override List<string> generarCampos()
         {
             List<string> campos = new List<string>();
+            campos.Add("correlativo");
             campos.Add("idforma_pago");
             campos.Add("idsucursal");
             campos.Add("fecha");
-            campos.Add("correlativo");
             campos.Add("idusuario");
             campos.Add("monto_total_neto");
             campos.Add("descuentos");
@@ -62,10 +74,10 @@ namespace conexiones_BD.clases.ventas
         public override List<string> generarValores()
         {
             List<string> valores = new List<string>();
+            valores.Add(this.Correlativo);
             valores.Add(this.idforma_pago);
             valores.Add(base.idsucursal);
             valores.Add(base.fecha);
-            valores.Add(this.correlativo);
             valores.Add(this.idusuario);
             valores.Add(this.monto_total_neto);
             valores.Add(this.descuentos);
@@ -82,7 +94,8 @@ namespace conexiones_BD.clases.ventas
         public override List<string> campos()
         {
             List<string> campos = new List<string>();
-            campos.Add("idventa_ticket");
+            campos.Add("idventa");
+            campos.Add("num_ticket");
             campos.Add("fecha");
             campos.Add("idsucursal");
             campos.Add("anulacion");
@@ -93,6 +106,7 @@ namespace conexiones_BD.clases.ventas
         public override List<string> valores()
         {
             List<string> valores = new List<string>();
+            valores.Add(correlativo);
             valores.Add(base.idDocu);
             valores.Add(base.fecha);
             valores.Add(base.idsucursal);
@@ -105,9 +119,9 @@ namespace conexiones_BD.clases.ventas
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select vt.idventa_ticket, vt.correlativo, vt.fecha, concat(c.nombre_cliente,' ',c.apellidos_cliente) as nombre, v.idventa
+            Consulta = @"select vt.correlativo, vt.fecha, concat(c.nombre_cliente,' ',c.apellidos_cliente) as nombre, v.idventa
                 from ventas v, ventas_tickets vt, clientes c
-                where v.idventa_ticket = vt.idventa_ticket and vt.idcliente = c.idcliente
+                where v.idventa = vt.correlativo and vt.idcliente = c.idcliente
                 and v.fecha>='" + fech+@" 00:00:00' and v.fecha<='"+fech+ @" 23:60:00' and v.idsucursal='" + idsu + @"'
                 and v.anulacion = 1 order by vt.fecha desc
                 ; ";

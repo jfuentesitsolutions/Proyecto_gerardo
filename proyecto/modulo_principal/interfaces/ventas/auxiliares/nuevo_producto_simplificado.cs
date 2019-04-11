@@ -14,6 +14,7 @@ namespace interfaces.ventas.auxiliares
     {
         conexiones_BD.clases.productos pro;
         conexiones_BD.clases.sucursales_productos sp;
+        conexiones_BD.clases.codigos codi;
         conexiones_BD.operaciones op;
         sessionManager.secion sesion = sessionManager.secion.Instancia;
         transferencias_internet.xml xm = new transferencias_internet.xml();
@@ -93,7 +94,7 @@ namespace interfaces.ventas.auxiliares
             List<conexiones_BD.clases.presentaciones_productos> pp = new List<conexiones_BD.clases.presentaciones_productos>();
 
             
-                pp.Add(new conexiones_BD.clases.presentaciones_productos("0","1","1", precio.Value.ToString(),"2","2"));
+                pp.Add(new conexiones_BD.clases.presentaciones_productos("0","1","1", precio.Value.ToString(),"2","2","1"));
             
 
             return pp;
@@ -150,17 +151,43 @@ namespace interfaces.ventas.auxiliares
             return valido;
         }
 
+        private bool validarExistenciasCodigo()
+        {
+
+            bool valido = false;
+
+                conexiones_BD.clases.codigos c = new conexiones_BD.clases.codigos(txtCodigo.Text, "1");
+                if (c.validarCodigo())
+                {
+                    valido = true;
+                    MessageBox.Show("No podemos ingresar el codigo, porque ya esta ingresado en la base", "Codigo duplicado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    valido = false;
+                }
+            
+
+            return valido;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
             if (!validar())
             {
+                if (!validarExistenciasCodigo())
+                {
+
                 pro = new conexiones_BD.clases.productos(
-                        txtCodigo.Text,
                         txtnombreP.Text.ToUpper(),
                         fe.fechaMysql(fecha),
                         "60",
                         "53");
+                codi = new conexiones_BD.clases.codigos(
+                        txtCodigo.Text,
+                        "1"
+                        );
 
                 sp = new conexiones_BD.clases.sucursales_productos(
                         sesion.DatosRegistro[1],
@@ -176,36 +203,37 @@ namespace interfaces.ventas.auxiliares
                         "1");
 
                 op = new conexiones_BD.operaciones();
-                if (op.transaccionProductos_Presentaciones_Proveedores(generaProveedores(), generaPresentaciones(), pro, sp) > 0)
+                if (op.transaccionProductos_Presentaciones_Proveedores(generaProveedores(), generaPresentaciones(), pro, sp, codi) > 0)
                 {
                     MessageBox.Show("El producto se ingreso", "Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ingresado = true;
 
-                    xm._AñadirProductos(txtCodigo.Text, txtnombreP.Text.ToUpper(), fe.fechaMysql(fecha), "60", "53", Convert.ToInt16(sesion.DatosRegistro[0]));
-                    xm._AñadirSucursal_productos(sesion.DatosRegistro[1],
-                        "0",
-                        "2",
-                        "4",
-                        "1",
-                        "1000",
-                        precio.Value.ToString(),
-                        "0.0",
-                        "0.0",
-                        "0.0",
-                        "1",
-                        txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
-                    xm._AñadirProvedores_productos("2", "0", txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
-                    xm._AñadirPrese_prod("0", "1", "1", precio.Value.ToString(), "2", "2",txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
+                    //            xm._AñadirProductos(txtCodigo.Text, txtnombreP.Text.ToUpper(), fe.fechaMysql(fecha), "60", "53", Convert.ToInt16(sesion.DatosRegistro[0]));
+                    //            xm._AñadirSucursal_productos(sesion.DatosRegistro[1],
+                    //                "0",
+                    //                "2",
+                    //                "4",
+                    //                "1",
+                    //                "1000",
+                    //                precio.Value.ToString(),
+                    //                "0.0",
+                    //                "0.0",
+                    //                "0.0",
+                    //                "1",
+                    //                txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
+                    //            xm._AñadirProvedores_productos("2", "0", txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
+                    //            xm._AñadirPrese_prod("0", "1", "1", precio.Value.ToString(), "2", "2",txtCodigo.Text, Convert.ToInt16(sesion.DatosRegistro[0]));
 
 
                     this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("El producto no se pudo ingresar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El producto no se pudo ingresar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                       }
+                   }
             }
-        }
 
         private void txtCodigo_KeyUp(object sender, KeyEventArgs e)
         {

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(venta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,9 +38,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(venta));
             this.panelInferio = new System.Windows.Forms.Panel();
             this.gBusqueda = new System.Windows.Forms.GroupBox();
-            this.btnAgr = new System.Windows.Forms.PictureBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.fecha_actual = new System.Windows.Forms.DateTimePicker();
             this.chkPres = new System.Windows.Forms.RadioButton();
@@ -119,9 +118,10 @@
             this.lblrelog = new System.Windows.Forms.ToolStripLabel();
             this.progreso = new System.Windows.Forms.ToolStripProgressBar();
             this.relog = new System.Windows.Forms.Timer(this.components);
+            this.btnAsingarNuevocodigo = new System.Windows.Forms.Button();
+            this.btnAgr = new System.Windows.Forms.PictureBox();
             this.panelInferio.SuspendLayout();
             this.gBusqueda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAgr)).BeginInit();
             this.Gcliente.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -136,6 +136,7 @@
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgr)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInferio
@@ -150,6 +151,7 @@
             // 
             // gBusqueda
             // 
+            this.gBusqueda.Controls.Add(this.btnAsingarNuevocodigo);
             this.gBusqueda.Controls.Add(this.btnAgr);
             this.gBusqueda.Controls.Add(this.txtBusqueda);
             this.gBusqueda.Controls.Add(this.fecha_actual);
@@ -165,19 +167,6 @@
             this.gBusqueda.TabStop = false;
             this.gBusqueda.Text = "Busqueda";
             // 
-            // btnAgr
-            // 
-            this.btnAgr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgr.Image = ((System.Drawing.Image)(resources.GetObject("btnAgr.Image")));
-            this.btnAgr.Location = new System.Drawing.Point(641, 25);
-            this.btnAgr.Name = "btnAgr";
-            this.btnAgr.Size = new System.Drawing.Size(32, 32);
-            this.btnAgr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnAgr.TabIndex = 10;
-            this.btnAgr.TabStop = false;
-            this.btnAgr.Visible = false;
-            this.btnAgr.Click += new System.EventHandler(this.btnAgr_Click);
-            // 
             // txtBusqueda
             // 
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.Control;
@@ -185,7 +174,7 @@
             this.txtBusqueda.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.Location = new System.Drawing.Point(15, 24);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(620, 35);
+            this.txtBusqueda.Size = new System.Drawing.Size(597, 35);
             this.txtBusqueda.TabIndex = 0;
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
@@ -195,7 +184,7 @@
             // 
             this.fecha_actual.CustomFormat = "dd/MM/yyyy HH:mm:ss tt";
             this.fecha_actual.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fecha_actual.Location = new System.Drawing.Point(679, 26);
+            this.fecha_actual.Location = new System.Drawing.Point(701, 26);
             this.fecha_actual.Name = "fecha_actual";
             this.fecha_actual.Size = new System.Drawing.Size(178, 26);
             this.fecha_actual.TabIndex = 4;
@@ -313,7 +302,7 @@
             this.listaTipoFactura.FormattingEnabled = true;
             this.listaTipoFactura.Location = new System.Drawing.Point(737, 18);
             this.listaTipoFactura.Name = "listaTipoFactura";
-            this.listaTipoFactura.Size = new System.Drawing.Size(112, 27);
+            this.listaTipoFactura.Size = new System.Drawing.Size(139, 27);
             this.listaTipoFactura.TabIndex = 3;
             this.listaTipoFactura.SelectedIndexChanged += new System.EventHandler(this.listaTipoFactura_SelectedIndexChanged);
             // 
@@ -356,7 +345,7 @@
             this.listaVendedor.FormattingEnabled = true;
             this.listaVendedor.Location = new System.Drawing.Point(738, 68);
             this.listaVendedor.Name = "listaVendedor";
-            this.listaVendedor.Size = new System.Drawing.Size(112, 27);
+            this.listaVendedor.Size = new System.Drawing.Size(138, 27);
             this.listaVendedor.TabIndex = 6;
             // 
             // lblven
@@ -1014,6 +1003,30 @@
             this.relog.Interval = 1000;
             this.relog.Tick += new System.EventHandler(this.relog_Tick);
             // 
+            // btnAsingarNuevocodigo
+            // 
+            this.btnAsingarNuevocodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsingarNuevocodigo.Image = ((System.Drawing.Image)(resources.GetObject("btnAsingarNuevocodigo.Image")));
+            this.btnAsingarNuevocodigo.Location = new System.Drawing.Point(656, 24);
+            this.btnAsingarNuevocodigo.Name = "btnAsingarNuevocodigo";
+            this.btnAsingarNuevocodigo.Size = new System.Drawing.Size(39, 34);
+            this.btnAsingarNuevocodigo.TabIndex = 11;
+            this.btnAsingarNuevocodigo.TabStop = false;
+            this.btnAsingarNuevocodigo.UseVisualStyleBackColor = true;
+            this.btnAsingarNuevocodigo.Click += new System.EventHandler(this.btnAsingarNuevocodigo_Click);
+            // 
+            // btnAgr
+            // 
+            this.btnAgr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgr.Image = ((System.Drawing.Image)(resources.GetObject("btnAgr.Image")));
+            this.btnAgr.Location = new System.Drawing.Point(618, 25);
+            this.btnAgr.Name = "btnAgr";
+            this.btnAgr.Size = new System.Drawing.Size(32, 32);
+            this.btnAgr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnAgr.TabIndex = 10;
+            this.btnAgr.TabStop = false;
+            this.btnAgr.Click += new System.EventHandler(this.btnAgr_Click);
+            // 
             // venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1035,7 +1048,6 @@
             this.panelInferio.ResumeLayout(false);
             this.gBusqueda.ResumeLayout(false);
             this.gBusqueda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAgr)).EndInit();
             this.Gcliente.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1054,6 +1066,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgr)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1139,5 +1152,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.Timer relog;
+        private System.Windows.Forms.Button btnAsingarNuevocodigo;
     }
 }

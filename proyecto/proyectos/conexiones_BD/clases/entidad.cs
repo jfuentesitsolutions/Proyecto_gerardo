@@ -122,7 +122,7 @@ namespace conexiones_BD.clases
             utilitarios.crearSentencia sentencia = new utilitarios.crearSentencia(tabla);
 
             valido = op.Consultar(sentencia.sentenciaValidacion(nombres_campos_b, valores_campos_b).ToString()).Rows.Count;
-            //Console.WriteLine(sentencia.sentenciaValidacion(nombres_campos_b, valores_campos_b).ToString());
+            Console.WriteLine(sentencia.sentenciaValidacion(nombres_campos_b, valores_campos_b).ToString());
 
             if (mensaje)
             {

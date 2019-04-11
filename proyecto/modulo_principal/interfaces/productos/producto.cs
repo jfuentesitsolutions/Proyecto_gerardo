@@ -270,6 +270,19 @@ namespace interfaces.productos
             this.Close();
         }
 
+        private void btnAgregarCodigo_Click(object sender, EventArgs e)
+        {
+            mantenimientos.auxiliares.agregaCodigos codi = new mantenimientos.auxiliares.agregaCodigos();
+            codi.Idproducto = this.idproducto;
+            Console.WriteLine(idproducto);
+            codi.ShowDialog();
+
+            if (codi.Listo)
+            {
+                cargarCodigos();
+            }
+        }
+
         private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             gadgets.movimimientos mov = new gadgets.movimimientos();
@@ -429,8 +442,25 @@ namespace interfaces.productos
 
             utilitarios.cargandoListas.cargarLista(mayoreo, listaMayoreo, "nombre", "idutilidad_compra");
             utilitarios.cargandoListas.cargarLista(detalle, listaUtilidadDetalle, "nombre", "idutilidad_compra");
-
+            cargarCodigos();
             cargarValores();
+        }
+
+        private void cargarCodigos()
+        {
+            DataTable codigos = conexiones_BD.clases.codigos.cargarCodigos(this.idproducto);
+            
+            if (codigos.Rows.Count>0)
+            {
+                utilitarios.cargandoListas.cargarLista(codigos,
+                listaCodigos, "codigo", "idcodigo");
+                listaCodigos.SelectedIndex = 0;
+            }else
+            {
+                listaCodigos.DataSource = null;
+                listaCodigos.Items.Add("No existen codigos activos");
+            }
+            
         }
 
         private void cargarValores()
@@ -478,6 +508,14 @@ namespace interfaces.productos
                 else
                 {
                     chkPriori.Checked = false;
+                }
+
+                if (tabla_presentacion_producto.CurrentRow.Cells[8].Value.ToString().Equals("Activo"))
+                {
+                    chkEstado.Checked = true;
+                }else
+                {
+                    chkEstado.Checked = false;
                 }
             }
         }
@@ -529,10 +567,14 @@ namespace interfaces.productos
 
         private void modificar()
         {
-            string prio = "2";
+            string prio = "2", esta="2";
             if (chkPriori.Checked)
             {
                 prio = "1";
+            }
+            if (chkEstado.Checked)
+            {
+                esta = "1";
             }
             prpr = new conexiones_BD.clases.presentaciones_productos(
                 idpresentacion_producto,
@@ -541,7 +583,8 @@ namespace interfaces.productos
                 canti.Value.ToString(),
                 precio.Value.ToString(),
                 tipoPrese(),
-                prio);
+                prio,
+                esta);
 
             if (prpr.modificar(true) > 0)
             {
@@ -643,7 +686,6 @@ namespace interfaces.productos
                 
 
                     pro = new conexiones_BD.clases.productos(
-                        txtCodigo.Text,
                         txtNombre.Text.ToUpper(),
                         fe.fechaMysql(fecha),
                         listaCategoria.SelectedValue.ToString(),

@@ -89,3 +89,4 @@ J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\cache_manager\obj\Debug\cache_
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\cache_manager\obj\Debug\cache_manager.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\MySql.Data.xml
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\cache_manager\bin\Debug\Google.Protobuf.dll

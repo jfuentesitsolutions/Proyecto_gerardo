@@ -80,6 +80,9 @@
             this.existencias = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.listaCodigos = new System.Windows.Forms.ComboBox();
+            this.btnAgregarCodigo = new System.Windows.Forms.Button();
             this.chkKardex = new System.Windows.Forms.CheckBox();
             this.btnGenerarCodigo = new System.Windows.Forms.Button();
             this.btnAgrePro = new System.Windows.Forms.Button();
@@ -98,7 +101,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.listaMarca = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtnombreP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -210,7 +212,7 @@
             this.lblEncanezado.AutoSize = true;
             this.lblEncanezado.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEncanezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncanezado.Location = new System.Drawing.Point(304, 9);
+            this.lblEncanezado.Location = new System.Drawing.Point(434, 8);
             this.lblEncanezado.Name = "lblEncanezado";
             this.lblEncanezado.Size = new System.Drawing.Size(247, 23);
             this.lblEncanezado.TabIndex = 0;
@@ -230,7 +232,7 @@
             this.contenidoTotal.Dock = System.Windows.Forms.DockStyle.Left;
             this.contenidoTotal.Location = new System.Drawing.Point(0, 46);
             this.contenidoTotal.Name = "contenidoTotal";
-            this.contenidoTotal.Size = new System.Drawing.Size(632, 584);
+            this.contenidoTotal.Size = new System.Drawing.Size(632, 719);
             this.contenidoTotal.TabIndex = 0;
             // 
             // panel3
@@ -487,7 +489,7 @@
             this.groupBox5.Location = new System.Drawing.Point(259, 25);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(233, 186);
-            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalle";
             // 
@@ -500,7 +502,7 @@
             this.listaUtilidadDetalle.Location = new System.Drawing.Point(36, 145);
             this.listaUtilidadDetalle.Name = "listaUtilidadDetalle";
             this.listaUtilidadDetalle.Size = new System.Drawing.Size(168, 27);
-            this.listaUtilidadDetalle.TabIndex = 3;
+            this.listaUtilidadDetalle.TabIndex = 1;
             this.listaUtilidadDetalle.SelectedValueChanged += new System.EventHandler(this.listaUtilidadDetalle_SelectedValueChanged);
             this.listaUtilidadDetalle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
             // 
@@ -526,7 +528,7 @@
             0});
             this.precioVD.Name = "precioVD";
             this.precioVD.Size = new System.Drawing.Size(65, 26);
-            this.precioVD.TabIndex = 5;
+            this.precioVD.TabIndex = 2;
             this.precioVD.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
             // 
             // precioCD
@@ -541,7 +543,7 @@
             0});
             this.precioCD.Name = "precioCD";
             this.precioCD.Size = new System.Drawing.Size(65, 26);
-            this.precioCD.TabIndex = 1;
+            this.precioCD.TabIndex = 0;
             this.precioCD.ValueChanged += new System.EventHandler(this.precioCD_ValueChanged);
             this.precioCD.Enter += new System.EventHandler(this.precioCD_Enter);
             this.precioCD.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
@@ -590,7 +592,7 @@
             this.listaMayoreo.Location = new System.Drawing.Point(34, 145);
             this.listaMayoreo.Name = "listaMayoreo";
             this.listaMayoreo.Size = new System.Drawing.Size(168, 27);
-            this.listaMayoreo.TabIndex = 3;
+            this.listaMayoreo.TabIndex = 1;
             this.listaMayoreo.SelectedValueChanged += new System.EventHandler(this.listaMayoreo_SelectedValueChanged);
             this.listaMayoreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
             // 
@@ -616,7 +618,7 @@
             0});
             this.precioCM.Name = "precioCM";
             this.precioCM.Size = new System.Drawing.Size(65, 26);
-            this.precioCM.TabIndex = 1;
+            this.precioCM.TabIndex = 0;
             this.precioCM.ValueChanged += new System.EventHandler(this.precioCM_ValueChanged);
             this.precioCM.Enter += new System.EventHandler(this.precioCM_Enter);
             this.precioCM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
@@ -653,7 +655,7 @@
             0});
             this.precioVM.Name = "precioVM";
             this.precioVM.Size = new System.Drawing.Size(65, 26);
-            this.precioVM.TabIndex = 5;
+            this.precioVM.TabIndex = 2;
             this.precioVM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
             // 
             // existencias
@@ -668,7 +670,7 @@
             0});
             this.existencias.Name = "existencias";
             this.existencias.Size = new System.Drawing.Size(87, 39);
-            this.existencias.TabIndex = 3;
+            this.existencias.TabIndex = 0;
             this.existencias.Enter += new System.EventHandler(this.existencias_Enter);
             this.existencias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.precioCM_KeyUp);
             // 
@@ -684,6 +686,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCodigo);
+            this.groupBox1.Controls.Add(this.listaCodigos);
+            this.groupBox1.Controls.Add(this.btnAgregarCodigo);
             this.groupBox1.Controls.Add(this.chkKardex);
             this.groupBox1.Controls.Add(this.btnGenerarCodigo);
             this.groupBox1.Controls.Add(this.btnAgrePro);
@@ -702,7 +707,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.listaMarca);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.txtnombreP);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -713,13 +717,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BackColor = System.Drawing.Color.Silver;
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.Location = new System.Drawing.Point(316, 57);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(227, 26);
+            this.txtCodigo.TabIndex = 1;
+            // 
+            // listaCodigos
+            // 
+            this.listaCodigos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.listaCodigos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaCodigos.BackColor = System.Drawing.Color.Silver;
+            this.listaCodigos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.listaCodigos.FormattingEnabled = true;
+            this.listaCodigos.Location = new System.Drawing.Point(316, 56);
+            this.listaCodigos.Name = "listaCodigos";
+            this.listaCodigos.Size = new System.Drawing.Size(227, 27);
+            this.listaCodigos.TabIndex = 18;
+            // 
+            // btnAgregarCodigo
+            // 
+            this.btnAgregarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCodigo.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCodigo.Image")));
+            this.btnAgregarCodigo.Location = new System.Drawing.Point(549, 57);
+            this.btnAgregarCodigo.Name = "btnAgregarCodigo";
+            this.btnAgregarCodigo.Size = new System.Drawing.Size(27, 27);
+            this.btnAgregarCodigo.TabIndex = 17;
+            this.btnAgregarCodigo.TabStop = false;
+            this.btnAgregarCodigo.UseVisualStyleBackColor = true;
+            this.btnAgregarCodigo.Click += new System.EventHandler(this.btnAgregarCodigo_Click);
+            // 
             // chkKardex
             // 
             this.chkKardex.AutoSize = true;
             this.chkKardex.Location = new System.Drawing.Point(22, 302);
             this.chkKardex.Name = "chkKardex";
             this.chkKardex.Size = new System.Drawing.Size(74, 23);
-            this.chkKardex.TabIndex = 16;
+            this.chkKardex.TabIndex = 8;
             this.chkKardex.Text = "Kardex";
             this.chkKardex.UseVisualStyleBackColor = true;
             // 
@@ -727,12 +764,13 @@
             // 
             this.btnGenerarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarCodigo.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarCodigo.Image")));
-            this.btnGenerarCodigo.Location = new System.Drawing.Point(549, 55);
+            this.btnGenerarCodigo.Location = new System.Drawing.Point(550, 21);
             this.btnGenerarCodigo.Name = "btnGenerarCodigo";
             this.btnGenerarCodigo.Size = new System.Drawing.Size(27, 27);
             this.btnGenerarCodigo.TabIndex = 0;
             this.btnGenerarCodigo.TabStop = false;
             this.btnGenerarCodigo.UseVisualStyleBackColor = true;
+            this.btnGenerarCodigo.Visible = false;
             this.btnGenerarCodigo.Click += new System.EventHandler(this.btnGenerarCodigo_Click_1);
             // 
             // btnAgrePro
@@ -742,7 +780,7 @@
             this.btnAgrePro.Location = new System.Drawing.Point(316, 213);
             this.btnAgrePro.Name = "btnAgrePro";
             this.btnAgrePro.Size = new System.Drawing.Size(260, 77);
-            this.btnAgrePro.TabIndex = 13;
+            this.btnAgrePro.TabIndex = 6;
             this.btnAgrePro.UseVisualStyleBackColor = true;
             this.btnAgrePro.Click += new System.EventHandler(this.btnAgrePro_Click);
             // 
@@ -764,7 +802,7 @@
             this.fecha.Location = new System.Drawing.Point(22, 264);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(264, 26);
-            this.fecha.TabIndex = 15;
+            this.fecha.TabIndex = 7;
             this.fecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
             // 
             // label11
@@ -799,7 +837,7 @@
             this.listaEstante.Location = new System.Drawing.Point(22, 212);
             this.listaEstante.Name = "listaEstante";
             this.listaEstante.Size = new System.Drawing.Size(227, 27);
-            this.listaEstante.TabIndex = 11;
+            this.listaEstante.TabIndex = 5;
             this.listaEstante.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
             // 
             // label6
@@ -834,7 +872,7 @@
             this.listaSucursal.Location = new System.Drawing.Point(316, 157);
             this.listaSucursal.Name = "listaSucursal";
             this.listaSucursal.Size = new System.Drawing.Size(227, 27);
-            this.listaSucursal.TabIndex = 9;
+            this.listaSucursal.TabIndex = 4;
             this.listaSucursal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
             // 
             // label5
@@ -869,7 +907,7 @@
             this.listaCategoria.Location = new System.Drawing.Point(22, 157);
             this.listaCategoria.Name = "listaCategoria";
             this.listaCategoria.Size = new System.Drawing.Size(227, 27);
-            this.listaCategoria.TabIndex = 7;
+            this.listaCategoria.TabIndex = 3;
             this.listaCategoria.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
             // 
             // btnNuevamarca
@@ -904,7 +942,7 @@
             this.listaMarca.Location = new System.Drawing.Point(316, 105);
             this.listaMarca.Name = "listaMarca";
             this.listaMarca.Size = new System.Drawing.Size(227, 27);
-            this.listaMarca.TabIndex = 5;
+            this.listaMarca.TabIndex = 2;
             this.listaMarca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
             // 
             // label3
@@ -917,16 +955,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Marca:";
             // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BackColor = System.Drawing.Color.Silver;
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.Location = new System.Drawing.Point(316, 55);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(227, 26);
-            this.txtCodigo.TabIndex = 3;
-            this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
-            // 
             // txtnombreP
             // 
             this.txtnombreP.BackColor = System.Drawing.Color.Silver;
@@ -935,7 +963,7 @@
             this.txtnombreP.Multiline = true;
             this.txtnombreP.Name = "txtnombreP";
             this.txtnombreP.Size = new System.Drawing.Size(264, 76);
-            this.txtnombreP.TabIndex = 1;
+            this.txtnombreP.TabIndex = 0;
             this.txtnombreP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtnombreP_KeyUp);
             // 
             // label2
@@ -965,7 +993,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(298, 779);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 29);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -977,7 +1005,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(213, 779);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 29);
-            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -992,7 +1020,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(632, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(661, 584);
+            this.panel1.Size = new System.Drawing.Size(661, 719);
             this.panel1.TabIndex = 8;
             // 
             // tablaPro
@@ -1045,7 +1073,7 @@
             this.tablaPro.ReadOnly = true;
             this.tablaPro.RowHeadersVisible = false;
             this.tablaPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaPro.Size = new System.Drawing.Size(659, 467);
+            this.tablaPro.Size = new System.Drawing.Size(659, 602);
             this.tablaPro.TabIndex = 1;
             this.tablaPro.Click += new System.EventHandler(this.tablaPro_Click);
             // 
@@ -1257,7 +1285,7 @@
             this.panel8.BackColor = System.Drawing.Color.Silver;
             this.panel8.Controls.Add(this.lblReg);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 544);
+            this.panel8.Location = new System.Drawing.Point(0, 679);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(659, 38);
             this.panel8.TabIndex = 5;
@@ -1280,7 +1308,7 @@
             this.tablaProductos.Location = new System.Drawing.Point(0, 77);
             this.tablaProductos.Name = "tablaProductos";
             this.tablaProductos.ReadOnly = true;
-            this.tablaProductos.Size = new System.Drawing.Size(659, 505);
+            this.tablaProductos.Size = new System.Drawing.Size(659, 640);
             this.tablaProductos.TabIndex = 4;
             // 
             // panel5
@@ -1401,7 +1429,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 630);
+            this.ClientSize = new System.Drawing.Size(1293, 765);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.contenidoTotal);
             this.Controls.Add(this.panelTitulo);
@@ -1540,7 +1568,6 @@
         private System.Windows.Forms.ErrorProvider error4;
         public System.Windows.Forms.Label lblEncanezado;
         private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.CheckBox chkKardex;
         private System.Windows.Forms.DataGridViewTextBoxColumn c1;
         private System.Windows.Forms.DataGridViewTextBoxColumn c2;
@@ -1569,5 +1596,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.RadioButton chkCategoria;
         private System.Windows.Forms.ComboBox listaCate;
+        private System.Windows.Forms.Button btnAgregarCodigo;
+        public System.Windows.Forms.ComboBox listaCodigos;
+        private System.Windows.Forms.TextBox txtCodigo;
     }
 }

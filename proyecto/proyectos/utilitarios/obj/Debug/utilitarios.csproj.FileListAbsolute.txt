@@ -27,3 +27,10 @@ C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitari
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb

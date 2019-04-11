@@ -533,3 +533,6 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hi
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.pdb
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.dll
 C:\Users\jfuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\Google.Protobuf.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.auxiliares.agregaCodigos.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.mantenimientos.auxiliares.busqueda_productos.resources

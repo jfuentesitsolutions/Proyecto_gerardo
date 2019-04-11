@@ -608,9 +608,9 @@ namespace interfaces.ventas.panel
 
             if (!validar())
             {
-                string correlativo = generaciondecorrelativo();
-                string id = IDCorrelativoTicket();
-                if (correlativo != null)
+                string correlativo = generaciondecorrelativo(); //se genera el correlativo
+                string id = IDCorrelativoTicket(); // se coloca el id del correlativo
+                if (correlativo != null) // si el correlativo se genera correctamente
                 {
                     interfaces.ventas.auxiliares.cobrar cobro = new auxiliares.cobrar();
                     cobro.lblTotala.Text = total;
@@ -618,7 +618,7 @@ namespace interfaces.ventas.panel
                     cobro.ShowDialog();
                     if (cobro.Cobrado)
                     {
-                        ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id);
+                        ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
                     }
 
                 }
@@ -630,6 +630,7 @@ namespace interfaces.ventas.panel
         private void ingresandoVentaTicket(string correl, string efec, string cam, string idcorre)
         {
             utilitarios.maneja_fechas fecha = new utilitarios.maneja_fechas();
+
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
                 "0", "0", fecha.fechaMysql(fecha_actual), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
                 correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
@@ -645,7 +646,7 @@ namespace interfaces.ventas.panel
                     string impresora= printDoc.PrinterSettings.PrinterName;
                     
                         conexiones_BD.clases.ventas.impresion_prueba imp = new conexiones_BD.clases.ventas.impresion_prueba();
-                        if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(res.ToString())))
+                        if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(correl)))
                         {
                         tabla_articulos.Rows.Clear();
                         calcularTotales();
@@ -1665,6 +1666,18 @@ namespace interfaces.ventas.panel
         private void relog_Tick(object sender, EventArgs e)
         {
             lblrelog.Text = "Hora: " + DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnAsingarNuevocodigo_Click(object sender, EventArgs e)
+        {
+            mantenimientos.auxiliares.busqueda_productos bp = new mantenimientos.auxiliares.busqueda_productos();
+            bp.Codigo = txtBusqueda.Text;
+            bp.ShowDialog();
+            if (bp.Listo)
+            {
+                cargarTablas();
+                colocarFoco();
+            }
         }
 
         private void colocarFoco()
