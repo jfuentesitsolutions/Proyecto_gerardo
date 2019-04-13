@@ -34,3 +34,10 @@ J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitar
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
