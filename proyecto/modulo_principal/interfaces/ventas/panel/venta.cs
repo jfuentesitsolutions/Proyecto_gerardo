@@ -1317,7 +1317,7 @@ namespace interfaces.ventas.panel
         {
             try
             {
-                lblrelog.Text = tabla_articulos.CurrentRow.Cells[11].Value.ToString();
+                //lblrelog.Text = tabla_articulos.CurrentRow.Cells[11].Value.ToString();
             }
             catch
             {

@@ -26,3 +26,17 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.xml
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.xml
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.pdb
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.xml
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.xml
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.Properties.Resources.resources
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.splash_espera.resources
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb

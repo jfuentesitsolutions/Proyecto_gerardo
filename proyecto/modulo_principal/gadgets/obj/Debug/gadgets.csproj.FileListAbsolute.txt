@@ -20,3 +20,8 @@ J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\gadgets\bin\Debug\gadge
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.csprojResolveAssemblyReference.cache
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.dll
 J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.pdb
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\gadgets\bin\Debug\gadgets.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\gadgets\bin\Debug\gadgets.pdb
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.dll
+C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\gadgets\obj\Debug\gadgets.pdb
