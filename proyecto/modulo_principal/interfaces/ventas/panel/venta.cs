@@ -26,6 +26,7 @@ namespace interfaces.ventas.panel
         bool busqueda = false;
         string idticket_Buscado = null;
         Action accion;
+        string correlativoAA, idcorrel;
 
         //DataTable producto_venta = null;
         DataTable pre_producto = null;
@@ -667,7 +668,10 @@ namespace interfaces.ventas.panel
                     }
                     else
                     {
-                        MessageBox.Show("Se produjo un error al guardar el ticket, pero la venta se guardo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conexiones_BD.clases.ventas.correlativos_tickets.actualizaCorrelativos(correlativoAA, idcorrel);
+                    Console.WriteLine(correlativoAA);
+
+                    MessageBox.Show("Se produjo un error al guardar el ticket, pero la venta se guardo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tabla_articulos.Rows.Clear();
                         calcularTotales();
                         busqueda = false;
@@ -681,6 +685,8 @@ namespace interfaces.ventas.panel
             }
             else
             {
+                conexiones_BD.clases.ventas.correlativos_tickets.actualizaCorrelativos(correlativoAA, idcorrel);
+                Console.WriteLine(correlativoAA);
                 MessageBox.Show("Se produjo un error al guardar el ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1007,8 +1013,10 @@ namespace interfaces.ventas.panel
             }else
             {
                 correlativoActual = Convert.ToInt32(correlativos.Rows[0][4].ToString());
+                correlativoAA = correlativos.Rows[0][4].ToString();
+                idcorrel = correlativos.Rows[0][0].ToString();
 
-                limite= Convert.ToInt32(correlativos.Rows[0][3].ToString());
+                limite = Convert.ToInt32(correlativos.Rows[0][3].ToString());
                 if (correlativoActual+1==limite)
                 {
                     MessageBox.Show("Ya se alcanso el limite de tickets emitidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
