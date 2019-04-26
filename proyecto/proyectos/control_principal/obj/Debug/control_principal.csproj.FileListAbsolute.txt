@@ -372,3 +372,5 @@ C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyecto
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.Properties.Resources.resources
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.splash.resources
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\control_principal\obj\Debug\control_principal.csproj.GenerateResource.Cache
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\ExcelViewer.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\proyectos\control_principal\bin\Debug\ExcelViewer.pdb

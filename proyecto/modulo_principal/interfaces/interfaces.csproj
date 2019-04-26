@@ -443,6 +443,12 @@
     <Compile Include="ventas\panel\anulacion_de_ventas.Designer.cs">
       <DependentUpon>anulacion_de_ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ventas\panel\catalogo_de_precios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas\panel\catalogo_de_precios.Designer.cs">
+      <DependentUpon>catalogo_de_precios.cs</DependentUpon>
+    </Compile>
     <Compile Include="ventas\panel\venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,6 +641,9 @@
     <EmbeddedResource Include="ventas\panel\anulacion_de_ventas.resx">
       <DependentUpon>anulacion_de_ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ventas\panel\catalogo_de_precios.resx">
+      <DependentUpon>catalogo_de_precios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ventas\panel\venta.resx">
       <DependentUpon>venta.cs</DependentUpon>
     </EmbeddedResource>
@@ -649,6 +658,10 @@
     <ProjectReference Include="..\..\proyectos\conexiones_BD\conexiones_BD.csproj">
       <Project>{46262f34-63b5-4da4-9d5d-f0111c13b65d}</Project>
       <Name>conexiones_BD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\proyectos\ExcelViewer\ExcelViewer\ExcelViewer.csproj">
+      <Project>{2040aab6-c40b-42a7-9a07-a0066b0c3cb7}</Project>
+      <Name>ExcelViewer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\proyectos\sessionManager\sessionManager.csproj">
       <Project>{3bf0dda4-44dc-48b9-893c-26c262edb3d9}</Project>
@@ -870,6 +883,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

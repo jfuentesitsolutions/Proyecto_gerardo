@@ -626,3 +626,6 @@ C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_p
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.csproj.GenerateResource.Cache
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.dll
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.pdb
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.ventas.panel.catalogo_de_precios.resources
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\ExcelViewer.dll
+J:\Escritorio\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\ExcelViewer.pdb

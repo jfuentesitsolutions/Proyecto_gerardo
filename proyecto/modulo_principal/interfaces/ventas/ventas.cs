@@ -146,5 +146,11 @@ namespace interfaces.ventas
             colocarPanel(new panel.anulacion_de_ventas(), false, "Anulacion de venta");
             slider();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            colocarPanel(new panel.catalogo_de_precios(), false, "Catalogo de precios");
+            slider();
+        }
     }
 }
