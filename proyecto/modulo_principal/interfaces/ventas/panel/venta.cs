@@ -731,7 +731,7 @@ namespace interfaces.ventas.panel
                         "0", fila.Cells[7].Value.ToString(), cantidad.ToString(),
                         fila.Cells[5].Value.ToString(), fila.Cells[6].Value.ToString(),
                         fila.Cells[8].Value.ToString(), "0", fila.Cells[12].Value.ToString(),
-                        can.ToString()));
+                        can.ToString(), fila.Cells[1].Value.ToString()));
             }
 
 

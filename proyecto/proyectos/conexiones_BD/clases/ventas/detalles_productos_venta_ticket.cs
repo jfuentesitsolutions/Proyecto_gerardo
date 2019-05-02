@@ -9,9 +9,9 @@ namespace conexiones_BD.clases.ventas
 {
     public class detalles_productos_venta_ticket:entidad
     {
-        string iddetalle_ventas_ticket, idpresentacion_producto, cantidad, precio_venta, total, utilidad, idventa_ticket, idsucursal_producto, cantidad_paquete;
+        string iddetalle_ventas_ticket, idpresentacion_producto, cantidad, precio_venta, total, utilidad, idventa_ticket, idsucursal_producto, cantidad_paquete, codigo;
 
-        public detalles_productos_venta_ticket(string iddetalle_ventas_ticket, string idpresentacion_producto, string cantidad, string precio_venta, string total, string utilidad, string idventa_ticket, string idsuc, string capa)
+        public detalles_productos_venta_ticket(string iddetalle_ventas_ticket, string idpresentacion_producto, string cantidad, string precio_venta, string total, string utilidad, string idventa_ticket, string idsuc, string capa, string cod)
         {
             this.iddetalle_ventas_ticket = iddetalle_ventas_ticket;
             this.idpresentacion_producto = idpresentacion_producto;
@@ -22,6 +22,7 @@ namespace conexiones_BD.clases.ventas
             this.Idventa_ticket = idventa_ticket;
             this.idsucursal_producto = idsuc;
             this.cantidad_paquete = capa;
+            this.codigo = cod;
         }
 
         public string Idventa_ticket
@@ -48,6 +49,7 @@ namespace conexiones_BD.clases.ventas
             campos.Add("idventa_ticket");
             campos.Add("idsucursal_producto");
             campos.Add("cantidad_paquete");
+            campos.Add("codigo");
 
             return campos;
         }
@@ -63,6 +65,7 @@ namespace conexiones_BD.clases.ventas
             campos.Add(idventa_ticket);
             campos.Add(idsucursal_producto);
             campos.Add(cantidad_paquete);
+            campos.Add(codigo);
 
             return campos;
         }
@@ -91,7 +94,8 @@ namespace conexiones_BD.clases.ventas
                         and pp.idsucursal_producto = sp.idsucursal_producto
                         and sp.idproducto = pr.idproducto
                         and pp.idpresentacion = p.idpresentacion
-                        and dvt.idventa_ticket = '"+id+@"' and vt.idcita=ci.idcita and vt.idcliente=cll.idcliente and vt.idcorrelativo = corr.idcorrelativo_ticket
+                        and dvt.idventa_ticket = '"+id+ @"' and vt.idcita=ci.idcita and vt.idcliente=cll.idcliente and vt.idcorrelativo = corr.idcorrelativo_ticket
+                        and dvt.codigo=codi.codigo
                         and codi.estado=1                        
                         ; ";
 
