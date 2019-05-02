@@ -621,7 +621,6 @@ namespace interfaces.ventas.panel
                     {
                         ingresandoVentaTicket(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
                     }
-
                 }
             }
             
@@ -630,10 +629,12 @@ namespace interfaces.ventas.panel
 
         private void ingresandoVentaTicket(string correl, string efec, string cam, string idcorre)
         {
+            
             utilitarios.maneja_fechas fecha = new utilitarios.maneja_fechas();
+            Console.WriteLine(fecha_actual.ToString());
 
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
-                "0", "0", fecha.fechaMysql(fecha_actual), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
+                "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
                 correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
                 this.total, "1", efec, cam, listaClientes.SelectedValue.ToString(), idcorre);
 
@@ -1673,7 +1674,12 @@ namespace interfaces.ventas.panel
 
         private void relog_Tick(object sender, EventArgs e)
         {
-            lblrelog.Text = "Hora: " + DateTime.Now.ToLongTimeString();
+            lblrelog.Text = DateTime.Now.ToString();
+        }
+
+        private void fecha_actual_TabIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAsingarNuevocodigo_Click(object sender, EventArgs e)

@@ -12,8 +12,8 @@ namespace utilitarios
 
         public string fechaMysql(DateTimePicker dp)
         {
-            
             DateTime fecha = Convert.ToDateTime(dp.Text.ToString());
+
             string formto = fecha.ToString("yyyy-MM-dd HH:mm:ss");
 
             return formto;
@@ -23,6 +23,15 @@ namespace utilitarios
         {
             DateTime fecha = Convert.ToDateTime(dp.Value.ToShortDateString());
             string formto = fecha.ToString("yyyy-MM-dd");
+
+            return formto;
+        }
+
+        public string fechaMy(string fech)
+        {
+            DateTime fecha = Convert.ToDateTime(fech);
+
+            string formto = fecha.ToString("yyyy-MM-dd HH:mm:ss");
 
             return formto;
         }
