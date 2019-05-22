@@ -14,6 +14,8 @@ namespace interfaces.ventas.auxiliares
     {
         bool ingresado = false;
         string nombre = "";
+        bool modificar = false;
+        string idcliente, genero;
 
         public bool Ingresado
         {
@@ -54,6 +56,45 @@ namespace interfaces.ventas.auxiliares
             }
         }
 
+        public bool Modificar
+        {
+            get
+            {
+                return modificar;
+            }
+
+            set
+            {
+                modificar = value;
+            }
+        }
+
+        public string Idcliente
+        {
+            get
+            {
+                return idcliente;
+            }
+
+            set
+            {
+                idcliente = value;
+            }
+        }
+
+        public string Genero
+        {
+            get
+            {
+                return genero;
+            }
+
+            set
+            {
+                genero = value;
+            }
+        }
+
         DataTable cli = null;
         conexiones_BD.clases.clientes cliente;
         public nuevo_cliente_simple()
@@ -70,6 +111,11 @@ namespace interfaces.ventas.auxiliares
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
             cargarListas();
+            if (modificar)
+            {
+                btnGuardar.Text = "Modificar";
+                listaGenero.SelectedIndex = listaGenero.FindString(this.genero);
+            }
         }
 
         private void nuevo_cliente_simple_MouseDown(object sender, MouseEventArgs e)
@@ -97,36 +143,56 @@ namespace interfaces.ventas.auxiliares
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!validar())
+            if (!this.modificar)
             {
-                if (!validarExistencias())
+                if (!validar())
                 {
-                    utilitarios.maneja_fechas fech = new utilitarios.maneja_fechas();
-                    cliente = new conexiones_BD.clases.clientes(
-                        codigo(),
-                        txtNombres.Text,
-                        txtApellidos.Text,
-                        txtDire.Text,
-                        "-",
-                        "-",
-                        "-",
-                        "-",
-                        "-",
-                        "-",
-                        "1",
-                        fech.fechaMysql(fecha),
-                        listaGenero.SelectedValue.ToString());
+                    if (!validarExistencias())
+                    {
+                        utilitarios.maneja_fechas fech = new utilitarios.maneja_fechas();
+                        cliente = new conexiones_BD.clases.clientes(
+                            codigo(),
+                            txtNombres.Text,
+                            txtApellidos.Text,
+                            txtDire.Text,
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "-",
+                            "1",
+                            fech.fechaMysql(fecha),
+                            listaGenero.SelectedValue.ToString());
 
 
-                    if (cliente.guardar(true) > 0)
+                        if (cliente.guardar(true) > 0)
+                        {
+                            ingresado = true;
+                            nombre = txtNombres.Text;
+                            this.Close();
+                        }
+                    }
+
+                }
+            }else
+            {
+                    if (!validar())
+                    {
+                        conexiones_BD.clases.clientes cl = new conexiones_BD.clases.clientes(
+                        idcliente, txtNombres.Text, txtApellidos.Text, txtDire.Text,
+                        listaGenero.SelectedValue.ToString()
+                        );
+
+                    if (cl.actualizarCliente())
                     {
                         ingresado = true;
                         nombre = txtNombres.Text;
                         this.Close();
                     }
                 }
-                
             }
+            
         }
 
         private void cargarListas()

@@ -8,7 +8,7 @@ using System.Data;
 
 namespace conexiones_BD.clases
 {
-    public class clientes:entidad
+    public class clientes : entidad
     {
         string idcliente, cod_cliente, nombre_cliente, apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero;
 
@@ -31,9 +31,18 @@ namespace conexiones_BD.clases
             base.cargarDatosModificados(generarCampos(), generarValores(), "clientes", idcliente, "idcliente");
         }
 
+        public clientes(string id, string nombres, string apellidos, string direcc, string gen)
+        {
+            idcliente = id;
+            nombre_cliente = nombres;
+            apellidos_cliente = apellidos;
+            direccion = direcc;
+            genero = gen;
+        }
+
         public clientes(string cod_cliente, string nombre_cliente,
-            string apellidos_cliente, string direccion, string dui, string nit, 
-            string ncr, string razon_social, string telefono, string correo, 
+            string apellidos_cliente, string direccion, string dui, string nit,
+            string ncr, string razon_social, string telefono, string correo,
             string iddescuento, string fecha_ingreso, string genero)
         {
             this.cod_cliente = cod_cliente;
@@ -120,6 +129,30 @@ where c.iddescuento = d.iddescuento
             }
 
             return Datos;
+        }
+
+        public bool actualizarCliente()
+        {
+            bool actualiza = false;
+            StringBuilder sentencia = new StringBuilder("UPDATE clientes SET ");
+            sentencia.Append("nombre_cliente ='" + this.nombre_cliente + "', ");
+            sentencia.Append("apellidos_cliente ='" + this.apellidos_cliente + "', ");
+            sentencia.Append("direccion ='" + this.direccion + "', ");
+            sentencia.Append("genero ='" + this.genero + "' WHERE(idcliente='" + idcliente + "');");
+
+            conexiones_BD.operaciones op = new operaciones();
+            Console.WriteLine(sentencia.ToString());
+
+            if (op.actualizar(sentencia.ToString()) > 0)
+            {
+                actualiza = true;
+            }
+            else
+            {
+                actualiza = false;
+            }
+
+            return actualiza;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace interfaces.ventas.panel
         string idticket_Buscado = null;
         Action accion;
         string correlativoAA, idcorrel;
+        DataRowView cliente = null;
 
         //DataTable producto_venta = null;
         DataTable pre_producto = null;
@@ -66,31 +67,31 @@ namespace interfaces.ventas.panel
         {
             ocultarDetalles();
         }
-        
+
         private void ocultarDetalles()
         {
-            if (Gcliente.Height == 137)
-            {
-                lblDi.Visible = false;
-                lblncr.Visible = false;
-                lblven.Visible = false;
-                txtDireccion.Visible = false;
-                txtncr.Visible = false;
-                listaVendedor.Visible = false;
-                Gcliente.Height = 75;
-                panelInferio.Height = 135;
-            }
-            else
-            {
-                lblDi.Visible = true;
-                lblncr.Visible = true;
-                lblven.Visible = true;
-                txtDireccion.Visible = true;
-                txtncr.Visible = true;
-                listaVendedor.Visible = true;
-                Gcliente.Height = 137;
-                panelInferio.Height = 198;
-            }
+            //if (Gcliente.Height == 137)
+            //{
+            //    lblDi.Visible = false;
+            //    lblncr.Visible = false;
+            //    lblven.Visible = false;
+            //    txtDireccion.Visible = false;
+            //    txtncr.Visible = false;
+            //    listaVendedor.Visible = false;
+            //    Gcliente.Height = 75;
+            //    panelInferio.Height = 135;
+            //}
+            //else
+            //{
+            //    lblDi.Visible = true;
+            //    lblncr.Visible = true;
+            //    lblven.Visible = true;
+            //    txtDireccion.Visible = true;
+            //    txtncr.Visible = true;
+            //    listaVendedor.Visible = true;
+            //    Gcliente.Height = 137;
+            //    panelInferio.Height = 198;
+            //}
         }
 
         private void cargaListas()
@@ -109,6 +110,7 @@ namespace interfaces.ventas.panel
                 listaVendedor.Enabled = false;
             }
             nuevoCliente();
+            
         }
 
         private void cargarTablas()
@@ -117,61 +119,61 @@ namespace interfaces.ventas.panel
             tabla.cargarSinContadorRegistros();
         }
 
-        private void cargarListaProductos()
-        {
+        //private void cargarListaProductos()
+        //{
             
-            if (chkCod.Checked)
-            {
-                if (sesion.Datos[3].Equals("Administradores"))
-                {
-                    utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "codigo", "idsp");
-                }
-                else
-                {
-                    utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "codigo", "idsp");
-                }
-                listaControl.Focus();
-                //lbltipoBusqueda.Text="Codigo:";
-            }
-            else if (chkNom.Checked)
-            {
-                if (sesion.Datos[3].Equals("Administradores"))
-                {
-                    utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "nombre", "idsp");
-                }
-                else
-                {
-                    utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "nombre", "idsp");
-                }
-                listaControl.Focus();
-                //lbltipoBusqueda.Text = "Nombre:";
-            }
-            else if (chkPres.Checked)
-            {
-                if (sesion.Datos[3].Equals("Administradores"))
-                {
-                    utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "prepro", "idsp");
-                }
-                else
-                {
-                    utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "prepro", "idsp");
-                }
-                listaControl.Focus();
-                //lbltipoBusqueda.Text = "Presentación:";
-            }
+        //    if (chkCod.Checked)
+        //    {
+        //        if (sesion.Datos[3].Equals("Administradores"))
+        //        {
+        //            utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "codigo", "idsp");
+        //        }
+        //        else
+        //        {
+        //            utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "codigo", "idsp");
+        //        }
+        //        listaControl.Focus();
+        //        //lbltipoBusqueda.Text="Codigo:";
+        //    }
+        //    else if (chkNom.Checked)
+        //    {
+        //        if (sesion.Datos[3].Equals("Administradores"))
+        //        {
+        //            utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "nombre", "idsp");
+        //        }
+        //        else
+        //        {
+        //            utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "nombre", "idsp");
+        //        }
+        //        listaControl.Focus();
+        //        //lbltipoBusqueda.Text = "Nombre:";
+        //    }
+        //    else if (chkPres.Checked)
+        //    {
+        //        if (sesion.Datos[3].Equals("Administradores"))
+        //        {
+        //            utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "prepro", "idsp");
+        //        }
+        //        else
+        //        {
+        //            utilitarios.cargandoListas.cargarLista(pre_producto, listaControl, "prepro", "idsp");
+        //        }
+        //        listaControl.Focus();
+        //        //lbltipoBusqueda.Text = "Presentación:";
+        //    }
 
  
             
-        }
+        //}
 
         private void venta_Load(object sender, EventArgs e)
         {
             relog.Start();
-
+            
             //  producto_venta = conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_X_SUCURSAL_VENTA(sesion.DatosRegistro[1]);
             Thread t = new Thread(creandoaccion);
             t.Start();
-
+            
         }
 
         private void creandoaccion()
@@ -181,6 +183,8 @@ namespace interfaces.ventas.panel
             {
                 Invoke(accion);
             }
+
+            
         }
 
         private void cargarTodo()
@@ -189,25 +193,24 @@ namespace interfaces.ventas.panel
 
 
             btnReimprimir.Enabled = false;
-            cargarListaProductos();
+            //cargarListaProductos();
             cargaListas();
             cargarTablas();
-            activacionCampoDocumento();
         }
 
         private void chkCod_CheckedChanged(object sender, EventArgs e)
         {
-            cargarListaProductos();
+            //cargarListaProductos();
         }
 
         private void chkPres_CheckedChanged(object sender, EventArgs e)
         {
-            cargarListaProductos();
+            //cargarListaProductos();
         }
 
         private void chkNom_CheckedChanged(object sender, EventArgs e)
         {
-            cargarListaProductos();
+            //cargarListaProductos();
         }
 
         private void venta_KeyUp(object sender, KeyEventArgs e)
@@ -253,10 +256,10 @@ namespace interfaces.ventas.panel
                 {
                     if (chkCod.Checked || chkNom.Checked)
                     {
-                        cantidadProductos();
+                        //cantidadProductos();
                     }else if(chkPres.Checked)
                     {
-                        cantidadProductoPrese();
+                        //cantidadProductoPrese();
                     } 
                 }
                 catch
@@ -267,234 +270,234 @@ namespace interfaces.ventas.panel
             }
         }
 
-        private void cantidadProductos()
-        {
-            auxiliares.producto_unica_presentacion pu = new auxiliares.producto_unica_presentacion();
-            DataRowView seleccion = (DataRowView)listaControl.SelectedItem;
-            auxiliares.productos_mas_presentaciones puu = new auxiliares.productos_mas_presentaciones();
+        //private void cantidadProductos()
+        //{
+        //    auxiliares.producto_unica_presentacion pu = new auxiliares.producto_unica_presentacion();
+        //    DataRowView seleccion = (DataRowView)listaControl.SelectedItem;
+        //    auxiliares.productos_mas_presentaciones puu = new auxiliares.productos_mas_presentaciones();
 
-            //si el articulos solo tiene una presentacion
-            if (seleccion.Row[3].ToString().Equals("1"))
-            {
-                pu.Idpresentacion_poroducto = seleccion.Row[8].ToString();
-                if (seleccion.Row[11].ToString().Equals("Detalle"))
-                {
-                    pu.TipoUtilidad = seleccion.Row[9].ToString();
-                }
-                else
-                {
-                    pu.TipoUtilidad = seleccion.Row[10].ToString();
-                }
-                    pu.Sucursal_producto = seleccion.Row[0].ToString();
-                    pu.Codigo = seleccion.Row[1].ToString();
-                    pu.lblExis.Text = seleccion.Row[6].ToString();
-                    pu.lblNombre.Text = seleccion.Row[2].ToString();
-                    pu.lblPres.Text = seleccion.Row[7].ToString();
-                    pu.lblPrecio.Text = "$" + seleccion.Row[5].ToString();
-                    pu.Precio = seleccion.Row[5].ToString();
-                    pu.txtCantidad.Value = 1;
-                    pu.CantidadInter = "1";
+        //    //si el articulos solo tiene una presentacion
+        //    if (seleccion.Row[3].ToString().Equals("1"))
+        //    {
+        //        pu.Idpresentacion_poroducto = seleccion.Row[8].ToString();
+        //        if (seleccion.Row[11].ToString().Equals("Detalle"))
+        //        {
+        //            pu.TipoUtilidad = seleccion.Row[9].ToString();
+        //        }
+        //        else
+        //        {
+        //            pu.TipoUtilidad = seleccion.Row[10].ToString();
+        //        }
+        //            pu.Sucursal_producto = seleccion.Row[0].ToString();
+        //            pu.Codigo = seleccion.Row[1].ToString();
+        //            pu.lblExis.Text = seleccion.Row[6].ToString();
+        //            pu.lblNombre.Text = seleccion.Row[2].ToString();
+        //            pu.lblPres.Text = seleccion.Row[7].ToString();
+        //            pu.lblPrecio.Text = "$" + seleccion.Row[5].ToString();
+        //            pu.Precio = seleccion.Row[5].ToString();
+        //            pu.txtCantidad.Value = 1;
+        //            pu.CantidadInter = "1";
 
-                pu.ShowDialog();
-                if (pu.Llenado)
-                {
-                    //si la tabla esta vacia
-                    if (tabla_articulos.Rows.Count == 0)
-                    {
-                        barraDeprogreso(10);
-                        tabla_articulos.Rows.Add(
-                        "",
-                        pu.Codigo,
-                        pu.lblNombre.Text,
-                        pu.lblPres.Text,
-                        pu.txtCantidad.Value.ToString(),
-                        pu.Precio,
-                        pu.Total,
-                        pu.Idpresentacion_poroducto,
-                        pu.Utilidad,
-                        "",
-                        "1",
-                        pu.lblExis.Text,
-                        pu.Sucursal_producto
-                        );
+        //        pu.ShowDialog();
+        //        if (pu.Llenado)
+        //        {
+        //            //si la tabla esta vacia
+        //            if (tabla_articulos.Rows.Count == 0)
+        //            {
+        //                barraDeprogreso(10);
+        //                tabla_articulos.Rows.Add(
+        //                "",
+        //                pu.Codigo,
+        //                pu.lblNombre.Text,
+        //                pu.lblPres.Text,
+        //                pu.txtCantidad.Value.ToString(),
+        //                pu.Precio,
+        //                pu.Total,
+        //                pu.Idpresentacion_poroducto,
+        //                pu.Utilidad,
+        //                "",
+        //                "1",
+        //                pu.lblExis.Text,
+        //                pu.Sucursal_producto
+        //                );
                         
-                    }else
-                    {
-                        //si el articulo no esta repetido
-                        if(!productoRepetido(pu.Idpresentacion_poroducto, pu.txtCantidad.Value.ToString()))
-                        {
-                            barraDeprogreso(10);
-                            tabla_articulos.Rows.Add(
-                        "",
-                        pu.Codigo,
-                        pu.lblNombre.Text,
-                        pu.lblPres.Text,
-                        pu.txtCantidad.Value.ToString(),
-                        pu.Precio,
-                        pu.Total,
-                        pu.Idpresentacion_poroducto,
-                        pu.Utilidad,
-                        "",
-                        "1",
-                        pu.lblExis.Text,
-                        pu.Sucursal_producto
-                        );
-                        }
+        //            }else
+        //            {
+        //                //si el articulo no esta repetido
+        //                if(!productoRepetido(pu.Idpresentacion_poroducto, pu.txtCantidad.Value.ToString()))
+        //                {
+        //                    barraDeprogreso(10);
+        //                    tabla_articulos.Rows.Add(
+        //                "",
+        //                pu.Codigo,
+        //                pu.lblNombre.Text,
+        //                pu.lblPres.Text,
+        //                pu.txtCantidad.Value.ToString(),
+        //                pu.Precio,
+        //                pu.Total,
+        //                pu.Idpresentacion_poroducto,
+        //                pu.Utilidad,
+        //                "",
+        //                "1",
+        //                pu.lblExis.Text,
+        //                pu.Sucursal_producto
+        //                );
+        //                }
                         
-                    }
+        //            }
                     
-                    utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
-                    cargarListaProductos();
-                    calcularTotales();
-                }
-                //cuando hay mas de dos presentaciones
-            }else
-            {
-                puu.Sucursal_producto = seleccion.Row[0].ToString();
-                puu.IdsucursalProducto = seleccion.Row[0].ToString();
-                puu.Codigo = seleccion.Row[1].ToString();
-                puu.UtilidadD = seleccion.Row[9].ToString();
-                puu.UtiliadM = seleccion.Row[10].ToString();
-                puu.lblExis.Text = seleccion.Row[6].ToString();
-                puu.lblNombre.Text = seleccion.Row[2].ToString();
+        //            utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
+        //            cargarListaProductos();
+        //            calcularTotales();
+        //        }
+        //        //cuando hay mas de dos presentaciones
+        //    }else
+        //    {
+        //        puu.Sucursal_producto = seleccion.Row[0].ToString();
+        //        puu.IdsucursalProducto = seleccion.Row[0].ToString();
+        //        puu.Codigo = seleccion.Row[1].ToString();
+        //        puu.UtilidadD = seleccion.Row[9].ToString();
+        //        puu.UtiliadM = seleccion.Row[10].ToString();
+        //        puu.lblExis.Text = seleccion.Row[6].ToString();
+        //        puu.lblNombre.Text = seleccion.Row[2].ToString();
 
-                puu.ShowDialog();
+        //        puu.ShowDialog();
 
-                if (puu.Llenado)
-                {
-                    if (tabla_articulos.Rows.Count == 0)
-                    {
-                        barraDeprogreso(10);
-                        tabla_articulos.Rows.Add(
-                        "",
-                        puu.Codigo,
-                        puu.lblNombre.Text,
-                        puu.Presentacion,
-                        puu.txtCantidad.Value.ToString(),
-                        puu.Precio,
-                        puu.Total,
-                        puu.Idpresentacion_poroducto,
-                        puu.Utilidad,
-                        "",
-                        puu.Cantidad_interna,
-                        puu.lblExis.Text,
-                        puu.Sucursal_producto
-                        );
-                    }
-                    else
-                    {
+        //        if (puu.Llenado)
+        //        {
+        //            if (tabla_articulos.Rows.Count == 0)
+        //            {
+        //                barraDeprogreso(10);
+        //                tabla_articulos.Rows.Add(
+        //                "",
+        //                puu.Codigo,
+        //                puu.lblNombre.Text,
+        //                puu.Presentacion,
+        //                puu.txtCantidad.Value.ToString(),
+        //                puu.Precio,
+        //                puu.Total,
+        //                puu.Idpresentacion_poroducto,
+        //                puu.Utilidad,
+        //                "",
+        //                puu.Cantidad_interna,
+        //                puu.lblExis.Text,
+        //                puu.Sucursal_producto
+        //                );
+        //            }
+        //            else
+        //            {
 
-                        if (!revisarExistencias(puu.IdsucursalProducto, puu.txtCantidad.Value.ToString(), puu.Cantidad_interna))
-                        {
-                            if (!productoRepetido(puu.Idpresentacion_poroducto, puu.txtCantidad.Value.ToString()))
-                            {
-                                barraDeprogreso(10);
-                                tabla_articulos.Rows.Add(
-                            "",
-                            puu.Codigo,
-                            puu.lblNombre.Text,
-                            puu.Presentacion,
-                            puu.txtCantidad.Value.ToString(),
-                            puu.Precio,
-                            puu.Total,
-                            puu.Idpresentacion_poroducto,
-                            puu.Utilidad,
-                            "",
-                            puu.Cantidad_interna,
-                            puu.lblExis.Text,
-                            puu.Sucursal_producto
-                            );
-                            }
-                        }
+        //                if (!revisarExistencias(puu.IdsucursalProducto, puu.txtCantidad.Value.ToString(), puu.Cantidad_interna))
+        //                {
+        //                    if (!productoRepetido(puu.Idpresentacion_poroducto, puu.txtCantidad.Value.ToString()))
+        //                    {
+        //                        barraDeprogreso(10);
+        //                        tabla_articulos.Rows.Add(
+        //                    "",
+        //                    puu.Codigo,
+        //                    puu.lblNombre.Text,
+        //                    puu.Presentacion,
+        //                    puu.txtCantidad.Value.ToString(),
+        //                    puu.Precio,
+        //                    puu.Total,
+        //                    puu.Idpresentacion_poroducto,
+        //                    puu.Utilidad,
+        //                    "",
+        //                    puu.Cantidad_interna,
+        //                    puu.lblExis.Text,
+        //                    puu.Sucursal_producto
+        //                    );
+        //                    }
+        //                }
 
                         
                           
-                    }
-                }
-                utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
-                cargarListaProductos();
-                calcularTotales();
+        //            }
+        //        }
+        //        utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
+        //        cargarListaProductos();
+        //        calcularTotales();
                 
-            }
-        }
+        //    }
+        //}
 
-        private void cantidadProductoPrese()
-        {
-            auxiliares.producto_unica_presentacion pu = new auxiliares.producto_unica_presentacion();
-            DataRowView seleccion = (DataRowView)listaControl.SelectedItem;
+        //private void cantidadProductoPrese()
+        //{
+        //    auxiliares.producto_unica_presentacion pu = new auxiliares.producto_unica_presentacion();
+        //    DataRowView seleccion = (DataRowView)listaControl.SelectedItem;
 
-            pu.Idpresentacion_poroducto = seleccion.Row[6].ToString();
-            if (seleccion.Row[9].ToString().Equals("Detalle"))
-            {
-                pu.TipoUtilidad = seleccion.Row[7].ToString();
-            }
-            else
-            {
-                pu.TipoUtilidad = seleccion.Row[8].ToString();
-            }
-            pu.Sucursal_producto = seleccion.Row[0].ToString();
-            pu.Codigo = seleccion.Row[1].ToString();
-            pu.lblExis.Text = seleccion.Row[4].ToString();
-            pu.lblNombre.Text = seleccion.Row[2].ToString();
-            pu.lblPres.Text = seleccion.Row[5].ToString();
-            pu.lblPrecio.Text = "$" + seleccion.Row[3].ToString();
-            pu.Precio = seleccion.Row[3].ToString();
-            pu.txtCantidad.Value = 1;
-            pu.CantidadInter= seleccion.Row[10].ToString();
+        //    pu.Idpresentacion_poroducto = seleccion.Row[6].ToString();
+        //    if (seleccion.Row[9].ToString().Equals("Detalle"))
+        //    {
+        //        pu.TipoUtilidad = seleccion.Row[7].ToString();
+        //    }
+        //    else
+        //    {
+        //        pu.TipoUtilidad = seleccion.Row[8].ToString();
+        //    }
+        //    pu.Sucursal_producto = seleccion.Row[0].ToString();
+        //    pu.Codigo = seleccion.Row[1].ToString();
+        //    pu.lblExis.Text = seleccion.Row[4].ToString();
+        //    pu.lblNombre.Text = seleccion.Row[2].ToString();
+        //    pu.lblPres.Text = seleccion.Row[5].ToString();
+        //    pu.lblPrecio.Text = "$" + seleccion.Row[3].ToString();
+        //    pu.Precio = seleccion.Row[3].ToString();
+        //    pu.txtCantidad.Value = 1;
+        //    pu.CantidadInter= seleccion.Row[10].ToString();
 
-            pu.ShowDialog();
-            if (pu.Llenado)
-            {
-                if (tabla_articulos.Rows.Count == 0)
-                {
-                    barraDeprogreso(10);
-                    tabla_articulos.Rows.Add(
-                    "",
-                    pu.Codigo,
-                    pu.lblNombre.Text,
-                    pu.lblPres.Text,
-                    pu.txtCantidad.Value.ToString(),
-                    pu.Precio,
-                    pu.Total,
-                    pu.Idpresentacion_poroducto,
-                    pu.Utilidad,
-                    "",
-                    pu.CantidadInter,
-                    pu.lblExis.Text,
-                    pu.Sucursal_producto
-                    );
+        //    pu.ShowDialog();
+        //    if (pu.Llenado)
+        //    {
+        //        if (tabla_articulos.Rows.Count == 0)
+        //        {
+        //            barraDeprogreso(10);
+        //            tabla_articulos.Rows.Add(
+        //            "",
+        //            pu.Codigo,
+        //            pu.lblNombre.Text,
+        //            pu.lblPres.Text,
+        //            pu.txtCantidad.Value.ToString(),
+        //            pu.Precio,
+        //            pu.Total,
+        //            pu.Idpresentacion_poroducto,
+        //            pu.Utilidad,
+        //            "",
+        //            pu.CantidadInter,
+        //            pu.lblExis.Text,
+        //            pu.Sucursal_producto
+        //            );
 
-                }
-                else
-                {
-                    if (!productoRepetido(pu.Idpresentacion_poroducto, pu.txtCantidad.Value.ToString()))
-                    {
-                        barraDeprogreso(10);
-                        tabla_articulos.Rows.Add(
-                    "",
-                    pu.Codigo,
-                    pu.lblNombre.Text,
-                    pu.lblPres.Text,
-                    pu.txtCantidad.Value.ToString(),
-                    pu.Precio,
-                    pu.Total,
-                    pu.Idpresentacion_poroducto,
-                    pu.Utilidad,
-                    "",
-                    pu.CantidadInter,
-                    pu.lblExis.Text,
-                    pu.Sucursal_producto
-                    );
-                    }
+        //        }
+        //        else
+        //        {
+        //            if (!productoRepetido(pu.Idpresentacion_poroducto, pu.txtCantidad.Value.ToString()))
+        //            {
+        //                barraDeprogreso(10);
+        //                tabla_articulos.Rows.Add(
+        //            "",
+        //            pu.Codigo,
+        //            pu.lblNombre.Text,
+        //            pu.lblPres.Text,
+        //            pu.txtCantidad.Value.ToString(),
+        //            pu.Precio,
+        //            pu.Total,
+        //            pu.Idpresentacion_poroducto,
+        //            pu.Utilidad,
+        //            "",
+        //            pu.CantidadInter,
+        //            pu.lblExis.Text,
+        //            pu.Sucursal_producto
+        //            );
+        //            }
 
-                }
+        //        }
 
-                utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
-                cargarListaProductos();
-                calcularTotales();
-            }
+        //        utilitarios.cargar_tablas.correlativoTabla(tabla_articulos);
+        //        cargarListaProductos();
+        //        calcularTotales();
+        //    }
 
-        }
+        //}
 
         private bool productoRepetido(string idpr_pro, string cant)
         {
@@ -661,10 +664,10 @@ namespace interfaces.ventas.panel
                         txtDireccion.Text = "";
                         cargarTablas();
 
-                        if (Gcliente.Height==137)
-                        {
-                            ocultarDetalles();
-                        }
+                        //if (Gcliente.Height==137)
+                        //{
+                        //    ocultarDetalles();
+                        //}
                         
                     }
                     else
@@ -703,10 +706,10 @@ namespace interfaces.ventas.panel
                 {
                     valido = true;
                     error.SetError(txtncr, "Tienes que digitar un numero de documento");
-                    if (Gcliente.Height != 137)
-                    {
-                        ocultarDetalles();
-                    }
+                    //if (Gcliente.Height != 137)
+                    //{
+                    //    ocultarDetalles();
+                    //}
                 }
             }
 
@@ -900,56 +903,58 @@ namespace interfaces.ventas.panel
         {
             if (listaClientes.SelectedValue == null)
             {
-                if (MessageBox.Show("¿Deseas ingresar un nuevo cliente?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    auxiliares.nuevo_cliente_simple cli = new auxiliares.nuevo_cliente_simple();
-                    cli.Cli = conexiones_BD.clases.clientes.datosTabla();
-                    cli.txtNombres.Text = listaClientes.Text;
-                    cli.txtApellidos.Text = "-";
-                    cli.txtDire.Text = "-";
-                    cli.ShowDialog();
-                    if (cli.Ingresado)
-                    {
-                        listaClientes.DataSource = null;
-                        listaClientes.Items.Clear();
-                        utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
-                        listaClientes.SelectedIndex = listaClientes.FindString(cli.Nombre);
-                        ocultarDetalles();
-                    }
-                }else
-                {
-                    cargaListas();
-                }
+                ingresandoNuevoCliente();
             }else
             {
                 DataRowView seleccion = (DataRowView)listaClientes.SelectedItem;
                 txtDireccion.Text = seleccion.Row[4].ToString();
-                ocultarDetalles();
-                colocarFoco();
-                
+                colocarFoco();      
             }
         }
 
+        private void ingresandoNuevoCliente()
+        {
+            if (MessageBox.Show("¿Deseas ingresar un nuevo cliente?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                auxiliares.nuevo_cliente_simple cli = new auxiliares.nuevo_cliente_simple();
+                cli.Cli = conexiones_BD.clases.clientes.datosTabla();
+                cli.txtNombres.Text = listaClientes.Text;
+                cli.txtApellidos.Text = "-";
+                cli.txtDire.Text = "-";
+                cli.ShowDialog();
+                if (cli.Ingresado)
+                {
+                    listaClientes.DataSource = null;
+                    listaClientes.Items.Clear();
+                    utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
+                    listaClientes.SelectedIndex = listaClientes.FindString(cli.Nombre);
+                }
+            }
+            else
+            {
+                cargaListas();
+            }
+        }
         private void activacionCampoDocumento()
         {
             if (listaTipoFactura.SelectedIndex==0)
             {
                 txtncr.Enabled = false;
                 txtncr.Text = "";
-                if (Gcliente.Height == 137)
-                {
-                    ocultarDetalles();
-                }
+                //if (Gcliente.Height == 137)
+                //{
+                //    ocultarDetalles();
+                //}
             }
             else
             {
                 txtncr.Enabled = true;
                 txtncr.Text = "";
                 txtncr.Focus();
-                if(Gcliente.Height != 137)
-                {
-                    ocultarDetalles();
-                }
+                //if(Gcliente.Height != 137)
+                //{
+                //    ocultarDetalles();
+                //}
             }
 
         }
@@ -974,6 +979,7 @@ namespace interfaces.ventas.panel
             if (listaTipoFactura.SelectedValue != null)
             {
                 activacionCampoDocumento();
+                
             }
         }
 
@@ -981,7 +987,7 @@ namespace interfaces.ventas.panel
         {
             if (e.KeyCode == Keys.Enter)
             {
-                listaControl.Focus();
+                //listaControl.Focus();
                 ocultarDetalles();
             }
         }
@@ -1667,11 +1673,6 @@ namespace interfaces.ventas.panel
             }
         }
 
-        private void listaClientes_Enter(object sender, EventArgs e)
-        {
-            ocultarDetalles();
-        }
-
         private void relog_Tick(object sender, EventArgs e)
         {
             lblrelog.Text = DateTime.Now.ToString();
@@ -1680,6 +1681,48 @@ namespace interfaces.ventas.panel
         private void fecha_actual_TabIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listaClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listaClientes.SelectedValue != null)
+            {
+                clienteSeleccionado();
+            }
+        }
+
+        private void clienteSeleccionado()
+        {
+            cliente = (DataRowView)listaClientes.SelectedItem;
+            txtDireccion.Text = cliente.Row[4].ToString();
+            colocarFoco();
+        }
+
+        private void btnActualizarInformación_Click(object sender, EventArgs e)
+        {
+            actualizarCliente();
+        }
+
+        private void actualizarCliente()
+        {
+            auxiliares.nuevo_cliente_simple clie = new auxiliares.nuevo_cliente_simple();
+            clie.Modificar = true;
+            clie.Idcliente = cliente.Row[0].ToString();
+            clie.txtNombres.Text = cliente.Row[2].ToString();
+            clie.txtApellidos.Text = cliente.Row[3].ToString();
+            clie.txtDire.Text = cliente.Row[4].ToString();
+            clie.Genero = cliente.Row[13].ToString();
+
+
+            clie.ShowDialog();
+
+            if (clie.Ingresado)
+            {
+                listaClientes.DataSource = null;
+                listaClientes.Items.Clear();
+                utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
+                listaClientes.SelectedIndex = listaClientes.FindString(clie.Nombre);
+            }
         }
 
         private void btnAsingarNuevocodigo_Click(object sender, EventArgs e)
