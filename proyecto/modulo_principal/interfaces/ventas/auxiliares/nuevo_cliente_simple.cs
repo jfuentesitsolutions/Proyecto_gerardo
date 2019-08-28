@@ -165,9 +165,13 @@ namespace interfaces.ventas.auxiliares
                             fech.fechaMysql(fecha),
                             listaGenero.SelectedValue.ToString());
 
+                        long res=cliente.ingresandoCliente(true);
+                        
 
-                        if (cliente.guardar(true) > 0)
+                        if ( res > 0)
                         {
+                            idcliente = res.ToString();
+                            System.Console.Write("El codigo asignado al cliente es: "+res);
                             ingresado = true;
                             nombre = txtNombres.Text;
                             this.Close();

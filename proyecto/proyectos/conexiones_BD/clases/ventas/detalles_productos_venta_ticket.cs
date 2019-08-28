@@ -9,7 +9,9 @@ namespace conexiones_BD.clases.ventas
 {
     public class detalles_productos_venta_ticket:entidad
     {
-        string iddetalle_ventas_ticket, idpresentacion_producto, cantidad, precio_venta, total, utilidad, idventa_ticket, idsucursal_producto, cantidad_paquete, codigo;
+        string iddetalle_ventas_ticket, idpresentacion_producto, cantidad, 
+            precio_venta, total, utilidad, idventa_ticket, idsucursal_producto,
+            cantidad_paquete, codigo;
 
         public detalles_productos_venta_ticket(string iddetalle_ventas_ticket, string idpresentacion_producto, string cantidad, string precio_venta, string total, string utilidad, string idventa_ticket, string idsuc, string capa, string cod)
         {

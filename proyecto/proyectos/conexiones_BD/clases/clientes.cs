@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace conexiones_BD.clases
 {
@@ -12,11 +12,37 @@ namespace conexiones_BD.clases
     {
         string idcliente, cod_cliente, nombre_cliente, apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero;
 
+        public string Cod_cliente
+        {
+            get
+            {
+                return cod_cliente;
+            }
+
+            set
+            {
+                cod_cliente = value;
+            }
+        }
+
+        public string Nombre_cliente
+        {
+            get
+            {
+                return nombre_cliente;
+            }
+
+            set
+            {
+                nombre_cliente = value;
+            }
+        }
+
         public clientes(string idcliente, string cod_cliente, string nombre_cliente, string apellidos_cliente, string direccion, string dui, string nit, string ncr, string razon_social, string telefono, string correo, string iddescuento, string fecha_ingreso, string genero)
         {
             this.idcliente = idcliente;
-            this.cod_cliente = cod_cliente;
-            this.nombre_cliente = nombre_cliente;
+            this.Cod_cliente = cod_cliente;
+            this.Nombre_cliente = nombre_cliente;
             this.apellidos_cliente = apellidos_cliente;
             this.direccion = direccion;
             this.dui = dui;
@@ -34,7 +60,7 @@ namespace conexiones_BD.clases
         public clientes(string id, string nombres, string apellidos, string direcc, string gen)
         {
             idcliente = id;
-            nombre_cliente = nombres;
+            Nombre_cliente = nombres;
             apellidos_cliente = apellidos;
             direccion = direcc;
             genero = gen;
@@ -45,8 +71,8 @@ namespace conexiones_BD.clases
             string ncr, string razon_social, string telefono, string correo,
             string iddescuento, string fecha_ingreso, string genero)
         {
-            this.cod_cliente = cod_cliente;
-            this.nombre_cliente = nombre_cliente;
+            this.Cod_cliente = cod_cliente;
+            this.Nombre_cliente = nombre_cliente;
             this.apellidos_cliente = apellidos_cliente;
             this.direccion = direccion;
             this.dui = dui;
@@ -94,8 +120,8 @@ namespace conexiones_BD.clases
         public override List<string> generarValores()
         {
             List<string> valores = new List<string>();
-            valores.Add(cod_cliente);
-            valores.Add(nombre_cliente);
+            valores.Add(Cod_cliente);
+            valores.Add(Nombre_cliente);
             valores.Add(apellidos_cliente);
             valores.Add(direccion);
             valores.Add(dui);
@@ -135,7 +161,7 @@ where c.iddescuento = d.iddescuento
         {
             bool actualiza = false;
             StringBuilder sentencia = new StringBuilder("UPDATE clientes SET ");
-            sentencia.Append("nombre_cliente ='" + this.nombre_cliente + "', ");
+            sentencia.Append("nombre_cliente ='" + this.Nombre_cliente + "', ");
             sentencia.Append("apellidos_cliente ='" + this.apellidos_cliente + "', ");
             sentencia.Append("direccion ='" + this.direccion + "', ");
             sentencia.Append("genero ='" + this.genero + "' WHERE(idcliente='" + idcliente + "');");
@@ -153,6 +179,67 @@ where c.iddescuento = d.iddescuento
             }
 
             return actualiza;
+        }
+
+        public static DataTable datosClientes()
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Consulta = @"select concat(e.nombre_cliente,' ', e.apellidos_cliente) as nombre, e.nombre_cliente, e.apellidos_cliente, e.idcliente, e.cod_cliente, e.direccion,
+                        e.genero
+                        from clientes e
+                        ; ";
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
+        public long ingresandoCliente(bool r)
+        {
+            StringBuilder sentencia = new StringBuilder(@"INSERT clientes (cod_cliente, nombre_cliente, 
+                apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero) VALUES (");
+            sentencia.Append("'" + cod_cliente + "',");
+            sentencia.Append("'" + nombre_cliente + "',");
+            sentencia.Append("'" + apellidos_cliente + "',");
+            sentencia.Append("'" + direccion + "',");
+            sentencia.Append("'" + dui + "',");
+            sentencia.Append("'" + nit + "',");
+            sentencia.Append("'" + ncr + "',");
+            sentencia.Append("'" + razon_social + "',");
+            sentencia.Append("'" + telefono + "',");
+            sentencia.Append("'" + correo + "',");
+            sentencia.Append("'" + iddescuento + "',");
+            sentencia.Append("'" + fecha_ingreso + "',");
+            sentencia.Append("'" + genero + "');");
+
+            conexiones_BD.operaciones op = new operaciones();
+            long respuesta = op.insertar(sentencia.ToString());
+
+            if (respuesta > 0)
+            {
+                if (r)
+                {
+                    MessageBox.Show("El registro se ingreso correctamente", "Registro ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro", "No se pudo agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return respuesta;
+
+            }
+            else
+            {
+                return respuesta = 0;
+            }
         }
     }
 }

@@ -21,13 +21,15 @@ namespace interfaces.ventas.panel
         //DataTable tipo_factura = conexiones_BD.clases.tipos_factura.datosTabla();
         //DataTable cliente = conexiones_BD.clases.clientes.datosTabla();
         //DataTable vendedor = conexiones_BD.clases.usuarios.datosTabla();
-        utilitarios.cargar_tablas tabla;
+        utilitarios.cargar_tablas tabla, tablaC;
         string cantiAn, precioAn;
-        bool busqueda = false;
+        bool busqueda = false, busquedaC=false;
         string idticket_Buscado = null;
         Action accion;
         string correlativoAA, idcorrel;
         DataRowView cliente = null;
+        List<string> lista = new List<string>();
+        List<string> lista_p = new List<string>();
 
         //DataTable producto_venta = null;
         DataTable pre_producto = null;
@@ -100,8 +102,8 @@ namespace interfaces.ventas.panel
             listaFormaPago.SelectedValue = "1";
             utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.tipos_factura.datosTabla(), listaTipoFactura, "nombre", "idtipo_factura");
             listaTipoFactura.SelectedValue = "1";
-            utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
-            listaClientes.SelectedValue = "1";
+            //utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
+            //listaClientes.SelectedValue = "1";
 
             utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.usuarios.datosTabla(), listaVendedor, "usuario", "idusuario");
             listaVendedor.Text = sesion.Datos[0];
@@ -109,7 +111,7 @@ namespace interfaces.ventas.panel
             {
                 listaVendedor.Enabled = false;
             }
-            nuevoCliente();
+            //nuevoCliente();
             
         }
 
@@ -117,6 +119,10 @@ namespace interfaces.ventas.panel
         {
             tabla = new utilitarios.cargar_tablas(tablad, txtBusqueda, conexiones_BD.clases.productos.CARGAR_TABLA_PRODUCTOS_X_SUCURSAL_VENTA(sesion.DatosRegistro[1]), "productoCod");
             tabla.cargarSinContadorRegistros();
+
+            tablaC = new utilitarios.cargar_tablas(tabla_clientes, txtBuscarCliente, conexiones_BD.clases.clientes.datosClientes(), "nombre");
+            tablaC.cargarSinContadorRegistros();
+
         }
 
         //private void cargarListaProductos()
@@ -196,6 +202,20 @@ namespace interfaces.ventas.panel
             //cargarListaProductos();
             cargaListas();
             cargarTablas();
+            txtBuscarCliente.Text = tabla_clientes.Rows[0].Cells[0].Value.ToString();
+            txtDireccion.Text = tabla_clientes.Rows[0].Cells[5].Value.ToString();
+
+            lista.Add(tabla_clientes.Rows[0].Cells[3].Value.ToString());
+            lista.Add(tabla_clientes.Rows[0].Cells[1].Value.ToString());
+            lista.Add(tabla_clientes.Rows[0].Cells[2].Value.ToString());
+            lista.Add(tabla_clientes.Rows[0].Cells[5].Value.ToString());
+            lista.Add(tabla_clientes.Rows[0].Cells[6].Value.ToString());
+
+            lista_p.Clear();
+            lista.ForEach(c => lista_p.Add(c));
+
+
+
         }
 
         private void chkCod_CheckedChanged(object sender, EventArgs e)
@@ -217,7 +237,7 @@ namespace interfaces.ventas.panel
         {
             if (e.KeyCode == Keys.F1)
             {
-                chkCod.Checked = true;
+                txtBuscarCliente.Focus();
             }
             else if (e.KeyCode == Keys.F2)
             {
@@ -639,7 +659,7 @@ namespace interfaces.ventas.panel
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
                 "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
                 correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
-                this.total, "1", efec, cam, listaClientes.SelectedValue.ToString(), idcorre);
+                this.total, "1", efec, cam, lista[0], idcorre);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
             Int32 res = op.transaccionVentasTickets(retornoProductos(), ticke);
@@ -660,9 +680,19 @@ namespace interfaces.ventas.panel
                         txtBusqueda.Focus();
                         tablad.Visible = false;
                         tablad.DataSource = null;
+                        tabla_clientes.DataSource = null;
                         cargaListas();
-                        txtDireccion.Text = "";
-                        cargarTablas();
+                    cargarTablas();
+
+                    lista.Clear();
+                    lista_p.ForEach(c => lista.Add(c));
+                       
+                        txtDireccion.Text = lista_p[3];
+                        txtBuscarCliente.Text = lista_p[1]+" "+lista_p[2];
+
+                    tabla_clientes.Visible = false;
+                    System.Console.Write(lista[1]);
+                        
 
                         //if (Gcliente.Height==137)
                         //{
@@ -717,6 +747,12 @@ namespace interfaces.ventas.panel
             {
                 valido = true;
                 error.SetError(tabla_articulos, "Tienes que gregar articulos al detalle");
+            }
+
+            if (lista.Count == 0)
+            {
+                valido = true;
+                error.SetError(txtBuscarCliente, "Tienes que insertar un cliente");
             }
 
             return valido;
@@ -881,10 +917,10 @@ namespace interfaces.ventas.panel
 
         private void listaClientes_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            /*if (e.KeyCode == Keys.Enter)
             {
                 this.nuevoCliente();
-            }
+            }*/
         }
 
         private void tabla_articulos_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -901,15 +937,11 @@ namespace interfaces.ventas.panel
 
         private void nuevoCliente()
         {
-            if (listaClientes.SelectedValue == null)
+            if (txtBuscarCliente.TextLength != 0)
             {
                 ingresandoNuevoCliente();
-            }else
-            {
-                DataRowView seleccion = (DataRowView)listaClientes.SelectedItem;
-                txtDireccion.Text = seleccion.Row[4].ToString();
-                colocarFoco();      
             }
+                
         }
 
         private void ingresandoNuevoCliente()
@@ -918,23 +950,34 @@ namespace interfaces.ventas.panel
             {
                 auxiliares.nuevo_cliente_simple cli = new auxiliares.nuevo_cliente_simple();
                 cli.Cli = conexiones_BD.clases.clientes.datosTabla();
-                cli.txtNombres.Text = listaClientes.Text;
+                cli.txtNombres.Text = txtBuscarCliente.Text;
                 cli.txtApellidos.Text = "-";
                 cli.txtDire.Text = "-";
                 cli.ShowDialog();
                 if (cli.Ingresado)
                 {
-                    listaClientes.DataSource = null;
-                    listaClientes.Items.Clear();
-                    utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
-                    listaClientes.SelectedIndex = listaClientes.FindString(cli.Nombre);
-                }
+                    cargarTablas();
+
+                    lista.Clear();
+                    lista.Add(cli.Idcliente);
+                    lista.Add(cli.txtNombres.Text);
+                    lista.Add(cli.txtApellidos.Text);
+                    lista.Add(cli.txtDire.Text);
+                    lista.Add(cli.listaGenero.SelectedValue.ToString());
+
+                    txtBuscarCliente.Text = lista[1]+" "+lista[2];
+                    txtDireccion.Text = lista[3];
+                    txtBuscarCliente.Focus();
+                    tabla_clientes.Visible = false;
+                    
+      }
             }
             else
             {
-                cargaListas();
+                cargarTablas();
             }
         }
+
         private void activacionCampoDocumento()
         {
             if (listaTipoFactura.SelectedIndex==0)
@@ -1685,10 +1728,10 @@ namespace interfaces.ventas.panel
 
         private void listaClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listaClientes.SelectedValue != null)
+            /*if(listaClientes.SelectedValue != null)
             {
                 clienteSeleccionado();
-            }
+            }*/
         }
 
         private void clienteSeleccionado()
@@ -1703,25 +1746,116 @@ namespace interfaces.ventas.panel
             actualizarCliente();
         }
 
+        private void txtBuscarCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            busquedaC = true;
+        }
+
+        private void txtBuscarCliente_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                tabla_clientes.Visible = false;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                    tabla_clientes.Focus();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {       
+                    if (busquedaC)
+                    {
+                        tabla_clientes.Focus();
+                        colocandoCliente();
+                    txtBusqueda.Focus();      
+                    }
+            }
+        }
+
+        private void tabla_clientes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void tabla_clientes_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    if (busquedaC)
+                    {
+                        colocandoCliente();
+                        busquedaC = false;
+                        txtBusqueda.Focus();
+                    }
+
+                }
+                catch
+                {
+
+                }
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                busquedaC = false;
+                txtBuscarCliente.Text = "";
+                txtBuscarCliente.Focus();
+                tabla_clientes.Visible = false;
+            }
+        }
+
         private void actualizarCliente()
         {
             auxiliares.nuevo_cliente_simple clie = new auxiliares.nuevo_cliente_simple();
             clie.Modificar = true;
-            clie.Idcliente = cliente.Row[0].ToString();
-            clie.txtNombres.Text = cliente.Row[2].ToString();
-            clie.txtApellidos.Text = cliente.Row[3].ToString();
-            clie.txtDire.Text = cliente.Row[4].ToString();
-            clie.Genero = cliente.Row[13].ToString();
+            clie.Idcliente = lista[0];
+            clie.txtNombres.Text = lista[1];
+            clie.txtApellidos.Text = lista[2];
+            clie.txtDire.Text = lista[3];
+            clie.Genero = lista[4];
 
 
             clie.ShowDialog();
 
             if (clie.Ingresado)
             {
-                listaClientes.DataSource = null;
-                listaClientes.Items.Clear();
-                utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.clientes.datosTabla(), listaClientes, "nom", "idcliente");
-                listaClientes.SelectedIndex = listaClientes.FindString(clie.Nombre);
+                cargarTablas();
+                txtDireccion.Text = clie.txtDire.Text;
+                lista.Clear();
+                lista.Add(clie.Idcliente);
+                lista.Add(clie.txtNombres.Text);
+                lista.Add(clie.txtApellidos.Text);
+                lista.Add(clie.txtDire.Text);
+                lista.Add(clie.listaGenero.SelectedValue.ToString());
+
+                System.Console.Write(clie.listaGenero.SelectedValue.ToString());
+                
+
+            }
+        }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (busquedaC)
+            {
+                tabla_clientes.Visible = true;
+                tablaC.FiltrarLocalmenteSinContadorRegistros();
+                try
+                {
+                    if (tabla_clientes.Rows.Count != 0)
+                    {
+                        tabla_clientes.CurrentCell = tabla_clientes.Rows[0].Cells[0];
+                    }
+
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -1743,6 +1877,40 @@ namespace interfaces.ventas.panel
             txtBusqueda.Focus();
             busqueda = false;
             tablad.Visible = false;
+        }
+
+        private void colocandoCliente()
+        {
+            if (tabla_clientes.Rows.Count != 0)
+            {
+                DataGridViewRow seleccion = tabla_clientes.CurrentRow;
+                tabla_clientes.Visible = false;
+                txtBuscarCliente.Focus();
+
+                lista.Clear();
+
+                lista.Add(seleccion.Cells[3].Value.ToString());
+                lista.Add(seleccion.Cells[1].Value.ToString());
+                lista.Add(seleccion.Cells[2].Value.ToString());
+                lista.Add(seleccion.Cells[5].Value.ToString());
+                lista.Add(seleccion.Cells[6].Value.ToString());
+
+                txtDireccion.Text = seleccion.Cells[5].Value.ToString();
+                txtBuscarCliente.Text = seleccion.Cells[0].Value.ToString();
+
+                tabla_clientes.Visible = false;
+
+
+                System.Console.WriteLine(lista[0]);
+            }
+            else
+            {
+                nuevoCliente();
+            }
+            
+
+
+
         }
     }
 }

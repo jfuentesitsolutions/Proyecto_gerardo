@@ -32,3 +32,8 @@ C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyecto
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
 C:\Users\Gerardo_Salcoatitan\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb
+D:\github\Proyecto_gerardo\proyecto\proyectos\sessionManager\bin\Debug\sessionManager.dll
+D:\github\Proyecto_gerardo\proyecto\proyectos\sessionManager\bin\Debug\sessionManager.pdb
+D:\github\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.csprojResolveAssemblyReference.cache
+D:\github\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.dll
+D:\github\Proyecto_gerardo\proyecto\proyectos\sessionManager\obj\Debug\sessionManager.pdb

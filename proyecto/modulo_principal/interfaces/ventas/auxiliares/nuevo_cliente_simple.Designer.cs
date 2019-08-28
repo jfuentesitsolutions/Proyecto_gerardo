@@ -289,7 +289,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox listaGenero;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ErrorProvider error;
@@ -298,5 +297,6 @@
         public System.Windows.Forms.TextBox txtDire;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker fecha;
+        public System.Windows.Forms.ComboBox listaGenero;
     }
 }
