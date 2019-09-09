@@ -113,6 +113,12 @@
       <DependentUpon>compras_de_productos.cs</DependentUpon>
     </Compile>
     <Compile Include="control_permisos\controlador_de_permisos.cs" />
+    <Compile Include="Inventarios\clientes_frecuentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\clientes_frecuentes.Designer.cs">
+      <DependentUpon>clientes_frecuentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="mantenimientos\auxiliares\agregaCodigos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +335,12 @@
     <Compile Include="paneles\inicio.Designer.cs">
       <DependentUpon>inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="paneles\inventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paneles\inventarios.Designer.cs">
+      <DependentUpon>inventarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="paneles\negocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +493,9 @@
     <EmbeddedResource Include="compras\compras_de_productos.resx">
       <DependentUpon>compras_de_productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\clientes_frecuentes.resx">
+      <DependentUpon>clientes_frecuentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mantenimientos\auxiliares\agregaCodigos.resx">
       <DependentUpon>agregaCodigos.cs</DependentUpon>
     </EmbeddedResource>
@@ -588,6 +603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="paneles\inicio.resx">
       <DependentUpon>inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paneles\inventarios.resx">
+      <DependentUpon>inventarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="paneles\negocio.resx">
       <DependentUpon>negocio.cs</DependentUpon>
@@ -886,6 +904,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_pie1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_pie2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_page1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_empty1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

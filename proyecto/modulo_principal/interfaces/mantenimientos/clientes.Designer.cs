@@ -38,6 +38,7 @@
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listaDes = new System.Windows.Forms.ComboBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,8 +73,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblReg = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.listaDes = new System.Windows.Forms.ComboBox();
             this.C1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +88,7 @@
             this.C12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel3.SuspendLayout();
@@ -119,7 +119,8 @@
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
             this.cerrar.Location = new System.Drawing.Point(856, 6);
             this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(37, 35);
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.cerrar.TabIndex = 2;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
@@ -185,6 +186,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Tag = "Generar codigo";
             this.groupBox1.Text = "Datos";
+            // 
+            // listaDes
+            // 
+            this.listaDes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.listaDes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.listaDes.BackColor = System.Drawing.Color.Silver;
+            this.listaDes.DisplayMember = "hola";
+            this.listaDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.listaDes.ForeColor = System.Drawing.Color.Black;
+            this.listaDes.FormattingEnabled = true;
+            this.listaDes.Location = new System.Drawing.Point(197, 330);
+            this.listaDes.Name = "listaDes";
+            this.listaDes.Size = new System.Drawing.Size(158, 27);
+            this.listaDes.TabIndex = 11;
             // 
             // txtApellidos
             // 
@@ -557,25 +572,6 @@
             this.tablaClientes.TabIndex = 8;
             this.tablaClientes.Click += new System.EventHandler(this.tablaClientes_Click);
             // 
-            // error
-            // 
-            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.error.ContainerControl = this;
-            // 
-            // listaDes
-            // 
-            this.listaDes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.listaDes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.listaDes.BackColor = System.Drawing.Color.Silver;
-            this.listaDes.DisplayMember = "hola";
-            this.listaDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.listaDes.ForeColor = System.Drawing.Color.Black;
-            this.listaDes.FormattingEnabled = true;
-            this.listaDes.Location = new System.Drawing.Point(197, 330);
-            this.listaDes.Name = "listaDes";
-            this.listaDes.Size = new System.Drawing.Size(158, 27);
-            this.listaDes.TabIndex = 11;
-            // 
             // C1
             // 
             this.C1.DataPropertyName = "idcliente";
@@ -690,6 +686,11 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
+            // 
+            // error
+            // 
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
             // 
             // clientes
             // 

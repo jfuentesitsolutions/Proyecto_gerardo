@@ -122,7 +122,7 @@ namespace conexiones_BD.clases.ventas
             Consulta = @"select vt.correlativo, vt.fecha, concat(c.nombre_cliente,' ',c.apellidos_cliente) as nombre, v.idventa
                 from ventas v, ventas_tickets vt, clientes c
                 where v.idventa = vt.correlativo and vt.idcliente = c.idcliente
-                and v.fecha>='" + fech+@" 00:00:00' and v.fecha<='"+fech+ @" 23:60:00' and v.idsucursal='" + idsu + @"'
+                and v.fecha>='" + fech+@" 00:00:00' and v.fecha<='"+fech+ @" 23:59:59' and v.idsucursal='" + idsu + @"'
                 and v.anulacion = 1 order by vt.fecha desc
                 ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();

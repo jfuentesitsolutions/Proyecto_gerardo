@@ -575,7 +575,6 @@ namespace transferencias_internet
         {
             List<conexiones_BD.clases.traslados.detalle_producto_traslado> detras = new List<conexiones_BD.clases.traslados.detalle_producto_traslado>();
             doc.Load(rutaXml);
-            conexiones_BD.clases.traslados.detalle_producto_traslado dt;
 
 
             XmlNodeList pro = doc.SelectNodes("traslados/detalle_traslado");

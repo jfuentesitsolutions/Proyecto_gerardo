@@ -171,6 +171,28 @@ namespace conexiones_BD.clases
             return Datos;
         }
 
+        public static DataTable permisosAsigandosInventario(string idgrupo)
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Consulta = @"select  p.nombre_control
+                from permisos_grupos pg, grupos g, permisos p
+                where pg.idgrupo = g.idgrupo and pg.idpermiso = p.idpermiso and pg.idgrupo = '" + idgrupo + @"' and p.nombre_control like 'inve%'
+                     ; ";
+            Console.WriteLine(Consulta);
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
         public static DataTable datosTabla()
         {
             DataTable Datos = new DataTable();

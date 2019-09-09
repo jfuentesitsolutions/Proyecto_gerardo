@@ -63,6 +63,31 @@ namespace conexiones_BD
 
             return resultado;
         }
+        private DataTable comprasClientes(string fi, string ff, int id)
+        {
+            DataTable resultado = new DataTable();
+            try
+            {
+                if (base.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("comprarXcliente", base.Conec);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("fecha_inicial",fi);
+                    comando.Parameters.AddWithValue("fecha_final", ff);
+                    comando.Parameters.AddWithValue("id", id);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(resultado);
+
+                }
+            }
+            catch (Exception e)
+            {
+                resultado = new DataTable();
+                Console.Write(e.Message);
+            }
+
+            return resultado;
+        }
         private long Ejecutarsentencia2(string sentencia)
         {
             long numero_insertado = 0;
@@ -375,7 +400,6 @@ namespace conexiones_BD
         {
             Int32 numeroFilas = 1;
             MySqlTransaction trans = null;
-            long res = 0;
 
             if (base.conectar())
             {
@@ -985,5 +1009,10 @@ namespace conexiones_BD
             return numeroFilas;
         }
 
+        //procedimientos almacenados
+        public DataTable comprasXcliente(string fi, string ff, int id)
+        {
+            return comprasClientes(fi, ff, id);
+        }
     }
 }

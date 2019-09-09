@@ -737,3 +737,10 @@ D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interf
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.csproj.GenerateResource.Cache
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.dll
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.pdb
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.Inventarios.clientes_frecuentes.resources
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.paneles.inventarios.resources
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CrystalDecisions.Shared.dll
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\FlashControlV71.dll

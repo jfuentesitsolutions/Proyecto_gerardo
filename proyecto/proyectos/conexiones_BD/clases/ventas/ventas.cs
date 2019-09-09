@@ -69,11 +69,11 @@ namespace conexiones_BD.clases.ventas
             String Consulta;
             Consulta = @"select concat(v.fecha) as ticket, vt.correlativo, vt.fecha, vt.monto_total
                 from ventas v, ventas_tickets vt
-                where v.num_ticket = vt.correlativo and v.fecha >= '"+fecha+@" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='"+idsu+@"' and v.anulacion=1
+                where v.num_ticket = vt.correlativo and v.fecha >= '"+fecha+@" 00:00:00' and v.fecha <= '"+fecha+ @" 23:59:59' and v.idsucursal='"+idsu+@"' and v.anulacion=1
                 union
                 select concat(v.fecha) as ticket, vf.numero_factura, vf.fecha, vf.monto_total
                  from ventas v, ventas_factura vf
-                 where v.num_factura = vf.numero_factura and v.fecha >= '" + fecha+" 00:00:00' and v.fecha <= '"+fecha+ @" 23:60:00' and v.idsucursal='" + idsu + @"'and v.anulacion=1
+                 where v.num_factura = vf.numero_factura and v.fecha >= '" + fecha+" 00:00:00' and v.fecha <= '"+fecha+ @" 23:59:59' and v.idsucursal='" + idsu + @"'and v.anulacion=1
                      ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try

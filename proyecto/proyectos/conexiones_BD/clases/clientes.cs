@@ -141,9 +141,9 @@ namespace conexiones_BD.clases
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = @"select *, d.tipo_descuento as nombres_des, concat(c.nombre_cliente, ' ', c.apellidos_cliente) as nom
-from clientes c, descuentos d
-where c.iddescuento = d.iddescuento
-; ";
+                        from clientes c, descuentos d
+                        where c.iddescuento = d.iddescuento
+                        ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
             try
             {
@@ -185,7 +185,8 @@ where c.iddescuento = d.iddescuento
         {
             DataTable Datos = new DataTable();
             String Consulta;
-            Consulta = @"select concat(e.nombre_cliente,' ', e.apellidos_cliente) as nombre, e.nombre_cliente, e.apellidos_cliente, e.idcliente, e.cod_cliente, e.direccion,
+            Consulta = @"select concat(e.nombre_cliente,' ', e.apellidos_cliente) as nombre, 
+                        e.nombre_cliente, e.apellidos_cliente, e.idcliente, e.cod_cliente, e.direccion,
                         e.genero
                         from clientes e
                         ; ";
@@ -193,6 +194,41 @@ where c.iddescuento = d.iddescuento
             try
             {
                 Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
+        public static DataTable ventasXcliente(string id, string fechai, string fechaf)
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Console.WriteLine(fechai +" "+fechaf);
+            Consulta = @"select sumasVentas("+id+",'"+fechai+"','"+fechaf+"');";
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
+        public static DataTable detalleventasXclientes(int id, string fechai, string fechaf)
+        {
+            DataTable Datos = new DataTable();
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.comprasXcliente(fechai, fechaf, id);
             }
             catch
             {
