@@ -378,6 +378,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>anulaciones_compras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Datos\mejores_clientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mejores_clientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Datos\ventas_al_dia.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -400,6 +405,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>reporteVentasaldia.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Diseño\reporte_mejores_clientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporte_mejores_clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Interfaz\estadisticas_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Interfaz\estadisticas_clientes.Designer.cs">
+      <DependentUpon>estadisticas_clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="traslados\recepcion_traslados.cs">
       <SubType>Form</SubType>
@@ -632,6 +649,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporteVentasaldia.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Diseño\reporte_mejores_clientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporte_mejores_clientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Interfaz\estadisticas_clientes.resx">
+      <DependentUpon>estadisticas_clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="traslados\recepcion_traslados.resx">
       <DependentUpon>recepcion_traslados.cs</DependentUpon>
     </EmbeddedResource>
@@ -731,6 +755,17 @@
     <None Include="Reportes\Datos\anulaciones_compras.xss">
       <DependentUpon>anulaciones_compras.xsd</DependentUpon>
     </None>
+    <None Include="Reportes\Datos\mejores_clientes.xsc">
+      <DependentUpon>mejores_clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Datos\mejores_clientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mejores_clientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Datos\mejores_clientes.xss">
+      <DependentUpon>mejores_clientes.xsd</DependentUpon>
+    </None>
     <None Include="Reportes\Datos\ventas_al_dia.xsc">
       <DependentUpon>ventas_al_dia.xsd</DependentUpon>
     </None>
@@ -743,9 +778,7 @@
       <DependentUpon>ventas_al_dia.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\Interfaz\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

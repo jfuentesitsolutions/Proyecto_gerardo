@@ -238,6 +238,38 @@ namespace conexiones_BD.clases
             return Datos;
         }
 
+        public static DataTable estadisticasXcliente(string fechai, string fechaf)
+        {
+            DataTable Datos = new DataTable();
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.estadisticasXcliente(fechai, fechaf);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
+        public static DataTable estadisticasTodosClientes(string fechai, string fechaf)
+        {
+            DataTable Datos = new DataTable();
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.estadisticasXTodos(fechai, fechaf);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
         public long ingresandoCliente(bool r)
         {
             StringBuilder sentencia = new StringBuilder(@"INSERT clientes (cod_cliente, nombre_cliente, 

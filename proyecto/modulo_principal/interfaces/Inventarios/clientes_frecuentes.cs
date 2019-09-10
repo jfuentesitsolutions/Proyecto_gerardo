@@ -14,6 +14,7 @@ namespace interfaces.Inventarios
     public partial class clientes_frecuentes : Form
     {
         cargar_tablas tabla, detalles;
+        private string fi, ff;
 
         public clientes_frecuentes()
         {
@@ -35,8 +36,13 @@ namespace interfaces.Inventarios
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
             cargandoTablas();
+
             DateTime fec = fechaFinal.Value;
             fechaInicio.Text = "01/01/"+fec.Year;
+            utilitarios.maneja_fechas fecha = new maneja_fechas();
+            fi = fec.Year.ToString() + "-01-01 00:00:00";
+            ff = fecha.fechaCortaMysql(fechaFinal) + " 23:59:59";
+
             activandoAreaDetalles(false);
         }
 
@@ -117,6 +123,14 @@ namespace interfaces.Inventarios
             }
 
             
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            Reportes.Interfaz.estadisticas_clientes frm = new Reportes.Interfaz.estadisticas_clientes();
+            frm.Fei = fi;
+            frm.Fef = ff;
+            frm.ShowDialog();
         }
 
         private void cargandoCompras(string fi, string ff)

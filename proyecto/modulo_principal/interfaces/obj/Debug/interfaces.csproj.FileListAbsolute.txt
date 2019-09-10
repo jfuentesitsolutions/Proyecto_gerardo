@@ -744,3 +744,4 @@ D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\Crysta
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CrystalDecisions.Shared.dll
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\FlashControlV71.dll
+D:\github\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.Reportes.Interfaz.estadisticas_clientes.resources

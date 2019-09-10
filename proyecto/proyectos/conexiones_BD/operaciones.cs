@@ -88,6 +88,54 @@ namespace conexiones_BD
 
             return resultado;
         }
+        private DataTable estadisticasClientes(string fi, string ff)
+        {
+            DataTable resultado = new DataTable();
+            try
+            {
+                if (base.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("estadisticaXcomprasClientes", base.Conec);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("fecha_inicial", fi);
+                    comando.Parameters.AddWithValue("fecha_final", ff);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(resultado);
+
+                }
+            }
+            catch (Exception e)
+            {
+                resultado = new DataTable();
+                Console.Write(e.Message);
+            }
+
+            return resultado;
+        }
+        private DataTable estadisticasTodosLosClientes(string fi, string ff)
+        {
+            DataTable resultado = new DataTable();
+            try
+            {
+                if (base.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("estadisticaXcompras", base.Conec);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("fecha_inicial", fi);
+                    comando.Parameters.AddWithValue("fecha_final", ff);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(resultado);
+
+                }
+            }
+            catch (Exception e)
+            {
+                resultado = new DataTable();
+                Console.Write(e.Message);
+            }
+
+            return resultado;
+        }
         private long Ejecutarsentencia2(string sentencia)
         {
             long numero_insertado = 0;
@@ -1013,6 +1061,14 @@ namespace conexiones_BD
         public DataTable comprasXcliente(string fi, string ff, int id)
         {
             return comprasClientes(fi, ff, id);
+        }
+        public DataTable estadisticasXcliente(string fi, string ff)
+        {
+            return estadisticasClientes(fi, ff);
+        }
+        public DataTable estadisticasXTodos(string fi, string ff)
+        {
+            return estadisticasTodosLosClientes(fi, ff);
         }
     }
 }
