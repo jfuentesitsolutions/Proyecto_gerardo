@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace conexiones_BD
 {
     public class operaciones : Conexion
@@ -444,10 +445,11 @@ namespace conexiones_BD
 
             return numeroFilas;
         }
-        private Int32 Ejecutartransaccion_Ventas_tickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
+        private clases.ctrl_errores.errores Ejecutartransaccion_Ventas_tickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
         {
-            Int32 numeroFilas = 1;
             MySqlTransaction trans = null;
+
+            clases.ctrl_errores.errores err = new clases.ctrl_errores.errores();
 
             if (base.conectar())
             {
@@ -476,18 +478,19 @@ namespace conexiones_BD
                     comando.ExecuteNonQuery();
 
                     trans.Commit();
-                    numeroFilas = 1;
+                    err.Res = 1;
 
                 }
                 catch (MySqlException e)
                 {
                     Console.WriteLine(e.Message);
                     trans.Rollback();
-                    numeroFilas = -1;
+                    err.Res = -1;
+                    err.Error = e.Message;
                 }
             }
 
-            return numeroFilas;
+            return err;
         }
         private Int32 EjecutartransaccionAnulaVentaTickets(conexiones_BD.clases.ventas.tickets v, conexiones_BD.clases.ventas.anulaciones a, List<clases.sucursales_productos> pr)
         {
@@ -860,7 +863,7 @@ namespace conexiones_BD
         {
             return EjecutartransaccionProductos_Presentaciones_Proveedores(prove, prese, pro, sp, co);
         }
-        public Int32 transaccionVentasTickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
+        public clases.ctrl_errores.errores transaccionVentasTickets(List<clases.ventas.detalles_productos_venta_ticket> dp, clases.ventas.tickets tic)
         {
             return Ejecutartransaccion_Ventas_tickets(dp, tic);
         }

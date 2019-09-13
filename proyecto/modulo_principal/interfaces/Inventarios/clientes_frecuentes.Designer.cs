@@ -28,20 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(clientes_frecuentes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.tabla_Clientes = new System.Windows.Forms.DataGridView();
             this.CN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.PictureBox();
             this.txtBusquedaClientes = new System.Windows.Forms.TextBox();
             this.grpDescripcion = new System.Windows.Forms.GroupBox();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabla_detalles = new System.Windows.Forms.DataGridView();
             this.FE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +53,8 @@
             this.To = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.grpFechas = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.fechaFinal = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,13 +67,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.PictureBox();
-            this.btnReporte = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cerrar = new System.Windows.Forms.PictureBox();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -75,15 +76,14 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Clientes)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             this.grpDescripcion.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla_detalles)).BeginInit();
             this.grpFechas.SuspendLayout();
-            this.grpDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
+            this.grpDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -98,6 +98,19 @@
             this.panelTitulo.Size = new System.Drawing.Size(1035, 46);
             this.panelTitulo.TabIndex = 7;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
+            // 
+            // cerrar
+            // 
+            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
+            this.cerrar.Location = new System.Drawing.Point(986, 6);
+            this.cerrar.Name = "cerrar";
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.cerrar.TabIndex = 2;
+            this.cerrar.TabStop = false;
+            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
             // 
             // lblEncanezado
             // 
@@ -141,13 +154,26 @@
             this.panel1.Size = new System.Drawing.Size(506, 72);
             this.panel1.TabIndex = 2;
             // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.Image = global::interfaces.Properties.Resources.chart_pie2;
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(171, 15);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(143, 40);
+            this.btnEstadisticas.TabIndex = 0;
+            this.btnEstadisticas.Text = "Ver estadisticas";
+            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
             // tabla_Clientes
             // 
             this.tabla_Clientes.AllowUserToAddRows = false;
             this.tabla_Clientes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.tabla_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.tabla_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla_Clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_Clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tabla_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -211,6 +237,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda de clientes";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.Location = new System.Drawing.Point(459, 19);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(32, 32);
+            this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.TabStop = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // txtBusquedaClientes
             // 
             this.txtBusquedaClientes.BackColor = System.Drawing.SystemColors.Control;
@@ -233,6 +271,19 @@
             this.grpDescripcion.TabIndex = 2;
             this.grpDescripcion.TabStop = false;
             this.grpDescripcion.Text = "Descripción de compras";
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.Image = global::interfaces.Properties.Resources.full_page1;
+            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte.Location = new System.Drawing.Point(199, 265);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(146, 40);
+            this.btnReporte.TabIndex = 2;
+            this.btnReporte.Text = "Imprimir reporte";
+            this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // groupBox5
             // 
@@ -316,6 +367,26 @@
             this.grpFechas.TabIndex = 1;
             this.grpFechas.TabStop = false;
             this.grpFechas.Text = "Filtrar compras por fecha";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::interfaces.Properties.Resources.calendar_empty1;
+            this.pictureBox3.Location = new System.Drawing.Point(182, 44);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::interfaces.Properties.Resources.calendar1;
+            this.pictureBox2.Location = new System.Drawing.Point(476, 44);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // fechaFinal
             // 
@@ -434,76 +505,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Codigo:";
             // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Image = global::interfaces.Properties.Resources.chart_pie2;
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(171, 15);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(143, 40);
-            this.btnEstadisticas.TabIndex = 0;
-            this.btnEstadisticas.Text = "Ver estadisticas";
-            this.btnEstadisticas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(459, 19);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(32, 32);
-            this.btnLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.TabStop = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.Image = global::interfaces.Properties.Resources.full_page1;
-            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(199, 265);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(146, 40);
-            this.btnReporte.TabIndex = 2;
-            this.btnReporte.Text = "Imprimir reporte";
-            this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReporte.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::interfaces.Properties.Resources.calendar_empty1;
-            this.pictureBox3.Location = new System.Drawing.Point(182, 44);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::interfaces.Properties.Resources.calendar1;
-            this.pictureBox2.Location = new System.Drawing.Point(476, 44);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // cerrar
-            // 
-            this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(986, 6);
-            this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(32, 32);
-            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.cerrar.TabIndex = 2;
-            this.cerrar.TabStop = false;
-            this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
-            // 
             // clientes_frecuentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -521,6 +522,7 @@
             this.Load += new System.EventHandler(this.clientes_frecuentes_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -529,17 +531,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabla_Clientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             this.grpDescripcion.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabla_detalles)).EndInit();
             this.grpFechas.ResumeLayout(false);
             this.grpFechas.PerformLayout();
-            this.grpDatos.ResumeLayout(false);
-            this.grpDatos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
+            this.grpDatos.ResumeLayout(false);
+            this.grpDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }

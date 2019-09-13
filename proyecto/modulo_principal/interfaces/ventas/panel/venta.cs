@@ -662,7 +662,9 @@ namespace interfaces.ventas.panel
                 this.total, "1", efec, cam, lista[0], idcorre);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
-            Int32 res = op.transaccionVentasTickets(retornoProductos(), ticke);
+            conexiones_BD.clases.ctrl_errores.errores err= op.transaccionVentasTickets(retornoProductos(), ticke);
+
+            Int32 res = err.Res;
 
             if ( res > 0)
             {
@@ -721,7 +723,7 @@ namespace interfaces.ventas.panel
             {
                 conexiones_BD.clases.ventas.correlativos_tickets.actualizaCorrelativos(correlativoAA, idcorrel);
                 Console.WriteLine(correlativoAA);
-                MessageBox.Show("Se produjo un error al guardar el ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(err.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

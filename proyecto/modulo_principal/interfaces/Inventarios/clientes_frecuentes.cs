@@ -125,6 +125,24 @@ namespace interfaces.Inventarios
             
         }
 
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            int id = (int)tabla_Clientes.CurrentRow.Cells[2].Value;
+            Reportes.Interfaz.visor_reportes frm = new Reportes.Interfaz.visor_reportes();
+            frm.Encabezado = "Reporte de cliente";
+            Reportes.Diseño.reporte_comprasXcliente repo= new Reportes.Diseño.reporte_comprasXcliente();
+            repo.SetDataSource(conexiones_BD.clases.clientes.detalleventasXclientes(id, fi, ff));
+            repo.SetParameterValue("nombre_cliente", txtNombre.Text);
+            repo.SetParameterValue("fecha_inicial", fi);
+            repo.SetParameterValue("fecha_final", ff);
+            repo.SetParameterValue("direccion", txtDireccion.Text);
+            repo.SetParameterValue("monto_total", lblTotal.Text);
+            frm.reporte.ReportSource=repo;
+
+            frm.ShowDialog();
+
+        }
+
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
             Reportes.Interfaz.estadisticas_clientes frm = new Reportes.Interfaz.estadisticas_clientes();

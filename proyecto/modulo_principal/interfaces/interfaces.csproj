@@ -383,6 +383,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mejores_clientes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Datos\reporte_comprasXcliente.cs">
+      <DependentUpon>reporte_comprasXcliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Datos\reporte_comprasXcliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporte_comprasXcliente.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Datos\ventas_al_dia.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -406,6 +414,12 @@
       <DependentUpon>reporteVentasaldia.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\Diseño\reporte_comprasXcliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reporte_comprasXcliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Diseño\reporte_mejores_clientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -417,6 +431,12 @@
     </Compile>
     <Compile Include="Reportes\Interfaz\estadisticas_clientes.Designer.cs">
       <DependentUpon>estadisticas_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Interfaz\visor_reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Interfaz\visor_reportes.Designer.cs">
+      <DependentUpon>visor_reportes.cs</DependentUpon>
     </Compile>
     <Compile Include="traslados\recepcion_traslados.cs">
       <SubType>Form</SubType>
@@ -649,12 +669,19 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporteVentasaldia.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Diseño\reporte_comprasXcliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporte_comprasXcliente.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Diseño\reporte_mejores_clientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporte_mejores_clientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Interfaz\estadisticas_clientes.resx">
       <DependentUpon>estadisticas_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Interfaz\visor_reportes.resx">
+      <DependentUpon>visor_reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="traslados\recepcion_traslados.resx">
       <DependentUpon>recepcion_traslados.cs</DependentUpon>
@@ -765,6 +792,17 @@
     </None>
     <None Include="Reportes\Datos\mejores_clientes.xss">
       <DependentUpon>mejores_clientes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Datos\reporte_comprasXcliente.xsc">
+      <DependentUpon>reporte_comprasXcliente.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Datos\reporte_comprasXcliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>reporte_comprasXcliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Datos\reporte_comprasXcliente.xss">
+      <DependentUpon>reporte_comprasXcliente.xsd</DependentUpon>
     </None>
     <None Include="Reportes\Datos\ventas_al_dia.xsc">
       <DependentUpon>ventas_al_dia.xsd</DependentUpon>
