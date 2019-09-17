@@ -670,7 +670,7 @@ namespace interfaces.ventas.panel
             {
                
                     PrintDocument printDoc = new PrintDocument();
-                    string impresora= printDoc.PrinterSettings.PrinterName;
+                string impresora = printDoc.PrinterSettings.PrinterName;
                     
                         conexiones_BD.clases.ventas.impresion_prueba imp = new conexiones_BD.clases.ventas.impresion_prueba();
                         if (imp.impresionTicket(impresora, conexiones_BD.clases.ventas.detalles_productos_venta_ticket.detalle_proTic(correl)))
@@ -684,6 +684,7 @@ namespace interfaces.ventas.panel
                         tablad.DataSource = null;
                         tabla_clientes.DataSource = null;
                         cargaListas();
+
                     cargarTablas();
 
                     lista.Clear();
@@ -704,8 +705,6 @@ namespace interfaces.ventas.panel
                     }
                     else
                     {
-                        conexiones_BD.clases.ventas.correlativos_tickets.actualizaCorrelativos(correlativoAA, idcorrel);
-                    Console.WriteLine(correlativoAA);
 
                     MessageBox.Show("Se produjo un error al guardar el ticket, pero la venta se guardo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tabla_articulos.Rows.Clear();
@@ -716,8 +715,7 @@ namespace interfaces.ventas.panel
                         tablad.Visible = false;
                         tablad.DataSource = null;
                     }
-                    
-                
+       
             }
             else
             {

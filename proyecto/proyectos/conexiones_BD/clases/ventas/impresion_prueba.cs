@@ -87,7 +87,6 @@ namespace conexiones_BD.clases.ventas
                     if (calcularTotal2(productos) == 0.0)
                     {
                         impreso = true;
-
                     }
                     else
                     {
@@ -98,8 +97,7 @@ namespace conexiones_BD.clases.ventas
                 {
                     impreso = impresionticket2(productos, nombreim);
                 }
-                
-                
+                                
             }
             catch
             {
