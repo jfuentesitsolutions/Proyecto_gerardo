@@ -318,7 +318,7 @@ namespace conexiones_BD.clases
             sentencia.Append("'" + correo + "',");
             sentencia.Append("'" + iddescuento + "',");
             sentencia.Append("'" + fecha_ingreso + "',");
-            sentencia.Append("'" + genero + "'),");
+            sentencia.Append("'" + genero + "',");
             sentencia.Append("'" + estado + "');");
 
             conexiones_BD.operaciones op = new operaciones();

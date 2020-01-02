@@ -176,6 +176,9 @@ namespace interfaces.ventas.auxiliares
                             ingresado = true;
                             nombre = txtNombres.Text;
                             this.Close();
+                        }else
+                        {
+                            MessageBox.Show("No se pudo ingresar");
                         }
                     }
 
