@@ -43,10 +43,8 @@ namespace control_principal
             bool cargado = false;
 
             foreach (Form llamado in frmpapa.MdiChildren)
-            {
-                
-                c++;
-                
+            {        
+                c++;   
             }
 
             if (c>0)

@@ -10,7 +10,7 @@ namespace conexiones_BD.clases
 {
     public class clientes : entidad
     {
-        string idcliente, cod_cliente, nombre_cliente, apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero;
+        string idcliente, cod_cliente, nombre_cliente, apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero, estado;
 
         public string Cod_cliente
         {
@@ -38,7 +38,8 @@ namespace conexiones_BD.clases
             }
         }
 
-        public clientes(string idcliente, string cod_cliente, string nombre_cliente, string apellidos_cliente, string direccion, string dui, string nit, string ncr, string razon_social, string telefono, string correo, string iddescuento, string fecha_ingreso, string genero)
+        public clientes(string idcliente, string cod_cliente, string nombre_cliente, string apellidos_cliente, string direccion, 
+            string dui, string nit, string ncr, string razon_social, string telefono, string correo, string iddescuento, string fecha_ingreso, string genero, string est)
         {
             this.idcliente = idcliente;
             this.Cod_cliente = cod_cliente;
@@ -54,22 +55,25 @@ namespace conexiones_BD.clases
             this.iddescuento = iddescuento;
             this.fecha_ingreso = fecha_ingreso;
             this.genero = genero;
+            this.estado = est;
             base.cargarDatosModificados(generarCampos(), generarValores(), "clientes", idcliente, "idcliente");
         }
 
-        public clientes(string id, string nombres, string apellidos, string direcc, string gen)
+        public clientes(string id, string nombres, string apellidos, string direcc, string gen, string est)
         {
             idcliente = id;
             Nombre_cliente = nombres;
             apellidos_cliente = apellidos;
             direccion = direcc;
             genero = gen;
+            estado = est;
+        
         }
 
         public clientes(string cod_cliente, string nombre_cliente,
             string apellidos_cliente, string direccion, string dui, string nit,
             string ncr, string razon_social, string telefono, string correo,
-            string iddescuento, string fecha_ingreso, string genero)
+            string iddescuento, string fecha_ingreso, string genero, string est)
         {
             this.Cod_cliente = cod_cliente;
             this.Nombre_cliente = nombre_cliente;
@@ -84,6 +88,7 @@ namespace conexiones_BD.clases
             this.iddescuento = iddescuento;
             this.fecha_ingreso = fecha_ingreso;
             this.genero = genero;
+            this.estado = est;
             base.cargarDatos(generarCampos(), generarValores(), "clientes");
         }
 
@@ -114,6 +119,7 @@ namespace conexiones_BD.clases
             campos.Add("iddescuento");
             campos.Add("fecha_ingreso");
             campos.Add("genero");
+            campos.Add("estado");
             return campos;
         }
 
@@ -133,6 +139,7 @@ namespace conexiones_BD.clases
             valores.Add(iddescuento);
             valores.Add(fecha_ingreso);
             valores.Add(genero);
+            valores.Add(estado);
             return valores;
         }
 
@@ -164,7 +171,8 @@ namespace conexiones_BD.clases
             sentencia.Append("nombre_cliente ='" + this.Nombre_cliente + "', ");
             sentencia.Append("apellidos_cliente ='" + this.apellidos_cliente + "', ");
             sentencia.Append("direccion ='" + this.direccion + "', ");
-            sentencia.Append("genero ='" + this.genero + "' WHERE(idcliente='" + idcliente + "');");
+            sentencia.Append("genero='"+this.genero+"',");
+            sentencia.Append("estado ='" + this.estado + "' WHERE(idcliente='" + idcliente + "');");
 
             conexiones_BD.operaciones op = new operaciones();
             Console.WriteLine(sentencia.ToString());
@@ -188,6 +196,29 @@ namespace conexiones_BD.clases
             Consulta = @"select concat(e.nombre_cliente,' ', e.apellidos_cliente) as nombre, 
                         e.nombre_cliente, e.apellidos_cliente, e.idcliente, e.cod_cliente, e.direccion,
                         e.genero
+                        from clientes e where e.estado=1
+                        ; ";
+            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            try
+            {
+                Datos = oOperacion.Consultar(Consulta);
+            }
+            catch
+            {
+                Datos = new DataTable();
+            }
+
+            return Datos;
+        }
+
+
+        public static DataTable datosClientes2()
+        {
+            DataTable Datos = new DataTable();
+            String Consulta;
+            Consulta = @"select concat(e.nombre_cliente,' ', e.apellidos_cliente) as nombre, 
+                        e.nombre_cliente, e.apellidos_cliente, e.idcliente, e.cod_cliente, e.direccion,
+                        e.genero
                         from clientes e
                         ; ";
             conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
@@ -202,6 +233,7 @@ namespace conexiones_BD.clases
 
             return Datos;
         }
+
 
         public static DataTable ventasXcliente(string id, string fechai, string fechaf)
         {
@@ -273,7 +305,7 @@ namespace conexiones_BD.clases
         public long ingresandoCliente(bool r)
         {
             StringBuilder sentencia = new StringBuilder(@"INSERT clientes (cod_cliente, nombre_cliente, 
-                apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero) VALUES (");
+                apellidos_cliente, direccion, dui, nit, ncr, razon_social, telefono, correo, iddescuento, fecha_ingreso, genero, estado) VALUES (");
             sentencia.Append("'" + cod_cliente + "',");
             sentencia.Append("'" + nombre_cliente + "',");
             sentencia.Append("'" + apellidos_cliente + "',");
@@ -286,7 +318,8 @@ namespace conexiones_BD.clases
             sentencia.Append("'" + correo + "',");
             sentencia.Append("'" + iddescuento + "',");
             sentencia.Append("'" + fecha_ingreso + "',");
-            sentencia.Append("'" + genero + "');");
+            sentencia.Append("'" + genero + "'),");
+            sentencia.Append("'" + estado + "');");
 
             conexiones_BD.operaciones op = new operaciones();
             long respuesta = op.insertar(sentencia.ToString());

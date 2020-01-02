@@ -143,6 +143,7 @@ namespace interfaces.mantenimientos
             controles.Add(btnCraCodigo);
             controles.Add(btnGuardar);
             controles.Add(btnCancelar);
+            controles.Add(chkEstado);
 
             utilitarios.vaciando_formularios.habilitandoTexbox(controles, co);
         }
@@ -196,6 +197,7 @@ namespace interfaces.mantenimientos
 
             listaDes.SelectedValue = "0";
             listaGenero.SelectedIndex = 0;
+            chkEstado.Checked = false;
         }
 
         private bool validarExistencias()
@@ -231,6 +233,18 @@ namespace interfaces.mantenimientos
             return existe;
         }
 
+        private string estado()
+        {
+            if (chkEstado.Checked)
+            {
+                return "1";
+            }
+            else
+            {
+                return "2";
+            }
+        }
+
         private void guardar()
         {
             if (!validar())
@@ -241,7 +255,7 @@ namespace interfaces.mantenimientos
                     cliente = new conexiones_BD.clases.clientes(txtCodigo.Text, 
                         txtNombres.Text, txtApellidos.Text, txtDire.Text, txtDui.Text, txtNit.Text, txtNcr.Text,
                         txtRazon.Text, txtTel.Text, txtEmail.Text, listaDes.SelectedValue.ToString(),
-                        fe.fechaMysql(fecha), listaGenero.SelectedIndex.ToString());
+                        fe.fechaMysql(fecha), listaGenero.SelectedIndex.ToString(), this.estado());
                     if (cliente.guardar(true) > 0)
                     {
                         vaciarDatos();
@@ -287,7 +301,8 @@ namespace interfaces.mantenimientos
                         txtEmail.Text,
                         listaDes.SelectedValue.ToString(),
                         fe.fechaMysql(fecha),
-                        listaGenero.SelectedIndex.ToString());
+                        listaGenero.SelectedIndex.ToString(),
+                        this.estado());
                     if (cliente.modificar(true) > 0)
                     {
                         habilitar(false);
@@ -355,6 +370,14 @@ namespace interfaces.mantenimientos
                 listaDes.SelectedValue = tablaClientes.CurrentRow.Cells[12].Value.ToString();
                 listaGenero.SelectedItem = tablaClientes.CurrentRow.Cells[14].Value.ToString();
                 fecha.Text = tablaClientes.CurrentRow.Cells[13].Value.ToString();
+                if (tablaClientes.CurrentRow.Cells[15].Value.Equals("activo"))
+                {
+                    chkEstado.Checked = true;
+                }
+                else
+                {
+                    chkEstado.Checked = false;
+                }
 
             }
         }

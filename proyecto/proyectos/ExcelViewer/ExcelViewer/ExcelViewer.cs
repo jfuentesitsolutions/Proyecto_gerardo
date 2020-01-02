@@ -104,8 +104,7 @@ namespace ExcelViewer
                 }
                 catch (Exception e)
                 {
-                    throw;
-                    //throw new InvalidOperationException("Could not open file.");
+                    Console.WriteLine(e.Message);
                 }
             }
         }
@@ -192,7 +191,7 @@ namespace ExcelViewer
                     workbook.Close();
                 }
             }
-            catch (Exception e) { }
+            catch (Exception e) { Console.WriteLine(e.Message); }
             finally
             {
                 if (workbooks != null)
@@ -212,7 +211,9 @@ namespace ExcelViewer
                     process.WaitForExit(100);
                 }
             }
-            catch (Exception e) { throw; }
+            catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
             finally
             { }
 

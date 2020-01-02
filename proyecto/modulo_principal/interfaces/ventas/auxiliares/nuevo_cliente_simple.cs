@@ -163,7 +163,8 @@ namespace interfaces.ventas.auxiliares
                             "-",
                             "1",
                             fech.fechaMysql(fecha),
-                            listaGenero.SelectedValue.ToString());
+                            listaGenero.SelectedValue.ToString(),
+                            "1");
 
                         long res=cliente.ingresandoCliente(true);
                         
@@ -185,7 +186,8 @@ namespace interfaces.ventas.auxiliares
                     {
                         conexiones_BD.clases.clientes cl = new conexiones_BD.clases.clientes(
                         idcliente, txtNombres.Text, txtApellidos.Text, txtDire.Text,
-                        listaGenero.SelectedValue.ToString()
+                        listaGenero.SelectedValue.ToString(),
+                        "1"
                         );
 
                     if (cl.actualizarCliente())

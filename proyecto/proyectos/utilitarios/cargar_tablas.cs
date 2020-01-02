@@ -142,7 +142,6 @@ namespace utilitarios
             {
                 ContenidoTabla.DataSource = TablaDatos;
                 FiltrarLocalmente();
-                
             }
             catch
             {

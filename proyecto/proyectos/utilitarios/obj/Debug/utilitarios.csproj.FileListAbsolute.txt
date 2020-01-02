@@ -48,3 +48,10 @@ D:\github\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.
 D:\github\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
 D:\github\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
 D:\github\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\bin\Debug\utilitarios.pdb
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.barra_progreso.resources
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.csproj.GenerateResource.Cache
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\utilitarios\obj\Debug\utilitarios.pdb

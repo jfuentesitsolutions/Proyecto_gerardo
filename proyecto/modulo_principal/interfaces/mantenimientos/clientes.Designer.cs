@@ -73,6 +73,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblReg = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.C1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +90,7 @@
             this.C12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel3.SuspendLayout();
@@ -152,6 +154,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.chkEstado);
             this.groupBox1.Controls.Add(this.listaDes);
             this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.label13);
@@ -181,7 +184,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(386, 443);
+            this.groupBox1.Size = new System.Drawing.Size(386, 473);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Tag = "Generar codigo";
@@ -459,7 +462,7 @@
             // 
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(205, 479);
+            this.btnCancelar.Location = new System.Drawing.Point(205, 492);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 29);
             this.btnCancelar.TabIndex = 2;
@@ -471,7 +474,7 @@
             // 
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(124, 479);
+            this.btnGuardar.Location = new System.Drawing.Point(124, 492);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 29);
             this.btnGuardar.TabIndex = 1;
@@ -560,7 +563,8 @@
             this.C11,
             this.C12,
             this.C13,
-            this.Column1});
+            this.Column1,
+            this.Column2});
             this.tablaClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaClientes.Location = new System.Drawing.Point(418, 87);
             this.tablaClientes.MultiSelect = false;
@@ -571,6 +575,21 @@
             this.tablaClientes.Size = new System.Drawing.Size(485, 457);
             this.tablaClientes.TabIndex = 8;
             this.tablaClientes.Click += new System.EventHandler(this.tablaClientes_Click);
+            // 
+            // error
+            // 
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
+            // 
+            // chkEstado
+            // 
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(29, 433);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(70, 23);
+            this.chkEstado.TabIndex = 25;
+            this.chkEstado.Text = "Estado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // C1
             // 
@@ -678,6 +697,7 @@
             this.C13.HeaderText = "Fecha ingreso";
             this.C13.Name = "C13";
             this.C13.ReadOnly = true;
+            this.C13.Visible = false;
             // 
             // Column1
             // 
@@ -687,10 +707,12 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
-            // error
+            // Column2
             // 
-            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.error.ContainerControl = this;
+            this.Column2.DataPropertyName = "estado";
+            this.Column2.HeaderText = "Estado";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // clientes
             // 
@@ -770,6 +792,7 @@
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox listaDes;
+        private System.Windows.Forms.CheckBox chkEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn C1;
         private System.Windows.Forms.DataGridViewTextBoxColumn C2;
         private System.Windows.Forms.DataGridViewTextBoxColumn C3;
@@ -785,5 +808,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn C12;
         private System.Windows.Forms.DataGridViewTextBoxColumn C13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

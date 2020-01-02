@@ -54,3 +54,17 @@ D:\github\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espe
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
 D:\github\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\espera_datos.pdb
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\Bunifu_UI_v1.52.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\CircularProgressBar.xml
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\bin\Debug\WinFormAnimation.xml
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csprojResolveAssemblyReference.cache
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.carga_tablas.resources
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.Properties.Resources.resources
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.splash_espera.resources
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.csproj.GenerateResource.Cache
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.dll
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\espera_datos\obj\Debug\espera_datos.pdb

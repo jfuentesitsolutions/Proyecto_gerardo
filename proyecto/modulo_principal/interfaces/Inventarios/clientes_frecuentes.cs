@@ -58,7 +58,7 @@ namespace interfaces.Inventarios
 
         private void cargandoTablas()
         {
-            tabla = new cargar_tablas(tabla_Clientes, txtBusquedaClientes, conexiones_BD.clases.clientes.datosClientes(), "nombre");
+            tabla = new cargar_tablas(tabla_Clientes, txtBusquedaClientes, conexiones_BD.clases.clientes.datosClientes2(), "nombre");
             tabla.cargarSinContadorRegistros();
         }
 
