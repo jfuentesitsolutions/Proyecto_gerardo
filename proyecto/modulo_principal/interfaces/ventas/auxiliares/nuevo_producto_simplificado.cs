@@ -47,7 +47,7 @@ namespace interfaces.ventas.auxiliares
         private void nuevo_producto_simplificado_Load(object sender, EventArgs e)
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
-            xm._crearXml("productos", Convert.ToInt16(sesion.DatosRegistro[0]), "productos.xml");
+            //xm._crearXml("productos", Convert.ToInt16(sesion.DatosRegistro[0]), "productos.xml");
         }
 
         private void panelTitulo_MouseDown(object sender, MouseEventArgs e)

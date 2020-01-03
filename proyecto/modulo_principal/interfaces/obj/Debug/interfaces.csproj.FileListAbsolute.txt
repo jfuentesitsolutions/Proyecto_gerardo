@@ -761,7 +761,6 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\ExcelViewer.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\FlashControlV71.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\gadgets.dll
-D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\sessionManager.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\transferencias_internet.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\utilitarios.dll
@@ -793,7 +792,6 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\espera_datos.pdb
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\gadgets.pdb
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\transferencias_internet.pdb
-D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\hilos_conexion.pdb
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\CircularProgressBar.xml
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\WinFormAnimation.xml
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\bin\Debug\MySql.Data.xml

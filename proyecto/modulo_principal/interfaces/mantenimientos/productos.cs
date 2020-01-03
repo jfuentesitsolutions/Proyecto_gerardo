@@ -53,7 +53,7 @@ namespace interfaces.mantenimientos
         private void productos_Load(object sender, EventArgs e)
         {
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
-            xm._crearXml("productos", Convert.ToInt16(sesion.DatosRegistro[0]), "productos.xml");
+            //xm._crearXml("productos", Convert.ToInt16(sesion.DatosRegistro[0]), "productos.xml");
             if (modificar)
             {
                 habilitar(false);
