@@ -59,8 +59,15 @@ namespace interfaces.paneles
 
         private void btnAgregaPresentaciones_Click(object sender, EventArgs e)
         {
-            ventas.ventas venta = new ventas.ventas();
-            venta.ShowDialog();
+            if (sesion.Caja_activa)
+            {
+                ventas.ventas venta = new ventas.ventas();
+                venta.ShowDialog();
+            }else
+            {
+                MessageBox.Show("No hay caja abierta", "Caja cerrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -105,6 +112,12 @@ namespace interfaces.paneles
         {
             traslados.traslados_productos frm = new traslados.traslados_productos();
             frm.ShowDialog();
+        }
+
+        private void btnGestion_cajas_Click(object sender, EventArgs e)
+        {
+            cajas_efectivo.Imagenes gestion_caja = new cajas_efectivo.Imagenes();
+            gestion_caja.ShowDialog();
         }
     }
 }

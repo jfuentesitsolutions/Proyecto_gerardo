@@ -9,7 +9,7 @@ namespace conexiones_BD.clases.ventas
 {
     public abstract class ventas: entidad
     {
-        protected string idventa, idDocu, fecha, idsucursal;
+        protected string idventa, idDocu, fecha, idsucursal, idcaja;
         private string anulacion;
 
         public ventas(string idventa, string anula)
@@ -18,13 +18,14 @@ namespace conexiones_BD.clases.ventas
             this.anulacion = anula;
         }
 
-        public ventas(string idventa, string idventa_ticket, string fecha, string idsucursal, string anulacion)
+        public ventas(string idventa, string idventa_ticket, string fecha, string idsucursal, string anulacion, string idca)
         {
             this.idventa = idventa;
             this.IdDocu = idventa_ticket; // este es el correlativo
             this.fecha = fecha;
             this.idsucursal = idsucursal;
-            this.Anulacion = anulacion; 
+            this.Anulacion = anulacion;
+            this.idcaja = idca; 
         }
 
         public string IdDocu

@@ -27,9 +27,9 @@ namespace conexiones_BD.clases.ventas
 
         public tickets(string idventa, string idventa_ticket, string fecha, string idsucursal, string anulacion,
             string idforma_pago, string correlativo, string idusuario, string monto_total_neto, string descuentos,
-            string monto_total, string idcita, string efectivo, string cambio, string idclien, string idcor
+            string monto_total, string idcita, string efectivo, string cambio, string idclien, string idcor, string idcaja
             )
-            : base(idventa,idventa_ticket, fecha, idsucursal, anulacion)
+            : base(idventa,idventa_ticket, fecha, idsucursal, anulacion, idcaja)
         {
             this.idforma_pago = idforma_pago;
             this.Correlativo = correlativo;
@@ -48,7 +48,6 @@ namespace conexiones_BD.clases.ventas
 
         public tickets(string idventa, string anulado):base(idventa,anulado)
         {
-
         }
 
         public override List<string> generarCampos()
@@ -99,6 +98,7 @@ namespace conexiones_BD.clases.ventas
             campos.Add("fecha");
             campos.Add("idsucursal");
             campos.Add("anulacion");
+            campos.Add("idcaja");
 
             return campos;
         }
@@ -111,6 +111,7 @@ namespace conexiones_BD.clases.ventas
             valores.Add(base.fecha);
             valores.Add(base.idsucursal);
             valores.Add(base.Anulacion);
+            valores.Add(base.idcaja);
 
             return valores;
         }

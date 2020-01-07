@@ -44,6 +44,7 @@ namespace control_principal.configuracion_inicial
                 listaEmpleados.SelectedValue = dato[3];
                 fecha.Text = dato[4];
                 txtEncargado.Text = dato[5];
+                txtNombre_equipo.Text = dato[6];
             }
 
         }
@@ -68,6 +69,7 @@ namespace control_principal.configuracion_inicial
             rk.SetValue("idempleado", listaEmpleados.SelectedValue.ToString());
             rk.SetValue("fecha_instalacion", fecha.Text);
             rk.SetValue("encargado_instalacion", txtEncargado.Text);
+            rk.SetValue("nombre_del_equipo", txtNombre_equipo.Text);
             rk.Close();
 
             string lectura = (string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "numero_sucursal", "NE");
@@ -99,6 +101,7 @@ namespace control_principal.configuracion_inicial
                 datos.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "idempleado", "NE"));
                 datos.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "fecha_instalacion", "NE"));
                 datos.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "encargado_instalacion", "NE"));
+                datos.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "nombre_del_equipo", "NE"));
             }
 
             return datos;
@@ -117,6 +120,7 @@ namespace control_principal.configuracion_inicial
             control.Add(txtDireccion);
             control.Add(txtTelefono);
             control.Add(txtEncargado);
+            control.Add(txtNombre_equipo);
 
             valido=utilitarios.vaciando_formularios.validando(control, error);
 

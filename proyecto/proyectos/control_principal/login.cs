@@ -151,6 +151,7 @@ namespace control_principal
                 sesion.DatosRegistro.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "telefono", "NE"));
                 sesion.DatosRegistro.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "encargado_sucursal", "NE"));
                 sesion.DatosRegistro.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "idempleado", "NE"));
+                sesion.DatosRegistro.Add((string)Registry.GetValue("HKEY_CURRENT_USER\\PuntoVentaGerardo\\configura", "nombre_del_equipo", "Nombre no configurado"));
 
             }
         }

@@ -97,6 +97,12 @@
     <Compile Include="actualizaciones\actualiza_productos.Designer.cs">
       <DependentUpon>actualiza_productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="cajas_efectivo\gestion_cajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cajas_efectivo\gestion_cajas.Designer.cs">
+      <DependentUpon>gestion_cajas.cs</DependentUpon>
+    </Compile>
     <Compile Include="compras\anular_compra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -524,6 +530,9 @@
     <EmbeddedResource Include="actualizaciones\actualiza_productos.resx">
       <DependentUpon>actualiza_productos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cajas_efectivo\gestion_cajas.resx">
+      <DependentUpon>gestion_cajas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="compras\anular_compra.resx">
       <DependentUpon>anular_compra.cs</DependentUpon>
     </EmbeddedResource>
@@ -816,7 +825,9 @@
       <DependentUpon>ventas_al_dia.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\computer %281%29.png" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
@@ -993,6 +1004,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja_abierta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja_cerrada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja_registro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja_control.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

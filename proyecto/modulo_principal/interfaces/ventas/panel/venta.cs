@@ -659,7 +659,7 @@ namespace interfaces.ventas.panel
             conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
                 "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
                 correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
-                this.total, "1", efec, cam, lista[0], idcorre);
+                this.total, "1", efec, cam, lista[0], idcorre, sesion.Idcaja);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
             conexiones_BD.clases.ctrl_errores.errores err= op.transaccionVentasTickets(retornoProductos(), ticke);

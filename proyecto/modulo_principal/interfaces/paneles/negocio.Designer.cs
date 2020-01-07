@@ -36,8 +36,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.negoCam = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.negoCodigo = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.negoCaja = new System.Windows.Forms.Panel();
+            this.btnGestion_cajas = new System.Windows.Forms.Button();
             this.negoAgrepre = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.negoAnulaCompra = new System.Windows.Forms.Panel();
@@ -48,7 +48,7 @@
             this.negoVentas.SuspendLayout();
             this.negoCompras.SuspendLayout();
             this.negoCam.SuspendLayout();
-            this.negoCodigo.SuspendLayout();
+            this.negoCaja.SuspendLayout();
             this.negoAgrepre.SuspendLayout();
             this.negoAnulaCompra.SuspendLayout();
             this.negoTraslados.SuspendLayout();
@@ -59,7 +59,7 @@
             this.panelOpciones.Controls.Add(this.negoVentas);
             this.panelOpciones.Controls.Add(this.negoCompras);
             this.panelOpciones.Controls.Add(this.negoCam);
-            this.panelOpciones.Controls.Add(this.negoCodigo);
+            this.panelOpciones.Controls.Add(this.negoCaja);
             this.panelOpciones.Controls.Add(this.negoAgrepre);
             this.panelOpciones.Controls.Add(this.negoAnulaCompra);
             this.panelOpciones.Controls.Add(this.negoTraslados);
@@ -150,31 +150,32 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // negoCodigo
+            // negoCaja
             // 
-            this.negoCodigo.Controls.Add(this.button3);
-            this.negoCodigo.Location = new System.Drawing.Point(547, 10);
-            this.negoCodigo.Margin = new System.Windows.Forms.Padding(10);
-            this.negoCodigo.Name = "negoCodigo";
-            this.negoCodigo.Size = new System.Drawing.Size(159, 170);
-            this.negoCodigo.TabIndex = 3;
-            this.negoCodigo.Visible = false;
+            this.negoCaja.Controls.Add(this.btnGestion_cajas);
+            this.negoCaja.Location = new System.Drawing.Point(547, 10);
+            this.negoCaja.Margin = new System.Windows.Forms.Padding(10);
+            this.negoCaja.Name = "negoCaja";
+            this.negoCaja.Size = new System.Drawing.Size(159, 170);
+            this.negoCaja.TabIndex = 3;
+            this.negoCaja.Visible = false;
             // 
-            // button3
+            // btnGestion_cajas
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 170);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Generación de codigos";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGestion_cajas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestion_cajas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGestion_cajas.FlatAppearance.BorderSize = 0;
+            this.btnGestion_cajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestion_cajas.Image = global::interfaces.Properties.Resources.caja_control;
+            this.btnGestion_cajas.Location = new System.Drawing.Point(0, 0);
+            this.btnGestion_cajas.Margin = new System.Windows.Forms.Padding(20);
+            this.btnGestion_cajas.Name = "btnGestion_cajas";
+            this.btnGestion_cajas.Size = new System.Drawing.Size(159, 170);
+            this.btnGestion_cajas.TabIndex = 2;
+            this.btnGestion_cajas.Text = "Gestión de cajas";
+            this.btnGestion_cajas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGestion_cajas.UseVisualStyleBackColor = true;
+            this.btnGestion_cajas.Click += new System.EventHandler(this.btnGestion_cajas_Click);
             // 
             // negoAgrepre
             // 
@@ -274,7 +275,7 @@
             this.negoVentas.ResumeLayout(false);
             this.negoCompras.ResumeLayout(false);
             this.negoCam.ResumeLayout(false);
-            this.negoCodigo.ResumeLayout(false);
+            this.negoCaja.ResumeLayout(false);
             this.negoAgrepre.ResumeLayout(false);
             this.negoAnulaCompra.ResumeLayout(false);
             this.negoTraslados.ResumeLayout(false);
@@ -291,8 +292,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel negoCam;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel negoCodigo;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel negoCaja;
+        private System.Windows.Forms.Button btnGestion_cajas;
         private System.Windows.Forms.Panel negoAgrepre;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel negoAnulaCompra;

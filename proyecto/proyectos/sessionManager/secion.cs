@@ -15,6 +15,8 @@ namespace sessionManager
 
         List<string> datos = new List<string>();
         List<string> datosRegistro = new List<string>();
+        bool caja_activa;
+        string idcaja;
 
         public static secion Instancia
         {
@@ -57,6 +59,32 @@ namespace sessionManager
             set
             {
                 datosRegistro = value;
+            }
+        }
+
+        public bool Caja_activa
+        {
+            get
+            {
+                return caja_activa;
+            }
+
+            set
+            {
+                caja_activa = value;
+            }
+        }
+
+        public string Idcaja
+        {
+            get
+            {
+                return idcaja;
+            }
+
+            set
+            {
+                idcaja = value;
             }
         }
 

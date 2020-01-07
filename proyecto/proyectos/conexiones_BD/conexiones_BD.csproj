@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clases\bancos.cs" />
+    <Compile Include="clases\cajas.cs" />
     <Compile Include="clases\cargos.cs" />
     <Compile Include="clases\categorias.cs" />
     <Compile Include="clases\clientes.cs" />

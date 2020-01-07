@@ -32,6 +32,7 @@ namespace interfaces.panel_inicio
             timer1.Start();
             ponerDatosUsuarios();
             ponerdatosSucursal();
+            verificandoCaja();
 
             control_permisos.controlador_de_permisos per = new control_permisos.controlador_de_permisos(this.panel_opciones, conexiones_BD.clases.usuarios.permisosAsigandosInicio(secion.Datos[5]));
 
@@ -81,6 +82,7 @@ namespace interfaces.panel_inicio
             lblDirec.Text = secion.DatosRegistro[2];
             lblTelefono.Text = secion.DatosRegistro[3];
             lblEncargado.Text = secion.DatosRegistro[4];
+            lblNombre_Equi.Text = secion.DatosRegistro[6];
         }
 
         private void btnAbajoss_Click(object sender, EventArgs e)
@@ -133,6 +135,25 @@ namespace interfaces.panel_inicio
             frm.ShowDialog();
             /*hilos_conexion.productos_hilos hil = new hilos_conexion.productos_hilos();
             hil.ShowDialog();*/
+        }
+
+        private void verificandoCaja()
+        {
+            DataTable caja = conexiones_BD.clases.cajas.datosTabla(secion.DatosRegistro[6]);
+            if (caja.Rows.Count>0)
+            {
+                tipo_caja.Image = Properties.Resources.caja_abierta;
+                lbl_estado_caja.Text = "Caja abierta";
+                secion.Caja_activa = true;
+                secion.Idcaja = caja.Rows[0][0].ToString();
+            }else
+            {
+                tipo_caja.Image = Properties.Resources.caja_cerrada;
+                lbl_estado_caja.Text = "No hay caja abierta";
+                secion.Caja_activa = false;
+                secion.Idcaja = "0";
+            }
+
         }
     }
 }
