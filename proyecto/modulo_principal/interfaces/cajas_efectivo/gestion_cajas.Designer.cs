@@ -34,11 +34,33 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lista_cajas = new System.Windows.Forms.ListView();
             this.lista_imagenes = new System.Windows.Forms.ImageList(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.grupo_caja = new System.Windows.Forms.GroupBox();
+            this.panel_contenido = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fecha = new System.Windows.Forms.MonthCalendar();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnAbrir = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCerrar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRevisar = new System.Windows.Forms.ToolStripButton();
+            this.efectivo_inicial = new System.Windows.Forms.NumericUpDown();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.grupo_caja.SuspendLayout();
+            this.panel_contenido.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.efectivo_inicial)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -52,6 +74,7 @@
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(755, 43);
             this.panelTitulo.TabIndex = 1;
+            this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
             // cerrar
             // 
@@ -81,21 +104,40 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lista_cajas);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(477, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(278, 398);
+            this.panel1.Size = new System.Drawing.Size(278, 237);
             this.panel1.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.checkBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(278, 26);
+            this.panel3.TabIndex = 1;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(56, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(169, 23);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Mostrar todas las cajas";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // lista_cajas
             // 
             this.lista_cajas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lista_cajas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lista_cajas.Location = new System.Drawing.Point(0, 0);
+            this.lista_cajas.Location = new System.Drawing.Point(0, 26);
             this.lista_cajas.MultiSelect = false;
             this.lista_cajas.Name = "lista_cajas";
-            this.lista_cajas.Size = new System.Drawing.Size(278, 398);
+            this.lista_cajas.Size = new System.Drawing.Size(278, 211);
             this.lista_cajas.TabIndex = 0;
             this.lista_cajas.UseCompatibleStateImageBehavior = false;
             this.lista_cajas.ItemActivate += new System.EventHandler(this.lista_cajas_SelectedIndexChanged);
@@ -106,12 +148,148 @@
             this.lista_imagenes.TransparentColor = System.Drawing.Color.Transparent;
             this.lista_imagenes.Images.SetKeyName(0, "caja_abierta.png");
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.grupo_caja);
+            this.panel2.Controls.Add(this.toolStrip1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(477, 237);
+            this.panel2.TabIndex = 3;
+            // 
+            // grupo_caja
+            // 
+            this.grupo_caja.Controls.Add(this.panel_contenido);
+            this.grupo_caja.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grupo_caja.Location = new System.Drawing.Point(0, 26);
+            this.grupo_caja.Name = "grupo_caja";
+            this.grupo_caja.Size = new System.Drawing.Size(477, 211);
+            this.grupo_caja.TabIndex = 1;
+            this.grupo_caja.TabStop = false;
+            this.grupo_caja.Text = "Datos de la caja";
+            // 
+            // panel_contenido
+            // 
+            this.panel_contenido.BackColor = System.Drawing.Color.Transparent;
+            this.panel_contenido.Controls.Add(this.efectivo_inicial);
+            this.panel_contenido.Controls.Add(this.label2);
+            this.panel_contenido.Controls.Add(this.lblNombre);
+            this.panel_contenido.Controls.Add(this.label1);
+            this.panel_contenido.Controls.Add(this.fecha);
+            this.panel_contenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_contenido.Location = new System.Drawing.Point(3, 22);
+            this.panel_contenido.Name = "panel_contenido";
+            this.panel_contenido.Size = new System.Drawing.Size(471, 186);
+            this.panel_contenido.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(269, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Efectivo inicial";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(274, 32);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(180, 71);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "label2";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(270, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre del equipo";
+            // 
+            // fecha
+            // 
+            this.fecha.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.fecha.Enabled = false;
+            this.fecha.Location = new System.Drawing.Point(9, 9);
+            this.fecha.Name = "fecha";
+            this.fecha.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAbrir,
+            this.toolStripSeparator1,
+            this.btnCerrar,
+            this.toolStripSeparator2,
+            this.btnRevisar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(477, 26);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Image = global::interfaces.Properties.Resources.caja_abierta;
+            this.btnAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(117, 23);
+            this.btnAbrir.Text = "Aperturar caja";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 26);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Image = global::interfaces.Properties.Resources.caja_cerrada;
+            this.btnCerrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(98, 23);
+            this.btnCerrar.Text = "Cerrar caja";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 26);
+            // 
+            // btnRevisar
+            // 
+            this.btnRevisar.Image = global::interfaces.Properties.Resources.search;
+            this.btnRevisar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRevisar.Name = "btnRevisar";
+            this.btnRevisar.Size = new System.Drawing.Size(103, 23);
+            this.btnRevisar.Text = "Revisar caja";
+            // 
+            // efectivo_inicial
+            // 
+            this.efectivo_inicial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.efectivo_inicial.DecimalPlaces = 2;
+            this.efectivo_inicial.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efectivo_inicial.Location = new System.Drawing.Point(274, 133);
+            this.efectivo_inicial.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.efectivo_inicial.Name = "efectivo_inicial";
+            this.efectivo_inicial.Size = new System.Drawing.Size(123, 38);
+            this.efectivo_inicial.TabIndex = 8;
+            // 
             // Imagenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(755, 441);
+            this.ClientSize = new System.Drawing.Size(755, 280);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitulo);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +304,16 @@
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.grupo_caja.ResumeLayout(false);
+            this.panel_contenido.ResumeLayout(false);
+            this.panel_contenido.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.efectivo_inicial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,5 +326,21 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView lista_cajas;
         private System.Windows.Forms.ImageList lista_imagenes;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnAbrir;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnCerrar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnRevisar;
+        private System.Windows.Forms.GroupBox grupo_caja;
+        private System.Windows.Forms.Panel panel_contenido;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.MonthCalendar fecha;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown efectivo_inicial;
     }
 }

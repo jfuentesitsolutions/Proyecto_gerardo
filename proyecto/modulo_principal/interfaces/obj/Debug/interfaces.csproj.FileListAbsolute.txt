@@ -983,3 +983,4 @@ C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\int
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.dll
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.pdb
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.cajas_efectivo.Imagenes.resources
+D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.cajas_efectivo.Imagenes.resources
