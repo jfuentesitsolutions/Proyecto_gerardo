@@ -89,6 +89,29 @@ namespace conexiones_BD
 
             return resultado;
         }
+        private DataTable estadisticasCaja(int id)
+        {
+            DataTable resultado = new DataTable();
+            try
+            {
+                if (base.conectar())
+                {
+                    MySqlCommand comando = new MySqlCommand("ESTADISTICAS_CAJA", base.Conec);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("id", id);
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(resultado);
+
+                }
+            }
+            catch (Exception e)
+            {
+                resultado = new DataTable();
+                Console.Write(e.Message);
+            }
+
+            return resultado;
+        }
         private DataTable estadisticasClientes(string fi, string ff)
         {
             DataTable resultado = new DataTable();
@@ -799,7 +822,6 @@ namespace conexiones_BD
 
             if (base.conectar())
             {
-
                 try
                 {
                     trans = base.Conec.BeginTransaction();
@@ -818,6 +840,50 @@ namespace conexiones_BD
                     Console.WriteLine(pc.sentenciaIngresar());
                     comando.ExecuteNonQuery();
                     
+
+                    trans.Commit();
+                    numeroFilas = Convert.ToInt32(res);
+
+                }
+                catch (MySqlException e)
+                {
+                    Console.WriteLine(e.Message);
+                    trans.Rollback();
+                    numeroFilas = -1;
+                }
+            }
+
+            return numeroFilas;
+        }
+        private Int32 EjecutartransaccionCierreCaja(clases.cajas caja, clases.cortes_diarios cd, clases.cortes_sucursales cs)
+        {
+            Int32 numeroFilas = 1;
+            MySqlTransaction trans = null;
+            long res = 0;
+
+            if (base.conectar())
+            {
+                try
+                {
+                    trans = base.Conec.BeginTransaction();
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.Connection = base.Conec;
+                    comando.Transaction = trans;
+
+                    comando.CommandText = caja.modificar(); 
+                    comando.ExecuteNonQuery();
+
+                    comando.CommandText =cd.sentenciaIngresar();
+                    Console.WriteLine(cd.sentenciaIngresar());
+                    comando.ExecuteNonQuery();
+
+                    res = comando.LastInsertedId;
+
+                    cs.cargarId(res.ToString());
+                    comando.CommandText = cs.sentenciaIngresar();
+                    comando.ExecuteNonQuery();
+
+                    res = comando.LastInsertedId;
 
                     trans.Commit();
                     numeroFilas = Convert.ToInt32(res);
@@ -891,7 +957,10 @@ namespace conexiones_BD
         {
             return EjecutartransaccionRecepcioTraslados2(idtras, pr, pre);
         }
-
+        public Int32 transaccionCajasCortes(clases.cajas caja, clases.cortes_diarios cd, clases.cortes_sucursales cs)
+        {
+            return EjecutartransaccionCierreCaja(caja, cd, cs);
+        }
         //sentencias y consultas
         public long insertar(string se)
         {
@@ -1072,6 +1141,11 @@ namespace conexiones_BD
         public DataTable estadisticasXTodos(string fi, string ff)
         {
             return estadisticasTodosLosClientes(fi, ff);
+        }
+
+        public DataTable datoscaja(int id)
+        {
+            return estadisticasCaja(id);
         }
     }
 }

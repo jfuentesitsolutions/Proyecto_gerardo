@@ -82,6 +82,8 @@
     <Compile Include="clases\compras\detalles_compras.cs" />
     <Compile Include="clases\compras\facturas_compras.cs" />
     <Compile Include="clases\configuracion_inicial.cs" />
+    <Compile Include="clases\cortes_diarios.cs" />
+    <Compile Include="clases\cortes_sucursales.cs" />
     <Compile Include="clases\ctrl_errores\errores.cs" />
     <Compile Include="clases\cuentas_proveedores.cs" />
     <Compile Include="clases\descuentos.cs" />

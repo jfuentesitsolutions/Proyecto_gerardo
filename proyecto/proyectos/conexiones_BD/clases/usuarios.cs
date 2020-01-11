@@ -87,7 +87,7 @@ namespace conexiones_BD.clases
         {
             DataTable datos = new DataTable();
 
-            String consulta = @"select u.usuario, concat(e.nombres, ' ', e.apellidos) as nomEmplea, e.genero, g.nombre, c.nombre_cargo, g.idgrupo 
+            String consulta = @"select u.usuario, concat(e.nombres, ' ', e.apellidos) as nomEmplea, e.genero, g.nombre, c.nombre_cargo, g.idgrupo, u.idusuario 
                                 from usuarios u, empleados_sucursales es, grupos g, sucursales s, empleados e, cargos c
                                 where u.idempleado_sucursal=es.idempleado_sucursal and u.idgrupo=g.idgrupo and
                                 es.idsucursal=s.idsucursal and es.idempleado=e.idempleado and e.idcargo=c.idcargo and u.usuario='" + usuario+@"' and u.contrasena=md5('"+contra+ @"') and u.estado=1

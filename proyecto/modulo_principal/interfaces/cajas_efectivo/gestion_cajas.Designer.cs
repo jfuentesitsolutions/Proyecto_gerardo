@@ -35,12 +35,13 @@
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.lista_cajas = new System.Windows.Forms.ListView();
             this.lista_imagenes = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.grupo_caja = new System.Windows.Forms.GroupBox();
             this.panel_contenido = new System.Windows.Forms.Panel();
+            this.efectivo_inicial = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@
             this.btnCerrar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRevisar = new System.Windows.Forms.ToolStripButton();
-            this.efectivo_inicial = new System.Windows.Forms.NumericUpDown();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -59,8 +60,9 @@
             this.panel2.SuspendLayout();
             this.grupo_caja.SuspendLayout();
             this.panel_contenido.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.efectivo_inicial)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -114,22 +116,23 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.checkBox1);
+            this.panel3.Controls.Add(this.chkTodos);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(278, 26);
             this.panel3.TabIndex = 1;
             // 
-            // checkBox1
+            // chkTodos
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(56, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(169, 23);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Mostrar todas las cajas";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkTodos.AutoSize = true;
+            this.chkTodos.Location = new System.Drawing.Point(56, 3);
+            this.chkTodos.Name = "chkTodos";
+            this.chkTodos.Size = new System.Drawing.Size(169, 23);
+            this.chkTodos.TabIndex = 0;
+            this.chkTodos.Text = "Mostrar todas las cajas";
+            this.chkTodos.UseVisualStyleBackColor = true;
+            this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
             // 
             // lista_cajas
             // 
@@ -182,6 +185,22 @@
             this.panel_contenido.Name = "panel_contenido";
             this.panel_contenido.Size = new System.Drawing.Size(471, 186);
             this.panel_contenido.TabIndex = 1;
+            // 
+            // efectivo_inicial
+            // 
+            this.efectivo_inicial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.efectivo_inicial.DecimalPlaces = 2;
+            this.efectivo_inicial.Enabled = false;
+            this.efectivo_inicial.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efectivo_inicial.Location = new System.Drawing.Point(307, 133);
+            this.efectivo_inicial.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.efectivo_inicial.Name = "efectivo_inicial";
+            this.efectivo_inicial.Size = new System.Drawing.Size(123, 38);
+            this.efectivo_inicial.TabIndex = 8;
             // 
             // label2
             // 
@@ -241,6 +260,7 @@
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(117, 23);
             this.btnAbrir.Text = "Aperturar caja";
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // toolStripSeparator1
             // 
@@ -254,6 +274,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(98, 23);
             this.btnCerrar.Text = "Cerrar caja";
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // toolStripSeparator2
             // 
@@ -267,21 +288,12 @@
             this.btnRevisar.Name = "btnRevisar";
             this.btnRevisar.Size = new System.Drawing.Size(103, 23);
             this.btnRevisar.Text = "Revisar caja";
+            this.btnRevisar.Click += new System.EventHandler(this.btnRevisar_Click);
             // 
-            // efectivo_inicial
+            // error
             // 
-            this.efectivo_inicial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
-            this.efectivo_inicial.DecimalPlaces = 2;
-            this.efectivo_inicial.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efectivo_inicial.Location = new System.Drawing.Point(274, 133);
-            this.efectivo_inicial.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.efectivo_inicial.Name = "efectivo_inicial";
-            this.efectivo_inicial.Size = new System.Drawing.Size(123, 38);
-            this.efectivo_inicial.TabIndex = 8;
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
             // 
             // Imagenes
             // 
@@ -311,9 +323,10 @@
             this.grupo_caja.ResumeLayout(false);
             this.panel_contenido.ResumeLayout(false);
             this.panel_contenido.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.efectivo_inicial)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.efectivo_inicial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,11 +349,12 @@
         private System.Windows.Forms.GroupBox grupo_caja;
         private System.Windows.Forms.Panel panel_contenido;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkTodos;
         private System.Windows.Forms.MonthCalendar fecha;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown efectivo_inicial;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

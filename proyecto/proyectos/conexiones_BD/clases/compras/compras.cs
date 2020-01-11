@@ -9,14 +9,15 @@ namespace conexiones_BD.clases.compras
 {
     public class compras:entidad
     {
-        string idcompra, idfactura, idsucursal, fecha_ingreso, anulacion;
+        string idcompra, idfactura, idsucursal, fecha_ingreso, anulacion, idcaja;
 
-        public compras(string idfactura, string idsucursal, string fecha_ingreso, string anulacion)
+        public compras(string idfactura, string idsucursal, string fecha_ingreso, string anulacion,string idc)
         {
             this.Idfactura = idfactura;
             this.idsucursal = idsucursal;
             this.fecha_ingreso = fecha_ingreso;
             this.anulacion = anulacion;
+            this.idcaja = idc;
             base.cargarDatos(generarCampos(), generarValores(), "compras");
         }
 
@@ -46,6 +47,7 @@ namespace conexiones_BD.clases.compras
             campos.Add("idsucursal");
             campos.Add("fecha_ingreso");
             campos.Add("anulacion");
+            campos.Add("idcaja");
 
             return campos;
         }
@@ -57,6 +59,7 @@ namespace conexiones_BD.clases.compras
             valores.Add(idsucursal);
             valores.Add(fecha_ingreso);
             valores.Add(anulacion);
+            valores.Add(idcaja);
 
             return valores;
         }

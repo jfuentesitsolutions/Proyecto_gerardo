@@ -103,6 +103,12 @@
     <Compile Include="cajas_efectivo\gestion_cajas.Designer.cs">
       <DependentUpon>gestion_cajas.cs</DependentUpon>
     </Compile>
+    <Compile Include="cajas_efectivo\revisar_caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cajas_efectivo\revisar_caja.Designer.cs">
+      <DependentUpon>revisar_caja.cs</DependentUpon>
+    </Compile>
     <Compile Include="compras\anular_compra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>anulaciones_compras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Datos\bd_facturacion2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bd_facturacion2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Datos\mejores_clientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -416,6 +427,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>facturas_compras.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Diseño\reporteCortes.cs">
+      <DependentUpon>reporteCortes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reportes\Diseño\reporteVentasaldia.cs">
       <AutoGen>True</AutoGen>
@@ -532,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cajas_efectivo\gestion_cajas.resx">
       <DependentUpon>gestion_cajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cajas_efectivo\revisar_caja.resx">
+      <DependentUpon>revisar_caja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="compras\anular_compra.resx">
       <DependentUpon>anular_compra.cs</DependentUpon>
@@ -677,6 +697,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>facturas_compras.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Diseño\reporteCortes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reporteCortes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Diseño\reporteVentasaldia.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reporteVentasaldia.cs</LastGenOutput>
@@ -790,6 +814,17 @@
     </None>
     <None Include="Reportes\Datos\anulaciones_compras.xss">
       <DependentUpon>anulaciones_compras.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Datos\bd_facturacion2.xsc">
+      <DependentUpon>bd_facturacion2.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Datos\bd_facturacion2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bd_facturacion2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Datos\bd_facturacion2.xss">
+      <DependentUpon>bd_facturacion2.xsd</DependentUpon>
     </None>
     <None Include="Reportes\Datos\mejores_clientes.xsc">
       <DependentUpon>mejores_clientes.xsd</DependentUpon>
@@ -1016,6 +1051,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\caja_control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fact_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files-and-folders_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

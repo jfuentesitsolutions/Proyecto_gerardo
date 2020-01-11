@@ -429,7 +429,8 @@ namespace interfaces.compras
                 "0",
                 listaSucursal.SelectedValue.ToString(),
                 fech.fechaMysql(fechaActual),
-                "1");
+                "1",
+                sesion.Idcaja);
 
             conexiones_BD.operaciones op = new conexiones_BD.operaciones();
 
