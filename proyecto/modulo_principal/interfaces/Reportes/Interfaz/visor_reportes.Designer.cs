@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(visor_reportes));
             this.panelTitulo = new System.Windows.Forms.Panel();
-            this.lblEncanezado = new System.Windows.Forms.Label();
             this.cerrar = new System.Windows.Forms.PictureBox();
+            this.lblEncanezado = new System.Windows.Forms.Label();
             this.reporte = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
@@ -50,17 +50,6 @@
             this.panelTitulo.TabIndex = 9;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
-            // lblEncanezado
-            // 
-            this.lblEncanezado.AutoSize = true;
-            this.lblEncanezado.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEncanezado.ForeColor = System.Drawing.Color.White;
-            this.lblEncanezado.Location = new System.Drawing.Point(350, 15);
-            this.lblEncanezado.Name = "lblEncanezado";
-            this.lblEncanezado.Size = new System.Drawing.Size(108, 23);
-            this.lblEncanezado.TabIndex = 0;
-            this.lblEncanezado.Text = "Estadisticas";
-            // 
             // cerrar
             // 
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -73,6 +62,17 @@
             this.cerrar.TabIndex = 2;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
+            // 
+            // lblEncanezado
+            // 
+            this.lblEncanezado.AutoSize = true;
+            this.lblEncanezado.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncanezado.ForeColor = System.Drawing.Color.White;
+            this.lblEncanezado.Location = new System.Drawing.Point(382, 15);
+            this.lblEncanezado.Name = "lblEncanezado";
+            this.lblEncanezado.Size = new System.Drawing.Size(108, 23);
+            this.lblEncanezado.TabIndex = 0;
+            this.lblEncanezado.Text = "Estadisticas";
             // 
             // reporte
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.panelTitulo);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "visor_reportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "visor_reportes";

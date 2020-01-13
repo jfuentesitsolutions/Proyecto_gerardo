@@ -53,6 +53,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRevisar = new System.Windows.Forms.ToolStripButton();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCajasC = new System.Windows.Forms.ToolStripButton();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,7 +76,7 @@
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(755, 43);
+            this.panelTitulo.Size = new System.Drawing.Size(774, 43);
             this.panelTitulo.TabIndex = 1;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
@@ -83,7 +85,7 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(710, 5);
+            this.cerrar.Location = new System.Drawing.Point(729, 5);
             this.cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.cerrar.Name = "cerrar";
             this.cerrar.Size = new System.Drawing.Size(32, 32);
@@ -109,7 +111,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lista_cajas);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(477, 43);
+            this.panel1.Location = new System.Drawing.Point(496, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(278, 237);
             this.panel1.TabIndex = 2;
@@ -158,7 +160,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(477, 237);
+            this.panel2.Size = new System.Drawing.Size(496, 237);
             this.panel2.TabIndex = 3;
             // 
             // grupo_caja
@@ -167,7 +169,7 @@
             this.grupo_caja.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grupo_caja.Location = new System.Drawing.Point(0, 26);
             this.grupo_caja.Name = "grupo_caja";
-            this.grupo_caja.Size = new System.Drawing.Size(477, 211);
+            this.grupo_caja.Size = new System.Drawing.Size(496, 211);
             this.grupo_caja.TabIndex = 1;
             this.grupo_caja.TabStop = false;
             this.grupo_caja.Text = "Datos de la caja";
@@ -183,7 +185,7 @@
             this.panel_contenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_contenido.Location = new System.Drawing.Point(3, 22);
             this.panel_contenido.Name = "panel_contenido";
-            this.panel_contenido.Size = new System.Drawing.Size(471, 186);
+            this.panel_contenido.Size = new System.Drawing.Size(490, 186);
             this.panel_contenido.TabIndex = 1;
             // 
             // efectivo_inicial
@@ -246,10 +248,12 @@
             this.toolStripSeparator1,
             this.btnCerrar,
             this.toolStripSeparator2,
-            this.btnRevisar});
+            this.btnRevisar,
+            this.toolStripSeparator3,
+            this.btnCajasC});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(477, 26);
+            this.toolStrip1.Size = new System.Drawing.Size(496, 26);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -295,12 +299,26 @@
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 26);
+            // 
+            // btnCajasC
+            // 
+            this.btnCajasC.Image = global::interfaces.Properties.Resources._lock;
+            this.btnCajasC.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCajasC.Name = "btnCajasC";
+            this.btnCajasC.Size = new System.Drawing.Size(120, 23);
+            this.btnCajasC.Text = "Cajas cerradas";
+            this.btnCajasC.Click += new System.EventHandler(this.btnCajasC_Click);
+            // 
             // Imagenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
-            this.ClientSize = new System.Drawing.Size(755, 280);
+            this.ClientSize = new System.Drawing.Size(774, 280);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitulo);
@@ -356,5 +374,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown efectivo_inicial;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton btnCajasC;
     }
 }

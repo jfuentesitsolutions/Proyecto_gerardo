@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,40 @@ namespace conexiones_BD.clases
             valores.Add(this.total_com);
             valores.Add(this.total_c_anulado);
             return valores;
+        }
+
+        public static DataTable datosCajasCerradas()
+        {
+            string sentencia = @"select c.idcaja, c.fecha_cierre, cd.total, c.nombre_equipo, c.efectivo_inicial, cast(c.idcaja as char(45)) as idl
+from cortes_diarios cd, cajas c
+where cd.idcaja=c.idcaja and c.estado=2;";
+
+            operaciones op = new operaciones();
+            try
+            {
+                return op.Consultar(sentencia);
+            }
+            catch
+            {
+                return new DataTable();
+            }
+
+        }
+
+        public static DataTable datosCaja(string idcaja)
+        {
+            string sentencia = @"select total_ventas_tickets as vt, total_ventas_facturas as vf, total_ventas_anuladas as anula_v,
+total_compras_anuladas as anula_c, gastos_operativos as gastos, total_compras as compra, total_ganancia as gana from cortes_diarios where idcaja='" + idcaja+"';";
+
+            operaciones op = new operaciones();
+            try
+            {
+                return op.Consultar(sentencia);
+            }
+            catch
+            {
+                return new DataTable();
+            }
         }
     }
 }

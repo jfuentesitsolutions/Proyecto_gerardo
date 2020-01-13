@@ -33,6 +33,7 @@ namespace interfaces.Reportes.Interfaz
             }
         }
 
+
         private void cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -49,5 +50,7 @@ namespace interfaces.Reportes.Interfaz
             lblEncanezado.Text = encabezado;
             gadgets.horientaciones_textos.colocarTitulo(panelTitulo, lblEncanezado);
         }
+
+       
     }
 }

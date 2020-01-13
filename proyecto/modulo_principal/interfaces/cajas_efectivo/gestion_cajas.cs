@@ -104,11 +104,14 @@ namespace interfaces.cajas_efectivo
                     sesion.Datos[6]
                     );
 
-                if (cajas.guardar(false)>0)
+                long id = cajas.guardar(false);
+
+                if (id>0)
                 {
                     MessageBox.Show("Caja abierta con exíto", "Caja abierta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     colocandoCajasActivas();
                     sesion.Caja_activa = true;
+                    sesion.Idcaja = id.ToString();
                 }
 
                 
@@ -118,9 +121,11 @@ namespace interfaces.cajas_efectivo
         private void btnRevisar_Click(object sender, EventArgs e)
         {
             revisar_caja frm = new revisar_caja();
-            frm.btnCerrar.Visible = false;
-            frm.Height = 400;
+            frm.Revisar = true;
             frm.Idcaja = idcaja;
+            frm.EfectivoI = efectivo_inicial.Value.ToString();
+            Console.WriteLine(idcaja);
+            frm.Nombre_caja = lblNombre.Text;
             frm.ShowDialog();
         }
 
@@ -136,7 +141,9 @@ namespace interfaces.cajas_efectivo
                 cajas.Rows[0][6].ToString());
             revisar_caja frm = new revisar_caja();
             frm.Idcaja = idcaja;
+            frm.EfectivoI = efectivo_inicial.Value.ToString();
             frm.Caja = caja;
+            frm.Nombre_caja = lblNombre.Text;
             frm.ShowDialog();
 
             if (frm.Cerrada)
@@ -163,6 +170,12 @@ namespace interfaces.cajas_efectivo
             {
                 colocandoCajasActivas();
             }
+        }
+
+        private void btnCajasC_Click(object sender, EventArgs e)
+        {
+            cajas_cerradas frm = new cajas_cerradas();
+            frm.ShowDialog();
         }
     }
 }

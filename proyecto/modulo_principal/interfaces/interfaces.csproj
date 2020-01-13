@@ -97,6 +97,12 @@
     <Compile Include="actualizaciones\actualiza_productos.Designer.cs">
       <DependentUpon>actualiza_productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="cajas_efectivo\cajas_cerradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cajas_efectivo\cajas_cerradas.Designer.cs">
+      <DependentUpon>cajas_cerradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="cajas_efectivo\gestion_cajas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -546,6 +552,9 @@
   <ItemGroup>
     <EmbeddedResource Include="actualizaciones\actualiza_productos.resx">
       <DependentUpon>actualiza_productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cajas_efectivo\cajas_cerradas.resx">
+      <DependentUpon>cajas_cerradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cajas_efectivo\gestion_cajas.resx">
       <DependentUpon>gestion_cajas.cs</DependentUpon>
@@ -1078,6 +1087,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\professions-and-jobs_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

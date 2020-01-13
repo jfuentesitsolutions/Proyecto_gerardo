@@ -60,7 +60,7 @@ namespace conexiones_BD.clases
             DataTable Datos = new DataTable();
             String Consulta;
             Consulta = "select * from estantes;";
-            conexiones_BD.operaciones oOperacion = new conexiones_BD.operaciones();
+            operaciones oOperacion = new operaciones();
             try
             {
                 Datos = oOperacion.Consultar(Consulta);

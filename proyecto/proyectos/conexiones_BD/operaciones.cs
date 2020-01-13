@@ -24,13 +24,9 @@ namespace conexiones_BD
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = base.Conec;
                 comando.CommandText = sentencia;
-
-
                 try
                 {
                     numeroFilas = comando.ExecuteNonQuery();
-
-
                 }
                 catch
                 {
