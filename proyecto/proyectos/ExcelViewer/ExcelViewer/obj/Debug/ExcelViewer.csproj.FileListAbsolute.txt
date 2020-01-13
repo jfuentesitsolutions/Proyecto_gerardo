@@ -13,3 +13,8 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\bin
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojResolveAssemblyReference.cache
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb
+C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.dll
+C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\bin\Debug\ExcelViewer.pdb
+C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.csprojResolveAssemblyReference.cache
+C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.dll
+C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\proyectos\ExcelViewer\ExcelViewer\obj\Debug\ExcelViewer.pdb

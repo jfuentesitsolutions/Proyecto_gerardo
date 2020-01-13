@@ -69,7 +69,8 @@
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
             this.cerrar.Location = new System.Drawing.Point(642, 6);
             this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(37, 33);
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.cerrar.TabIndex = 2;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);

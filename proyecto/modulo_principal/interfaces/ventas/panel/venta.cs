@@ -1838,6 +1838,13 @@ namespace interfaces.ventas.panel
             }
         }
 
+        private void btnActualizar_Pro_Click(object sender, EventArgs e)
+        {
+            this.cargarTablas();
+            barraDeprogreso(10);
+            
+        }
+
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
             if (busquedaC)

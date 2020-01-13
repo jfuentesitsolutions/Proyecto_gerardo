@@ -205,9 +205,9 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(248, 17);
+            this.label1.Location = new System.Drawing.Point(241, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 39);
+            this.label1.Size = new System.Drawing.Size(272, 39);
             this.label1.TabIndex = 7;
             this.label1.Text = "Para ver el detalle del corte presione doble clic sobre la fila que corresponda a" +
     " el.";

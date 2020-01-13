@@ -987,3 +987,4 @@ D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug
 C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.cajas_efectivo.revisar_caja.resources
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.cajas_efectivo.revisar_caja.resources
 D:\TiendaGerardo\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.cajas_efectivo.cajas_cerradas.resources
+C:\Users\Fuentes\Documents\GitHub\Proyecto_gerardo\proyecto\modulo_principal\interfaces\obj\Debug\interfaces.cajas_efectivo.cajas_cerradas.resources
