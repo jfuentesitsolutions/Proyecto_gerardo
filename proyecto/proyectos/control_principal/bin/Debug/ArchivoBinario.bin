@@ -222,3 +222,6 @@ UPDATE productos SET nom_producto='HARINA DE ARROZ
 ', fecha_ingreso='2019-02-25 11:04:13', idcategoria='60', idmarca='53' WHERE idproducto='4064';
 UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53', UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53' WHERE idproducto='1106';
 UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53', UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', idcategoria='24', idmarca='53' WHERE idproducto='1106';
+UPDATE productos SET nom_producto='MANI JAPONES
+', fecha_ingreso='2019-05-25 12:35:35', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='MANI JAPONES
+', fecha_ingreso='2019-05-25 12:35:35', idcategoria='60', idmarca='53' WHERE idproducto='4326';

@@ -37,16 +37,20 @@ namespace interfaces.ventas.panel
         {
             if (despliegue)
             {
-                if (ventas.Width == 534)
+                Console.WriteLine(this.Width);
+                if (this.Width == 1092)
                 {
-                    ventas.Width = 377;
+                    ventas.Width = 728;
                 }
                 else
                 {
-                    ventas.Width = 534;
+                    
+                    ventas.Width = 570;
                 }
             }else
             {
+                Console.WriteLine("DEspliegue:" + this.Width);
+                Console.WriteLine(this.Width);
                 despliegue = true;
             }
             
