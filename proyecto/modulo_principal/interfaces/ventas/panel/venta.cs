@@ -265,6 +265,10 @@ namespace interfaces.ventas.panel
             }else if (e.KeyCode == Keys.F5)
             {
                 cargarTablas();
+                barraDeprogreso(10);
+            }else if (e.KeyCode == Keys.F11)
+            {
+                cobrosinTicket();
             }
         }
 
@@ -555,7 +559,6 @@ namespace interfaces.ventas.panel
 
             return encontrado;
         }
-
         private string recalcularTotalProducto(string canti, string pre)
         {
             string total = "";
@@ -569,7 +572,6 @@ namespace interfaces.ventas.panel
             
             return total;
         }
-
         private void calcularTotales()
         {
             double precio = 0;
@@ -585,7 +587,6 @@ namespace interfaces.ventas.panel
             lblTotal.Text = "$ "+ precio.ToString();
             total = precio.ToString();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (tabla_articulos.RowCount!=0)
@@ -604,7 +605,6 @@ namespace interfaces.ventas.panel
             }
             
         }
-
         private void quitarPestaña()
         {
             Panel pan = (Panel)this.Parent;
@@ -625,7 +625,6 @@ namespace interfaces.ventas.panel
             }
             
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             fecha_actual.Value = DateTime.Now;
@@ -646,10 +645,32 @@ namespace interfaces.ventas.panel
                     }
                 }
             }
-            
-           
+ 
         }
 
+        private void cobrosinTicket()
+        {
+            fecha_actual.Value = DateTime.Now;
+
+            if (!validar())
+            {
+                string correlativo = generaciondecorrelativo(); //se genera el correlativo
+                string id = IDCorrelativoTicket(); // se coloca el id del correlativo
+                if (correlativo != null) // si el correlativo se genera correctamente
+                {
+                    auxiliares.cobrar cobro = new auxiliares.cobrar();
+                    cobro.lblTotala.Text = total;
+                    cobro.lblEncanezado.Text = "Sin comprobante";
+                    cobro.panelTitulo.BackColor = Color.Red;
+                    cobro.efec.Text = total;
+                    cobro.ShowDialog();
+                    if (cobro.Cobrado)
+                    {
+                        ingresandoVentaTicket_sincomprobante(correlativo, cobro.txtefe.Text, cobro.lblCambio.Text, id); // metodo para ingresar la venta del ticket
+                    }
+                }
+            }
+        }
         private void ingresandoVentaTicket(string correl, string efec, string cam, string idcorre)
         {
             
@@ -716,6 +737,56 @@ namespace interfaces.ventas.panel
                         tablad.DataSource = null;
                     }
        
+            }
+            else
+            {
+                conexiones_BD.clases.ventas.correlativos_tickets.actualizaCorrelativos(correlativoAA, idcorrel);
+                Console.WriteLine(correlativoAA);
+                MessageBox.Show(err.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ingresandoVentaTicket_sincomprobante(string correl, string efec, string cam, string idcorre)
+        {
+
+            utilitarios.maneja_fechas fecha = new utilitarios.maneja_fechas();
+            Console.WriteLine(fecha_actual.ToString());
+
+            conexiones_BD.clases.ventas.tickets ticke = new conexiones_BD.clases.ventas.tickets(
+                "0", "0", fecha.fechaMy(lblrelog.ToString()), sesion.DatosRegistro[1], "1", listaFormaPago.SelectedValue.ToString(),
+                correl, listaVendedor.SelectedValue.ToString(), lblSubt.Text, lblDescuento.Text,
+                this.total, "1", efec, cam, lista[0], idcorre, sesion.Idcaja);
+
+            conexiones_BD.operaciones op = new conexiones_BD.operaciones();
+            conexiones_BD.clases.ctrl_errores.errores err = op.transaccionVentasTickets(retornoProductos(), ticke);
+
+            Int32 res = err.Res;
+
+            if (res > 0)
+            {
+
+                MessageBox.Show("Venta realizada", "Exíto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tabla_articulos.Rows.Clear();
+                    calcularTotales();
+                    busqueda = false;
+                    txtBusqueda.Text = "";
+                    txtBusqueda.Focus();
+                    tablad.Visible = false;
+                    tablad.DataSource = null;
+                    tabla_clientes.DataSource = null;
+                    cargaListas();
+
+                    cargarTablas();
+
+                    lista.Clear();
+                    lista_p.ForEach(c => lista.Add(c));
+
+                    txtDireccion.Text = lista_p[3];
+                    txtBuscarCliente.Text = lista_p[1] + " " + lista_p[2];
+
+                    tabla_clientes.Visible = false;
+                    System.Console.Write(lista[1]);
+
             }
             else
             {

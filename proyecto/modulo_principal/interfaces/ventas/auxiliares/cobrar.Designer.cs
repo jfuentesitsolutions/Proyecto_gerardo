@@ -71,9 +71,10 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(185, 6);
+            this.cerrar.Location = new System.Drawing.Point(194, 6);
             this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(37, 35);
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.cerrar.TabIndex = 2;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
@@ -249,10 +250,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.PictureBox cerrar;
-        private System.Windows.Forms.Label lblEncanezado;
         private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -265,5 +263,7 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.NumericUpDown efec;
         public System.Windows.Forms.TextBox txtefe;
+        public System.Windows.Forms.Panel panelTitulo;
+        public System.Windows.Forms.Label lblEncanezado;
     }
 }
