@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cargos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cargos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tablaCargos = new System.Windows.Forms.DataGridView();
+            this.Cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRegistro = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -50,23 +56,17 @@
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tablaCargos = new System.Windows.Forms.DataGridView();
-            this.lblRegistro = new System.Windows.Forms.Label();
-            this.Cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cdescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCargos)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaCargos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +99,84 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(378, 223);
             this.panel6.TabIndex = 3;
+            // 
+            // tablaCargos
+            // 
+            this.tablaCargos.AllowUserToAddRows = false;
+            this.tablaCargos.AllowUserToDeleteRows = false;
+            this.tablaCargos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tablaCargos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaCargos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaCargos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaCargos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaCargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cid,
+            this.Cnombre,
+            this.Cdescripcion});
+            this.tablaCargos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablaCargos.Location = new System.Drawing.Point(0, 0);
+            this.tablaCargos.MultiSelect = false;
+            this.tablaCargos.Name = "tablaCargos";
+            this.tablaCargos.ReadOnly = true;
+            this.tablaCargos.RowHeadersVisible = false;
+            this.tablaCargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaCargos.Size = new System.Drawing.Size(378, 195);
+            this.tablaCargos.TabIndex = 2;
+            this.tablaCargos.Click += new System.EventHandler(this.tablaCargos_Click);
+            // 
+            // Cid
+            // 
+            this.Cid.DataPropertyName = "idcargo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Cid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Cid.HeaderText = "ID";
+            this.Cid.Name = "Cid";
+            this.Cid.ReadOnly = true;
+            this.Cid.Width = 75;
+            // 
+            // Cnombre
+            // 
+            this.Cnombre.DataPropertyName = "nombre_cargo";
+            this.Cnombre.HeaderText = "Cargo";
+            this.Cnombre.Name = "Cnombre";
+            this.Cnombre.ReadOnly = true;
+            this.Cnombre.Width = 150;
+            // 
+            // Cdescripcion
+            // 
+            this.Cdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cdescripcion.DataPropertyName = "descripcion";
+            this.Cdescripcion.HeaderText = "Descripción";
+            this.Cdescripcion.Name = "Cdescripcion";
+            this.Cdescripcion.ReadOnly = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.lblRegistro);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 195);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(378, 28);
+            this.panel2.TabIndex = 0;
+            // 
+            // lblRegistro
+            // 
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Location = new System.Drawing.Point(196, 5);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(45, 19);
+            this.lblRegistro.TabIndex = 0;
+            this.lblRegistro.Text = "label3";
             // 
             // panel5
             // 
@@ -227,9 +305,10 @@
             this.cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cerrar.Image = ((System.Drawing.Image)(resources.GetObject("cerrar.Image")));
-            this.cerrar.Location = new System.Drawing.Point(653, 6);
+            this.cerrar.Location = new System.Drawing.Point(664, 6);
             this.cerrar.Name = "cerrar";
-            this.cerrar.Size = new System.Drawing.Size(37, 35);
+            this.cerrar.Size = new System.Drawing.Size(32, 32);
+            this.cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.cerrar.TabIndex = 2;
             this.cerrar.TabStop = false;
             this.cerrar.Click += new System.EventHandler(this.cerrar_Click);
@@ -250,84 +329,6 @@
             this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error.ContainerControl = this;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.lblRegistro);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 195);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(378, 28);
-            this.panel2.TabIndex = 0;
-            // 
-            // tablaCargos
-            // 
-            this.tablaCargos.AllowUserToAddRows = false;
-            this.tablaCargos.AllowUserToDeleteRows = false;
-            this.tablaCargos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tablaCargos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaCargos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tablaCargos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaCargos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaCargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cid,
-            this.Cnombre,
-            this.Cdescripcion});
-            this.tablaCargos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablaCargos.Location = new System.Drawing.Point(0, 0);
-            this.tablaCargos.MultiSelect = false;
-            this.tablaCargos.Name = "tablaCargos";
-            this.tablaCargos.ReadOnly = true;
-            this.tablaCargos.RowHeadersVisible = false;
-            this.tablaCargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaCargos.Size = new System.Drawing.Size(378, 195);
-            this.tablaCargos.TabIndex = 2;
-            this.tablaCargos.Click += new System.EventHandler(this.tablaCargos_Click);
-            // 
-            // lblRegistro
-            // 
-            this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Location = new System.Drawing.Point(196, 5);
-            this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(45, 19);
-            this.lblRegistro.TabIndex = 0;
-            this.lblRegistro.Text = "label3";
-            // 
-            // Cid
-            // 
-            this.Cid.DataPropertyName = "idcargo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Cid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Cid.HeaderText = "ID";
-            this.Cid.Name = "Cid";
-            this.Cid.ReadOnly = true;
-            this.Cid.Width = 75;
-            // 
-            // Cnombre
-            // 
-            this.Cnombre.DataPropertyName = "nombre_cargo";
-            this.Cnombre.HeaderText = "Cargo";
-            this.Cnombre.Name = "Cnombre";
-            this.Cnombre.ReadOnly = true;
-            this.Cnombre.Width = 150;
-            // 
-            // Cdescripcion
-            // 
-            this.Cdescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cdescripcion.DataPropertyName = "descripcion";
-            this.Cdescripcion.HeaderText = "Descripción";
-            this.Cdescripcion.Name = "Cdescripcion";
-            this.Cdescripcion.ReadOnly = true;
-            // 
             // cargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -345,6 +346,9 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCargos)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -354,9 +358,6 @@
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaCargos)).EndInit();
             this.ResumeLayout(false);
 
         }

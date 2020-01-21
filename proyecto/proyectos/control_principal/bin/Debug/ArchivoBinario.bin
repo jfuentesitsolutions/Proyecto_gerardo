@@ -225,3 +225,10 @@ UPDATE productos SET nom_producto='MAIZ', fecha_ingreso='2018-06-25 10:18:16', i
 UPDATE productos SET nom_producto='MANI JAPONES
 ', fecha_ingreso='2019-05-25 12:35:35', idcategoria='60', idmarca='53', UPDATE productos SET nom_producto='MANI JAPONES
 ', fecha_ingreso='2019-05-25 12:35:35', idcategoria='60', idmarca='53' WHERE idproducto='4326';
+UPDATE productos SET nom_producto='ALKA-SELTZER EXTREME', fecha_ingreso='2020-01-19 05:30:23', idcategoria='61', idmarca='20', UPDATE productos SET nom_producto='ALKA-SELTZER EXTREME', fecha_ingreso='2020-01-19 05:30:23', idcategoria='61', idmarca='20' WHERE idproducto='2697';
+UPDATE productos SET nom_producto='SUERO PLASTICO ORALDEX', fecha_ingreso='2020-01-20 10:15:03', idcategoria='61', idmarca='200', UPDATE productos SET nom_producto='SUERO PLASTICO ORALDEX', fecha_ingreso='2020-01-20 10:15:03', idcategoria='61', idmarca='200' WHERE idproducto='1821';
+UPDATE productos SET nom_producto='SUERO ORAL ANCALMO COCO 54 SOBRES
+', fecha_ingreso='2020-01-14 11:25:38', idcategoria='61', idmarca='53', UPDATE productos SET nom_producto='SUERO ORAL ANCALMO COCO 54 SOBRES
+', fecha_ingreso='2020-01-14 11:25:38', idcategoria='61', idmarca='53' WHERE idproducto='4876';
+UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='53', UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='53' WHERE idproducto='4909';
+UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='20', UPDATE productos SET nom_producto='TABCIN ANTIGRIPAL ADULTO', fecha_ingreso='2020-01-14 12:13:38', idcategoria='61', idmarca='20' WHERE idproducto='4909';

@@ -28,5 +28,11 @@ namespace interfaces.paneles
             Inventarios.clientes_frecuentes frm = new Inventarios.clientes_frecuentes();
             frm.ShowDialog();
         }
+
+        private void btnFarmacia_Click(object sender, EventArgs e)
+        {
+            farmacia.Control_de_medicina frm = new farmacia.Control_de_medicina();
+            frm.ShowDialog();
+        }
     }
 }

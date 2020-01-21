@@ -31,13 +31,17 @@
             this.panelOpciones = new System.Windows.Forms.FlowLayoutPanel();
             this.inveClientes = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.inveFarmacia = new System.Windows.Forms.Panel();
+            this.btnFarmacia = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.inveClientes.SuspendLayout();
+            this.inveFarmacia.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelOpciones
             // 
             this.panelOpciones.Controls.Add(this.inveClientes);
+            this.panelOpciones.Controls.Add(this.inveFarmacia);
             this.panelOpciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelOpciones.Location = new System.Drawing.Point(0, 0);
             this.panelOpciones.Name = "panelOpciones";
@@ -71,6 +75,33 @@
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
+            // inveFarmacia
+            // 
+            this.inveFarmacia.Controls.Add(this.btnFarmacia);
+            this.inveFarmacia.Location = new System.Drawing.Point(189, 10);
+            this.inveFarmacia.Margin = new System.Windows.Forms.Padding(10);
+            this.inveFarmacia.Name = "inveFarmacia";
+            this.inveFarmacia.Size = new System.Drawing.Size(159, 170);
+            this.inveFarmacia.TabIndex = 8;
+            this.inveFarmacia.Visible = false;
+            // 
+            // btnFarmacia
+            // 
+            this.btnFarmacia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFarmacia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFarmacia.FlatAppearance.BorderSize = 0;
+            this.btnFarmacia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFarmacia.Image = global::interfaces.Properties.Resources.drugs_128;
+            this.btnFarmacia.Location = new System.Drawing.Point(0, 0);
+            this.btnFarmacia.Margin = new System.Windows.Forms.Padding(20);
+            this.btnFarmacia.Name = "btnFarmacia";
+            this.btnFarmacia.Size = new System.Drawing.Size(159, 170);
+            this.btnFarmacia.TabIndex = 2;
+            this.btnFarmacia.Text = "Farmacia";
+            this.btnFarmacia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFarmacia.UseVisualStyleBackColor = true;
+            this.btnFarmacia.Click += new System.EventHandler(this.btnFarmacia_Click);
+            // 
             // inventarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -79,12 +110,13 @@
             this.Controls.Add(this.panelOpciones);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "inventarios";
             this.Text = "inventarios";
             this.Load += new System.EventHandler(this.inventarios_Load);
             this.panelOpciones.ResumeLayout(false);
             this.inveClientes.ResumeLayout(false);
+            this.inveFarmacia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,5 +126,7 @@
         private System.Windows.Forms.FlowLayoutPanel panelOpciones;
         private System.Windows.Forms.Panel inveClientes;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Panel inveFarmacia;
+        private System.Windows.Forms.Button btnFarmacia;
     }
 }

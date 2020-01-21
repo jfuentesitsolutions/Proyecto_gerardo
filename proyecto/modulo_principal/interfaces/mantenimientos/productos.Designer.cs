@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(productos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
@@ -232,7 +232,7 @@
             this.contenidoTotal.Dock = System.Windows.Forms.DockStyle.Left;
             this.contenidoTotal.Location = new System.Drawing.Point(0, 46);
             this.contenidoTotal.Name = "contenidoTotal";
-            this.contenidoTotal.Size = new System.Drawing.Size(632, 719);
+            this.contenidoTotal.Size = new System.Drawing.Size(632, 703);
             this.contenidoTotal.TabIndex = 0;
             // 
             // panel3
@@ -302,8 +302,8 @@
             // 
             this.tabla_presentacion_producto.AllowUserToAddRows = false;
             this.tabla_presentacion_producto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabla_presentacion_producto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabla_presentacion_producto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.tabla_presentacion_producto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_presentacion_producto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tabla_presentacion_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -395,8 +395,8 @@
             // 
             this.tabla_presentacion.AllowUserToAddRows = false;
             this.tabla_presentacion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabla_presentacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabla_presentacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.tabla_presentacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla_presentacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tabla_presentacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -417,8 +417,8 @@
             // id
             // 
             this.id.DataPropertyName = "idpresentacion";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle10;
             this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
@@ -1020,25 +1020,25 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(632, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(661, 719);
+            this.panel1.Size = new System.Drawing.Size(661, 703);
             this.panel1.TabIndex = 8;
             // 
             // tablaPro
             // 
             this.tablaPro.AllowUserToAddRows = false;
             this.tablaPro.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tablaPro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tablaPro.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.tablaPro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaPro.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaPro.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.tablaPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaPro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c1,
@@ -1073,15 +1073,15 @@
             this.tablaPro.ReadOnly = true;
             this.tablaPro.RowHeadersVisible = false;
             this.tablaPro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaPro.Size = new System.Drawing.Size(659, 602);
+            this.tablaPro.Size = new System.Drawing.Size(659, 586);
             this.tablaPro.TabIndex = 1;
             this.tablaPro.Click += new System.EventHandler(this.tablaPro_Click);
             // 
             // c1
             // 
             this.c1.DataPropertyName = "idSp";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.c1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.c1.DefaultCellStyle = dataGridViewCellStyle13;
             this.c1.HeaderText = "ID";
             this.c1.Name = "c1";
             this.c1.ReadOnly = true;
@@ -1090,8 +1090,8 @@
             // c2
             // 
             this.c2.DataPropertyName = "idP";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.c2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.c2.DefaultCellStyle = dataGridViewCellStyle14;
             this.c2.HeaderText = "ID_pro";
             this.c2.Name = "c2";
             this.c2.ReadOnly = true;
@@ -1285,7 +1285,7 @@
             this.panel8.BackColor = System.Drawing.Color.Silver;
             this.panel8.Controls.Add(this.lblReg);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 679);
+            this.panel8.Location = new System.Drawing.Point(0, 663);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(659, 38);
             this.panel8.TabIndex = 5;
@@ -1308,7 +1308,7 @@
             this.tablaProductos.Location = new System.Drawing.Point(0, 77);
             this.tablaProductos.Name = "tablaProductos";
             this.tablaProductos.ReadOnly = true;
-            this.tablaProductos.Size = new System.Drawing.Size(659, 640);
+            this.tablaProductos.Size = new System.Drawing.Size(659, 624);
             this.tablaProductos.TabIndex = 4;
             // 
             // panel5
@@ -1343,7 +1343,7 @@
             this.listaCate.BackColor = System.Drawing.Color.Silver;
             this.listaCate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.listaCate.FormattingEnabled = true;
-            this.listaCate.Location = new System.Drawing.Point(18, 24);
+            this.listaCate.Location = new System.Drawing.Point(18, 25);
             this.listaCate.Name = "listaCate";
             this.listaCate.Size = new System.Drawing.Size(264, 27);
             this.listaCate.TabIndex = 6;
@@ -1429,7 +1429,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 765);
+            this.ClientSize = new System.Drawing.Size(1293, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.contenidoTotal);
             this.Controls.Add(this.panelTitulo);

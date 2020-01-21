@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(negocio));
             this.panelOpciones = new System.Windows.Forms.FlowLayoutPanel();
             this.negoVentas = new System.Windows.Forms.Panel();
-            this.btn_Ventas = new System.Windows.Forms.Button();
             this.negoCompras = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.negoCam = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.negoCaja = new System.Windows.Forms.Panel();
-            this.btnGestion_cajas = new System.Windows.Forms.Button();
             this.negoAgrepre = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.negoAnulaCompra = new System.Windows.Forms.Panel();
-            this.btnAnulaCompra = new System.Windows.Forms.Button();
             this.negoTraslados = new System.Windows.Forms.Panel();
+            this.btn_Ventas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnGestion_cajas = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAnulaCompra = new System.Windows.Forms.Button();
             this.btnTraslado = new System.Windows.Forms.Button();
             this.panelOpciones.SuspendLayout();
             this.negoVentas.SuspendLayout();
@@ -79,6 +79,66 @@
             this.negoVentas.TabIndex = 0;
             this.negoVentas.Visible = false;
             // 
+            // negoCompras
+            // 
+            this.negoCompras.Controls.Add(this.button1);
+            this.negoCompras.Location = new System.Drawing.Point(189, 10);
+            this.negoCompras.Margin = new System.Windows.Forms.Padding(10);
+            this.negoCompras.Name = "negoCompras";
+            this.negoCompras.Size = new System.Drawing.Size(159, 170);
+            this.negoCompras.TabIndex = 1;
+            this.negoCompras.Visible = false;
+            // 
+            // negoCam
+            // 
+            this.negoCam.Controls.Add(this.button2);
+            this.negoCam.Location = new System.Drawing.Point(368, 10);
+            this.negoCam.Margin = new System.Windows.Forms.Padding(10);
+            this.negoCam.Name = "negoCam";
+            this.negoCam.Size = new System.Drawing.Size(159, 170);
+            this.negoCam.TabIndex = 2;
+            this.negoCam.Visible = false;
+            // 
+            // negoCaja
+            // 
+            this.negoCaja.Controls.Add(this.btnGestion_cajas);
+            this.negoCaja.Location = new System.Drawing.Point(547, 10);
+            this.negoCaja.Margin = new System.Windows.Forms.Padding(10);
+            this.negoCaja.Name = "negoCaja";
+            this.negoCaja.Size = new System.Drawing.Size(159, 170);
+            this.negoCaja.TabIndex = 3;
+            this.negoCaja.Visible = false;
+            // 
+            // negoAgrepre
+            // 
+            this.negoAgrepre.Controls.Add(this.button4);
+            this.negoAgrepre.Location = new System.Drawing.Point(726, 10);
+            this.negoAgrepre.Margin = new System.Windows.Forms.Padding(10);
+            this.negoAgrepre.Name = "negoAgrepre";
+            this.negoAgrepre.Size = new System.Drawing.Size(159, 170);
+            this.negoAgrepre.TabIndex = 4;
+            this.negoAgrepre.Visible = false;
+            // 
+            // negoAnulaCompra
+            // 
+            this.negoAnulaCompra.Controls.Add(this.btnAnulaCompra);
+            this.negoAnulaCompra.Location = new System.Drawing.Point(10, 200);
+            this.negoAnulaCompra.Margin = new System.Windows.Forms.Padding(10);
+            this.negoAnulaCompra.Name = "negoAnulaCompra";
+            this.negoAnulaCompra.Size = new System.Drawing.Size(159, 170);
+            this.negoAnulaCompra.TabIndex = 5;
+            this.negoAnulaCompra.Visible = false;
+            // 
+            // negoTraslados
+            // 
+            this.negoTraslados.Controls.Add(this.btnTraslado);
+            this.negoTraslados.Location = new System.Drawing.Point(189, 200);
+            this.negoTraslados.Margin = new System.Windows.Forms.Padding(10);
+            this.negoTraslados.Name = "negoTraslados";
+            this.negoTraslados.Size = new System.Drawing.Size(159, 170);
+            this.negoTraslados.TabIndex = 6;
+            this.negoTraslados.Visible = false;
+            // 
             // btn_Ventas
             // 
             this.btn_Ventas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -95,16 +155,6 @@
             this.btn_Ventas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Ventas.UseVisualStyleBackColor = true;
             this.btn_Ventas.Click += new System.EventHandler(this.btnAgregaPresentaciones_Click);
-            // 
-            // negoCompras
-            // 
-            this.negoCompras.Controls.Add(this.button1);
-            this.negoCompras.Location = new System.Drawing.Point(189, 10);
-            this.negoCompras.Margin = new System.Windows.Forms.Padding(10);
-            this.negoCompras.Name = "negoCompras";
-            this.negoCompras.Size = new System.Drawing.Size(159, 170);
-            this.negoCompras.TabIndex = 1;
-            this.negoCompras.Visible = false;
             // 
             // button1
             // 
@@ -123,16 +173,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // negoCam
-            // 
-            this.negoCam.Controls.Add(this.button2);
-            this.negoCam.Location = new System.Drawing.Point(368, 10);
-            this.negoCam.Margin = new System.Windows.Forms.Padding(10);
-            this.negoCam.Name = "negoCam";
-            this.negoCam.Size = new System.Drawing.Size(159, 170);
-            this.negoCam.TabIndex = 2;
-            this.negoCam.Visible = false;
-            // 
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -149,16 +189,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // negoCaja
-            // 
-            this.negoCaja.Controls.Add(this.btnGestion_cajas);
-            this.negoCaja.Location = new System.Drawing.Point(547, 10);
-            this.negoCaja.Margin = new System.Windows.Forms.Padding(10);
-            this.negoCaja.Name = "negoCaja";
-            this.negoCaja.Size = new System.Drawing.Size(159, 170);
-            this.negoCaja.TabIndex = 3;
-            this.negoCaja.Visible = false;
             // 
             // btnGestion_cajas
             // 
@@ -177,16 +207,6 @@
             this.btnGestion_cajas.UseVisualStyleBackColor = true;
             this.btnGestion_cajas.Click += new System.EventHandler(this.btnGestion_cajas_Click);
             // 
-            // negoAgrepre
-            // 
-            this.negoAgrepre.Controls.Add(this.button4);
-            this.negoAgrepre.Location = new System.Drawing.Point(726, 10);
-            this.negoAgrepre.Margin = new System.Windows.Forms.Padding(10);
-            this.negoAgrepre.Name = "negoAgrepre";
-            this.negoAgrepre.Size = new System.Drawing.Size(159, 170);
-            this.negoAgrepre.TabIndex = 4;
-            this.negoAgrepre.Visible = false;
-            // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -204,16 +224,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // negoAnulaCompra
-            // 
-            this.negoAnulaCompra.Controls.Add(this.btnAnulaCompra);
-            this.negoAnulaCompra.Location = new System.Drawing.Point(10, 200);
-            this.negoAnulaCompra.Margin = new System.Windows.Forms.Padding(10);
-            this.negoAnulaCompra.Name = "negoAnulaCompra";
-            this.negoAnulaCompra.Size = new System.Drawing.Size(159, 170);
-            this.negoAnulaCompra.TabIndex = 5;
-            this.negoAnulaCompra.Visible = false;
-            // 
             // btnAnulaCompra
             // 
             this.btnAnulaCompra.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -230,16 +240,6 @@
             this.btnAnulaCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAnulaCompra.UseVisualStyleBackColor = true;
             this.btnAnulaCompra.Click += new System.EventHandler(this.btnAnulaCompra_Click);
-            // 
-            // negoTraslados
-            // 
-            this.negoTraslados.Controls.Add(this.btnTraslado);
-            this.negoTraslados.Location = new System.Drawing.Point(189, 200);
-            this.negoTraslados.Margin = new System.Windows.Forms.Padding(10);
-            this.negoTraslados.Name = "negoTraslados";
-            this.negoTraslados.Size = new System.Drawing.Size(159, 170);
-            this.negoTraslados.TabIndex = 6;
-            this.negoTraslados.Visible = false;
             // 
             // btnTraslado
             // 

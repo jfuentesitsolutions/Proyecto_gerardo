@@ -393,6 +393,26 @@ namespace interfaces.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drugs_128 {
+            get {
+                object obj = ResourceManager.GetObject("drugs_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drugs_256 {
+            get {
+                object obj = ResourceManager.GetObject("drugs_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fact_32 {
             get {
                 object obj = ResourceManager.GetObject("fact_32", resourceCulture);
@@ -716,6 +736,26 @@ namespace interfaces.Properties {
         internal static System.Drawing.Bitmap search_page {
             get {
                 object obj = ResourceManager.GetObject("search_page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search1 {
+            get {
+                object obj = ResourceManager.GetObject("search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search2 {
+            get {
+                object obj = ResourceManager.GetObject("search2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
