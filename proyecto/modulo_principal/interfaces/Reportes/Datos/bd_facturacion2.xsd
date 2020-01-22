@@ -43,7 +43,9 @@
               <xs:element name="nom_producto" msprop:Generator_ColumnVarNameInTable="columnnom_producto" msprop:Generator_ColumnPropNameInRow="nom_producto" msprop:Generator_ColumnPropNameInTable="nom_productoColumn" msprop:Generator_UserColumnName="nom_producto" type="xs:string" minOccurs="0" />
               <xs:element name="cant" msprop:Generator_ColumnVarNameInTable="columncant" msprop:Generator_ColumnPropNameInRow="cant" msprop:Generator_ColumnPropNameInTable="cantColumn" msprop:Generator_UserColumnName="cant" type="xs:string" minOccurs="0" />
               <xs:element name="pre" msprop:Generator_ColumnVarNameInTable="columnpre" msprop:Generator_ColumnPropNameInRow="pre" msprop:Generator_ColumnPropNameInTable="preColumn" msprop:Generator_UserColumnName="pre" type="xs:string" minOccurs="0" />
-              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="preci" msprop:Generator_ColumnVarNameInTable="columnpreci" msprop:Generator_ColumnPropNameInRow="preci" msprop:Generator_ColumnPropNameInTable="preciColumn" msprop:Generator_UserColumnName="preci" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

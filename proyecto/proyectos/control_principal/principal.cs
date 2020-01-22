@@ -231,6 +231,7 @@ namespace control_principal
             int posicion = (panelSuperior.Width / 2) - (lblTitulo.Width / 2);
             Point punto = new Point(posicion, 13);
             lblTitulo.Location = punto;
+            gadgets.horientaciones_textos.colocarTitulo(panelSuperior, lblTitulo);
         }
 
         private void btnCerrarsesion_Click(object sender, EventArgs e)

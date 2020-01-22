@@ -140,7 +140,6 @@ namespace interfaces.farmacia
             {
                 this.cargandoTabla2(tabla_detalle_venta.CurrentRow.Cells[3].Value.ToString());
                 lblNombre.Text = tabla_detalle_venta.CurrentRow.Cells[0].Value.ToString();
-                lblNombre.BackColor = Color.YellowGreen;
                 if (this.Width != 972)
                 {
                     this.Width = 972;
@@ -163,17 +162,24 @@ namespace interfaces.farmacia
             if (tabla_detalle_venta.RowCount != 0)
             {
                 Reportes.Interfaz.visor_reportes frm = new Reportes.Interfaz.visor_reportes();
-                frm.Encabezado = "Este es una prueba";
+                frm.Encabezado = "Reporte de ventas de medicina";
                 Reportes.Diseño.reporte_ventas_medicina repo_farmacia = new Reportes.Diseño.reporte_ventas_medicina();
 
-
-                repo_farmacia.SetDataSource(conexiones_BD.farmacias.todos_datos_productos_id_periodo(fechaInicial.Value.ToString("yyyy-MM-dd"), fechaFinal.Value.ToString("yyyy-MM-dd")));
-
-
-                repo_farmacia.SetParameterValue("encabezado", "Prueba");
-                repo_farmacia.SetParameterValue("fecha", "Hola");
-
-                frm.reporte.ReportSource = repo_farmacia;
+                if (!sesion.Caja_activa || chkPeriodo.Checked)
+                {
+                    repo_farmacia.SetDataSource(conexiones_BD.farmacias.todos_datos_productos_id_periodo(fechaInicial.Value.ToString("yyyy-MM-dd"), fechaFinal.Value.ToString("yyyy-MM-dd")));
+                    repo_farmacia.SetParameterValue("encabezado", "REPORTE VENTA DE MEDICINA");
+                    repo_farmacia.SetParameterValue("fecha", "De: " + fechaInicial.Value.ToString("dd-MM-yyyy") + " A " + fechaFinal.Value.ToString("dd-MM-yyyy"));
+                    frm.reporte.ReportSource = repo_farmacia;
+                }
+                else
+                {
+                    repo_farmacia.SetDataSource(conexiones_BD.farmacias.todos_datos_productos_id(sesion.Idcaja));
+                    repo_farmacia.SetParameterValue("encabezado", "REPORTE VENTA DE MEDICINA");
+                    repo_farmacia.SetParameterValue("fecha", "Caja número: "+sesion.Idcaja);
+                    frm.reporte.ReportSource = repo_farmacia;
+                }
+                
 
 
                 frm.ShowDialog();

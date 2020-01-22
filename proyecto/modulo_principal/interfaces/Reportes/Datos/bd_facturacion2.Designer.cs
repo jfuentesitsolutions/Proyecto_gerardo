@@ -981,6 +981,10 @@ namespace interfaces.Reportes.Datos {
             
             private global::System.Data.DataColumn columntotal;
             
+            private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columnpreci;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public detalle_ventas_farmacia_individualDataTable() {
@@ -1064,6 +1068,22 @@ namespace interfaces.Reportes.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn preciColumn {
+                get {
+                    return this.columnpreci;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1099,7 +1119,7 @@ namespace interfaces.Reportes.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_ventas_farmacia_individualRow Adddetalle_ventas_farmacia_individualRow(string fecha, string docu, string nom_producto, string cant, string pre, string total) {
+            public detalle_ventas_farmacia_individualRow Adddetalle_ventas_farmacia_individualRow(string fecha, string docu, string nom_producto, string cant, string pre, double total, int cantidad, double preci) {
                 detalle_ventas_farmacia_individualRow rowdetalle_ventas_farmacia_individualRow = ((detalle_ventas_farmacia_individualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fecha,
@@ -1107,7 +1127,9 @@ namespace interfaces.Reportes.Datos {
                         nom_producto,
                         cant,
                         pre,
-                        total};
+                        total,
+                        cantidad,
+                        preci};
                 rowdetalle_ventas_farmacia_individualRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdetalle_ventas_farmacia_individualRow);
                 return rowdetalle_ventas_farmacia_individualRow;
@@ -1136,6 +1158,8 @@ namespace interfaces.Reportes.Datos {
                 this.columncant = base.Columns["cant"];
                 this.columnpre = base.Columns["pre"];
                 this.columntotal = base.Columns["total"];
+                this.columncantidad = base.Columns["cantidad"];
+                this.columnpreci = base.Columns["preci"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1151,8 +1175,12 @@ namespace interfaces.Reportes.Datos {
                 base.Columns.Add(this.columncant);
                 this.columnpre = new global::System.Data.DataColumn("pre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpre);
-                this.columntotal = new global::System.Data.DataColumn("total", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntotal = new global::System.Data.DataColumn("total", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columnpreci = new global::System.Data.DataColumn("preci", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpreci);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1721,10 +1749,10 @@ namespace interfaces.Reportes.Datos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string total {
+            public double total {
                 get {
                     try {
-                        return ((string)(this[this.tabledetalle_ventas_farmacia_individual.totalColumn]));
+                        return ((double)(this[this.tabledetalle_ventas_farmacia_individual.totalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'total\' de la tabla \'detalle_ventas_farmacia_individual\' e" +
@@ -1733,6 +1761,40 @@ namespace interfaces.Reportes.Datos {
                 }
                 set {
                     this[this.tabledetalle_ventas_farmacia_individual.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int cantidad {
+                get {
+                    try {
+                        return ((int)(this[this.tabledetalle_ventas_farmacia_individual.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'detalle_ventas_farmacia_individual" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_ventas_farmacia_individual.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double preci {
+                get {
+                    try {
+                        return ((double)(this[this.tabledetalle_ventas_farmacia_individual.preciColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'preci\' de la tabla \'detalle_ventas_farmacia_individual\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledetalle_ventas_farmacia_individual.preciColumn] = value;
                 }
             }
             
@@ -1806,6 +1868,30 @@ namespace interfaces.Reportes.Datos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettotalNull() {
                 this[this.tabledetalle_ventas_farmacia_individual.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tabledetalle_ventas_farmacia_individual.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tabledetalle_ventas_farmacia_individual.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspreciNull() {
+                return this.IsNull(this.tabledetalle_ventas_farmacia_individual.preciColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpreciNull() {
+                this[this.tabledetalle_ventas_farmacia_individual.preciColumn] = global::System.Convert.DBNull;
             }
         }
         

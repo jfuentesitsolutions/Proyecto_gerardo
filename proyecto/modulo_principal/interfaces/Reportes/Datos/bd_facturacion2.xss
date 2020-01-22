@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:datos_corte" ZOrder="3" X="26" Y="26" Height="162" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:detalle_ventas_farmacia" ZOrder="1" X="206" Y="41" Height="105" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:detalle_ventas_farmacia_individual" ZOrder="2" X="198" Y="170" Height="143" Width="266" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
+    <Shape ID="DesignTable:detalle_ventas_farmacia_individual" ZOrder="2" X="198" Y="170" Height="181" Width="266" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="177" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

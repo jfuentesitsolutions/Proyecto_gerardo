@@ -405,6 +405,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>anulaciones_compras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Datos\bd_facturacion2.cs">
+      <DependentUpon>bd_facturacion2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Datos\bd_facturacion2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
