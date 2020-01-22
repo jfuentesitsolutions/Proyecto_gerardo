@@ -47,8 +47,8 @@ namespace interfaces.farmacia
             }
         }
 
-       private void activandoControles()
-        {       
+        private void activandoControles()
+        {
             if (chkCaja_activa.Checked)
             {
                 fechaInicial.Enabled = false;
@@ -56,7 +56,7 @@ namespace interfaces.farmacia
                 btnBuscar.Enabled = false;
                 this.cargandoTabla1();
 
-            }else
+            } else
             {
                 fechaInicial.Enabled = true;
                 fechaFinal.Enabled = true;
@@ -68,7 +68,7 @@ namespace interfaces.farmacia
                     tabla.ContenidoTabla = null;
                     tabla_detalle_venta.DataSource = null;
                 }
-                
+
             }
         }
 
@@ -83,26 +83,26 @@ namespace interfaces.farmacia
             {
                 MessageBox.Show("No se ha detectado apertura de caja.\nsi desea ver registros habilite la opción periodo\nluego elija el periodo y presione buscar", "No hay caja activa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 chkCaja_activa.Enabled = false;
-                if (tabla!=null)
+                if (tabla != null)
                 {
                     tabla.TablaDatos = null;
                     tabla.ContenidoTabla = null;
                     tabla_detalle_venta.DataSource = null;
                 }
             }
-            
+
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            if (tabla!=null)
+            if (tabla != null)
             {
-                if (tabla.TablaDatos!=null)
+                if (tabla.TablaDatos != null)
                 {
                     tabla.FiltrarLocalmenteSinContadorRegistros();
                 }
-                
-            }          
+
+            }
         }
 
         private void chkPeriodo_CheckedChanged(object sender, EventArgs e)
@@ -112,9 +112,9 @@ namespace interfaces.farmacia
 
         private void chkCaja_activa_CheckedChanged(object sender, EventArgs e)
         {
-            
-                this.activandoControles(); 
-            
+
+            this.activandoControles();
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -124,12 +124,12 @@ namespace interfaces.farmacia
                 tabla.TablaDatos = conexiones_BD.farmacias.datos_productos_farmacia_periodo(fechaInicial.Value.ToString("yyyy-MM-dd"), fechaFinal.Value.ToString("yyyy-MM-dd"));
                 tabla.ContenidoTabla = new BindingSource();
                 tabla.cargarSinContadorRegistros();
-            }else
+            } else
             {
                 tabla = new utilitarios.cargar_tablas(tabla_detalle_venta, txtBusqueda, conexiones_BD.farmacias.datos_productos_farmacia_periodo(fechaInicial.Value.ToString("yyyy-MM-dd"), fechaFinal.Value.ToString("yyyy-MM-dd")), "nom_producto");
                 tabla.cargarSinContadorRegistros();
             }
-            
+
 
         }
 
@@ -141,7 +141,7 @@ namespace interfaces.farmacia
                 this.cargandoTabla2(tabla_detalle_venta.CurrentRow.Cells[3].Value.ToString());
                 lblNombre.Text = tabla_detalle_venta.CurrentRow.Cells[0].Value.ToString();
                 lblNombre.BackColor = Color.YellowGreen;
-                if (this.Width!= 972)
+                if (this.Width != 972)
                 {
                     this.Width = 972;
                     panel_derecho.Visible = true;
@@ -149,13 +149,49 @@ namespace interfaces.farmacia
                     this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
                     this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
                 }
-                    
+
             }
         }
 
         private void btnImprimirReporte_Click(object sender, EventArgs e)
         {
-            
+            mostrarReporte();
+        }
+
+        private void mostrarReporte()
+        {
+            if (tabla_detalle_venta.RowCount != 0)
+            {
+                Reportes.Interfaz.visor_reportes frm = new Reportes.Interfaz.visor_reportes();
+                frm.Encabezado = "Este es una prueba";
+                Reportes.Diseño.reporte_ventas_medicina repo_farmacia = new Reportes.Diseño.reporte_ventas_medicina();
+
+
+                repo_farmacia.SetDataSource(conexiones_BD.farmacias.todos_datos_productos_id_periodo(fechaInicial.Value.ToString("yyyy-MM-dd"), fechaFinal.Value.ToString("yyyy-MM-dd")));
+
+
+                repo_farmacia.SetParameterValue("encabezado", "Prueba");
+                repo_farmacia.SetParameterValue("fecha", "Hola");
+
+                frm.reporte.ReportSource = repo_farmacia;
+
+
+                frm.ShowDialog();
+            }
+
+        }
+
+        private DataSet datosSubReporte()
+        {
+
+            DataSet datos = new DataSet();
+            BindingSource dato = tabla_detalle_venta.DataSource as BindingSource;
+            DataTable da = dato.DataSource as DataTable;
+
+            datos.Tables.Add(da);
+
+
+            return datos;
         }
 
         private void cargandoTabla2(string idsuc)
