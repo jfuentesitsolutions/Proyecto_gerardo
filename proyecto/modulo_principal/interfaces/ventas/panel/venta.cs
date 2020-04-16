@@ -1076,7 +1076,7 @@ namespace interfaces.ventas.panel
         private string IDCorrelativoTicket()
         {
             string idcorre = "";
-            DataTable correlativos = conexiones_BD.clases.ventas.correlativos_tickets.datosTabla(sesion.DatosRegistro[1]);
+            DataTable correlativos = conexiones_BD.clases.ventas.correlativos_tickets.datosTabla(sesion.DatosRegistro[1], sesion.DatosRegistro[6]);
             if (correlativos == null)
             {
                 idcorre = "0";
@@ -1123,14 +1123,14 @@ namespace interfaces.ventas.panel
         private string generaciondecorrelativo()
         {
             string corre = null;
-            DataTable correlativos = conexiones_BD.clases.ventas.correlativos_tickets.datosTabla(sesion.DatosRegistro[1]);
+            DataTable correlativos = conexiones_BD.clases.ventas.correlativos_tickets.datosTabla(sesion.DatosRegistro[1], sesion.DatosRegistro[6]);
             Int32 limite = 0;
             Int32 correlativoActual = 0;
             Int32 correlativoSiguiente = 0;
 
-            if (correlativos == null)
+            if (correlativos == null || correlativos.Rows.Count==0)
             {
-                MessageBox.Show("No se han establecido correlativos para esta sucursal", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se han establecido correlativos para esta sucursal o no especificado el nombre del equipo", "Error de correlativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }else
             {
                 correlativoActual = Convert.ToInt32(correlativos.Rows[0][4].ToString());
@@ -1153,9 +1153,7 @@ namespace interfaces.ventas.panel
                     {
                         MessageBox.Show("Setecto un problema al generar el correlativo","Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                
-                
+                }   
             }
 
             return corre;

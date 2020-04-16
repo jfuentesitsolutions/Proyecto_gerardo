@@ -40,7 +40,7 @@ namespace interfaces.mantenimientos.correlativos
         {
             if (!validar())
             {
-                DataTable correlativos = conexiones_BD.clases.ventas.correlativos_tickets.datosTabla(listaSucursal.SelectedValue.ToString());
+                DataTable correlativos = conexiones_BD.clases.ventas.correlativos_tickets.datosTabla(listaSucursal.SelectedValue.ToString(), sesion.DatosRegistro[6]);
                 if (correlativos.Rows.Count==0)
                 {
                     string activo;
@@ -54,7 +54,7 @@ namespace interfaces.mantenimientos.correlativos
                     }
                     utilitarios.maneja_fechas fe = new utilitarios.maneja_fechas();
                     conexiones_BD.clases.ventas.correlativos_tickets co = new conexiones_BD.clases.ventas.correlativos_tickets(listaSucursal.SelectedValue.ToString(), numInicio.Value.ToString(), numFinal.Value.ToString(),
-                        "1", fe.fechaMysql(fecha), txtDescripcion.Text, activo
+                        "1", fe.fechaMysql(fecha), txtDescripcion.Text, activo, txtEquipo.Text
                         );
 
                     if (co.guardar(true)>0)
@@ -75,11 +75,13 @@ namespace interfaces.mantenimientos.correlativos
 
         private void cargar()
         {
-            tabla = new utilitarios.cargar_tablas(tablaCorrelativos, new TextBox(), conexiones_BD.clases.ventas.correlativos_tickets.datosTablaCorrelativo(), "nus");
+            tabla = new utilitarios.cargar_tablas(tablaCorrelativos, new TextBox(), conexiones_BD.clases.ventas.correlativos_tickets.datosTablaCorrelativo(sesion.DatosRegistro[1], sesion.DatosRegistro[6]), "nus");
             tabla.cargarSinContadorRegistros();
             utilitarios.cargandoListas.cargarLista(conexiones_BD.clases.sucursales.datosTabla(), listaSucursal, "numero_de_sucursal", "idsucursal");
             listaSucursal.SelectedValue = sesion.DatosRegistro[1];
             numInicio.Value = 1;
+            txtEquipo.Text = sesion.DatosRegistro[6];
+            txtEquipo.Enabled = false;
             numFinal.Value = 999999;
         }
 
@@ -109,7 +111,12 @@ namespace interfaces.mantenimientos.correlativos
                 valido = true;
                 error.SetError(txtDescripcion, mensaje);
             }
-            
+            if (txtEquipo.TextLength == 0)
+            {
+                valido = true;
+                error.SetError(txtEquipo, mensaje);
+            }
+
             return valido;
         }
     }

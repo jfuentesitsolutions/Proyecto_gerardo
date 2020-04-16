@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(correlativo_ticket));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.cerrar = new System.Windows.Forms.PictureBox();
             this.lblEncanezado = new System.Windows.Forms.Label();
@@ -50,11 +50,14 @@
             this.listaSucursal = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tablaCorrelativos = new System.Windows.Forms.DataGridView();
+            this.lblEquipo = new System.Windows.Forms.Label();
+            this.txtEquipo = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -111,6 +114,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEquipo);
+            this.groupBox1.Controls.Add(this.lblEquipo);
             this.groupBox1.Controls.Add(this.fecha);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnIngresar);
@@ -126,8 +131,8 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 43);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 340);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.Size = new System.Drawing.Size(298, 372);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
@@ -138,7 +143,7 @@
             this.fecha.Location = new System.Drawing.Point(112, 32);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(164, 26);
-            this.fecha.TabIndex = 12;
+            this.fecha.TabIndex = 0;
             // 
             // label5
             // 
@@ -152,10 +157,10 @@
             // btnIngresar
             // 
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Location = new System.Drawing.Point(117, 285);
+            this.btnIngresar.Location = new System.Drawing.Point(117, 332);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 31);
-            this.btnIngresar.TabIndex = 3;
+            this.btnIngresar.TabIndex = 7;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -163,25 +168,25 @@
             // chekActivo
             // 
             this.chekActivo.AutoSize = true;
-            this.chekActivo.Location = new System.Drawing.Point(202, 246);
+            this.chekActivo.Location = new System.Drawing.Point(202, 293);
             this.chekActivo.Name = "chekActivo";
             this.chekActivo.Size = new System.Drawing.Size(74, 23);
-            this.chekActivo.TabIndex = 2;
+            this.chekActivo.TabIndex = 6;
             this.chekActivo.Text = "Activos";
             this.chekActivo.UseVisualStyleBackColor = true;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(112, 164);
+            this.txtDescripcion.Location = new System.Drawing.Point(112, 211);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(164, 76);
-            this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 193);
+            this.label4.Location = new System.Drawing.Point(21, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 19);
             this.label4.TabIndex = 0;
@@ -189,7 +194,7 @@
             // 
             // numFinal
             // 
-            this.numFinal.Location = new System.Drawing.Point(112, 134);
+            this.numFinal.Location = new System.Drawing.Point(112, 181);
             this.numFinal.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -197,11 +202,11 @@
             0});
             this.numFinal.Name = "numFinal";
             this.numFinal.Size = new System.Drawing.Size(81, 26);
-            this.numFinal.TabIndex = 10;
+            this.numFinal.TabIndex = 4;
             // 
             // numInicio
             // 
-            this.numInicio.Location = new System.Drawing.Point(112, 102);
+            this.numInicio.Location = new System.Drawing.Point(112, 149);
             this.numInicio.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -209,12 +214,12 @@
             0});
             this.numInicio.Name = "numInicio";
             this.numInicio.Size = new System.Drawing.Size(81, 26);
-            this.numInicio.TabIndex = 9;
+            this.numInicio.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 138);
+            this.label3.Location = new System.Drawing.Point(21, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 19);
             this.label3.TabIndex = 8;
@@ -223,7 +228,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 106);
+            this.label2.Location = new System.Drawing.Point(21, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 19);
             this.label2.TabIndex = 7;
@@ -246,7 +251,7 @@
             this.listaSucursal.Location = new System.Drawing.Point(112, 69);
             this.listaSucursal.Name = "listaSucursal";
             this.listaSucursal.Size = new System.Drawing.Size(164, 27);
-            this.listaSucursal.TabIndex = 5;
+            this.listaSucursal.TabIndex = 1;
             // 
             // panel1
             // 
@@ -254,16 +259,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(298, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 340);
+            this.panel1.Size = new System.Drawing.Size(348, 372);
             this.panel1.TabIndex = 6;
             // 
             // tablaCorrelativos
             // 
             this.tablaCorrelativos.AllowUserToAddRows = false;
             this.tablaCorrelativos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(96)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.tablaCorrelativos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(96)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.tablaCorrelativos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaCorrelativos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.tablaCorrelativos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaCorrelativos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -271,7 +276,8 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             this.tablaCorrelativos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaCorrelativos.Location = new System.Drawing.Point(0, 0);
             this.tablaCorrelativos.MultiSelect = false;
@@ -279,8 +285,23 @@
             this.tablaCorrelativos.ReadOnly = true;
             this.tablaCorrelativos.RowHeadersVisible = false;
             this.tablaCorrelativos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaCorrelativos.Size = new System.Drawing.Size(348, 340);
+            this.tablaCorrelativos.Size = new System.Drawing.Size(348, 372);
             this.tablaCorrelativos.TabIndex = 0;
+            // 
+            // lblEquipo
+            // 
+            this.lblEquipo.Location = new System.Drawing.Point(21, 106);
+            this.lblEquipo.Name = "lblEquipo";
+            this.lblEquipo.Size = new System.Drawing.Size(85, 47);
+            this.lblEquipo.TabIndex = 13;
+            this.lblEquipo.Text = "Nombre del equipo:";
+            // 
+            // txtEquipo
+            // 
+            this.txtEquipo.Location = new System.Drawing.Point(112, 110);
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(164, 26);
+            this.txtEquipo.TabIndex = 2;
             // 
             // Column1
             // 
@@ -319,12 +340,19 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "nom_equi";
+            this.Column6.HeaderText = "Equipo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // correlativo_ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(646, 383);
+            this.ClientSize = new System.Drawing.Size(646, 415);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitulo);
@@ -371,10 +399,13 @@
         private System.Windows.Forms.ComboBox listaSucursal;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView tablaCorrelativos;
+        private System.Windows.Forms.TextBox txtEquipo;
+        private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
